@@ -1,0 +1,80 @@
+.project {
+  position: relative;
+}
+
+.project-img-wide {
+  position: relative;
+  background-size: cover;
+  background-position: center;
+  border-radius: 5px;
+  margin-right: 7px;
+  margin-left: 7px;
+}
+
+.project-name, .project-category {
+  position: absolute;
+  left: 10px;
+  bottom: 10px;
+  color: white;
+  padding: 10px;
+}
+
+.project-name {
+  bottom: 30px;
+}
+
+.project-category {
+  bottom: 10px;
+}
+
+.project-category p{
+  font-size: 10px;
+  font-family: 'Gotham Book';
+}
+
+.projects-list-standard {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap:15px;
+  padding-bottom:15px;
+}
+
+/* Stile per i progetti wide */
+.projects-list-wide .project {
+  width: 100%; /* I progetti wide occupano tutta la larghezza */
+}
+
+.projects-list-wide {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 15px;
+}
+
+/* Stili hover per i progetti */
+.project:hover .project-name,
+.project:hover .project-category {
+  opacity: 1;
+  transition: opacity 0.2s ease;
+}
+
+.project .project-name,
+.project .project-category {
+  opacity: 0;
+}
+
+/* Media queries per dispositivi mobili e tablet */
+@media (max-width: 768px) {
+  .project {
+    width: 100%;
+  }
+
+  .project .project-name,
+  .project .project-category {
+    opacity: 1;
+  }
+
+  .project .project-category {
+    display: none;
+  }
+}

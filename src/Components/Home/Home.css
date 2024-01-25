@@ -1,0 +1,507 @@
+/* hero */
+section.hero {
+  height: 400px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-end;
+}
+
+/* hero-img */
+section.hero-img {
+  position: relative;
+  padding: 0;
+  height: 100vh;
+  overflow: hidden;
+}
+
+
+
+section.hero-img .hero-img-container {
+  width: 100%;
+  height: 100%;
+}
+
+section.hero-img .hero-img-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+section.hero-img .hero-img-copy {
+  position: absolute;
+  top: 63%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  color: #fff;
+  text-align: center;
+  z-index: 1;
+  pointer-events: none;
+}
+
+
+/* projects */
+.projects,
+.projects-header {
+  padding-top:3.5em;
+}
+
+section.projects .projects-copy,
+section.projects-header .projects-copy {
+  width: 100%;
+  display: flex;
+  margin-bottom: 2em;
+}
+
+section.projects .projects-copy .projects-copy-h1,
+section.projects-header .projects-copy .projects-copy-h1 {
+  flex: 3;
+}
+
+section.projects .projects-copy .projects-copy-ws,
+section.projects-header .projects-copy .projects-copy-ws {
+  flex: 2;
+}
+
+.projects-list {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  display: flex;
+  justify-content: space-around;
+}
+
+.projects-list a {
+  width: 100%;
+}
+
+.projects-list .project {
+  margin: 7px;
+  color: white;
+  font-weight: bold;
+  font-size: 1.5em;
+  text-align: center;
+  flex: 1 0 auto;
+  display: flex;
+  flex-direction: column;
+}
+
+
+
+.projects-list .project .project-name p {
+  font-weight: 500;
+}
+
+.projects-list .project .project-name p,
+.projects-list .project .project-category p {
+  text-transform: uppercase;
+  font-size: 14px;
+  color: #fff;
+  text-decoration: none;
+}
+
+/* feature img */
+section.feature-img {
+  padding: 0;
+  height: 800px;
+}
+
+section.feature-img .feature-img-container {
+  width: 100%;
+  height: 100%;
+}
+
+section.feature-img .feature-img-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* footer */
+section.footer {
+  padding: 0;
+  background: #000;
+  color: #fff;
+  align-items: center;
+  text-align: left;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding: 2em;
+  font-size: 13px;
+}
+
+.footer-copy {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.footer-copy-text {
+ gap:50px;
+}
+
+section.footer .footer-copy .footer-copy-h1 a {
+  text-decoration: none;
+  color: #fff;
+}
+
+section.footer .footer-copy .footer-copy-text {
+  margin: 2em 0;
+}
+
+section.footer .footer-copy .footer-copy-text p {
+  text-transform: uppercase;
+  font-weight: 400;
+  font-size: 14px;
+}
+
+section.footer .footer-copy .footer-copy-text p a {
+  text-decoration: none;
+  color: #fff;
+}
+
+.footer-links {
+  color: #fff;
+}
+
+.footer-links-2 {
+  color: #fff;
+  padding-left:40px;
+}
+
+.footer-year {
+  position: absolute;
+  right:3em;
+  font-size:13px;
+}
+
+.clients {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  /* Altri stili se necessari */
+}
+
+.client {
+  margin: 10px;
+  /* Altri stili per i singoli elementi dei clienti */
+}
+
+
+.logo-home-page-big  {
+ width: 60vw;
+}
+
+@media (max-width: 900px) {
+
+  .logo-home-page-big  {
+    width: 89vw !important;
+    margin-bottom:0px;
+  }
+
+}
+
+/* Stili Comuni per Project Name e Project Category */
+.project-name, .project-category, .project-wide .project-name, .project-wide .project-category {
+  position: absolute;
+  left: 10px;
+  color: white;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+
+.project-name {
+  bottom: 30px;
+}
+
+.project-category {
+  bottom: 10px;
+}
+
+/* Stili per il Project Img */
+.project-img, .project-img-wide {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  border-radius: 5px;
+  overflow: hidden;
+  background-size: cover;
+  background-position: center;
+}
+
+
+/* Mostra Name e Category all'Hover */
+.project:hover .project-name, 
+.project:hover .project-category,
+.project-wide:hover .project-name, 
+.project-wide:hover .project-category {
+  opacity: 1;
+}
+
+/* Progetto Wide */
+.project-wide {
+  flex: 1 0 auto;
+  aspect-ratio: 16 / 9;
+  margin: auto;
+}
+
+@media (max-width: 768px) {
+  /* Mostra sempre il nome del progetto e nasconde la categoria sui dispositivi più piccoli */
+  .project-name, .project-wide .project-name {
+    opacity: 1;
+  }
+
+  .project-category, .project-wide .project-category {
+    display: none;
+  }
+}
+
+/* Stili per le Liste dei Progetti */
+.projects-list, .projects-list-wide {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  display: flex;
+  justify-content: space-around;
+}
+
+.projects-list a, .projects-list-wide a {
+  width: 100%;
+}
+
+/* Stili per i singoli progetti */
+.project, .project-wide {
+  color: white;
+  font-weight: bold;
+  font-size: 1.5em;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+}
+
+.project-wide {
+ aspect-ratio: 16 / 9;
+}
+
+.project {
+  flex: 1 0 auto;
+  aspect-ratio: 7 / 9; /* Questa proporzione si applica agli elementi non wide */
+}
+
+.project-wide {
+  flex: 1 0 auto;
+  aspect-ratio: 16 / 8; /* Questa proporzione si applica agli elementi wide */
+}
+
+
+
+/* Keyframes per l'animazione di blinking blur */
+@keyframes blinkingBlur {
+  0%, 100% { filter: blur(0); }
+  50% { filter: blur(2px); }
+}
+
+/* Stili base per le immagini dei progetti */
+.project-img {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  border-radius: 5px;
+  overflow: hidden;
+  background-size: cover;
+  background-position: center;
+  transition: filter 0.2s ease;
+}
+
+/* Applicazione dell'animazione di blur all'hover */
+.project-img:hover, .project-img-wide:hover {
+  animation: blinkingBlur 1s infinite;
+}
+
+/* Stili per Project Name e Project Category */
+.project-name, .project-category {
+  position: absolute;
+  left: 10px;
+  color: white;
+  z-index: 1; /* Posizionato sopra l'immagine */
+  transition: opacity 0.3s ease-in-out;
+}
+
+.project-name {
+  bottom: 24px;
+}
+
+.project-category {
+  bottom: 10px;
+}
+
+/* Mostra il nome e la categoria al passaggio del mouse */
+.project:hover .project-name, 
+.project:hover .project-category {
+  opacity: 1;
+}
+
+/* Media Queries per dispositivi mobili e tablet */
+@media (max-width: 768px) {
+  /* Mostra sempre il nome del progetto su dispositivi più piccoli */
+  .project-name {
+    opacity: 1;
+  }
+
+  /* Nasconde la categoria del progetto su dispositivi più piccoli */
+  .project-category {
+    display: none;
+  }
+
+  .project-name {
+    bottom: 8px;
+  }
+
+  .projects-list .project {
+    aspect-ratio: 9 / 15;
+  }
+
+  .project-wide {
+    aspect-ratio: 9 / 16;
+  }
+
+}
+
+/* Stili per le immagini di sfondo specifiche */
+
+.logo-home-page-big, .menu__item-text {
+  z-index: 9999; /* Sufficientemente alto per stare sopra gli altri elementi */
+  position: relative; /* O absolute, a seconda della struttura della tua pagina */
+  /* Altri stili per logo e testo del menu */
+}
+
+.menu {
+  display: flex;
+  justify-content: center; /* Centra orizzontalmente i nomi dei progetti */
+  align-items: center;     /* Centra verticalmente i nomi dei progetti */
+  position: fixed;
+  z-index: 1000; /* Assicurati che il menu sia sopra gli elementi normali della pagina */
+  flex-direction: row;
+  flex-wrap: wrap; /* Questa proprietà permette di andare a capo quando necessario */
+  line-height: 1.2em;
+  bottom: 200px;
+  margin-left:12%;
+  margin-right:12%;
+}
+
+.menu__item {
+  position: relative;
+  cursor: pointer;
+  padding-left: 5px;
+  padding-right: 2px;
+  padding-top: 0px;
+  padding-bottom: 0px;
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+
+.menu__item-image_wrapper {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-55%, -50%);
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: 2; /* Sopra gli elementi normali della pagina, ma sotto il testo del menu */
+}
+
+.menu__item:hover .menu__item-image_wrapper {
+  opacity: 1; /* Mostra l'immagine al passaggio del mouse */
+}
+
+.menu__item-text {
+  font-weight: 400;
+  font-size: 1.5em;
+  color: #fff;
+  text-transform: uppercase;
+  font-family: 'Gotham' sans-serif;
+  top: 75%;
+}
+
+.menu__item:hover .menu__item-text {
+  color: #424242;
+}
+/* Imposta lo z-index del contenitore SVG a un valore molto alto */
+.logo-home-page-big {
+  position: absolute; /* O absolute/fixed a seconda della struttura della pagina */
+  z-index: 99999; /* Un valore estremamente elevato per garantire che sia sopra tutto */
+  /* Altre proprietà come width, transform, etc... */
+}
+
+/* Assicurati che gli elementi del menu e le immagini abbiano un z-index inferiore */
+.menu {
+  /* Proprietà esistenti... */
+  z-index: 1; /* Inferiore rispetto al contenitore SVG */
+}
+
+.menu__item-image_wrapper {
+  /* Proprietà esistenti... */
+  z-index: 1; /* Ancora inferiore, per stare sotto il testo del menu */
+}
+
+.menu__item-text {
+  /* Proprietà esistenti... */
+  z-index: 800; /* Inferiore rispetto al contenitore SVG ma sopra le immagini */
+}
+
+/* Nasconde il menu su schermi più piccoli (esempio: larghezza inferiore a 768px) */
+@media (max-width: 768px) {
+  .menu-animation {
+    display: none !important;
+  }
+
+  .menu {
+    display: none !important;
+  }
+  
+}
+
+.background-video {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  height: 100vh;
+  z-index: 0;
+}
+
+/* Nasconde il video su schermi più grandi (esempio: larghezza superiore a 768px) */
+@media (min-width: 768px) {
+  .background-video {
+    display: none;
+  }
+}
+
+@media (max-height: 589px) {
+  .menu {
+    bottom: 60px;
+  }
+}
+
+@media (max-height: 845px) {
+  .menu {
+    bottom: 160px;
+  }
+}
+
+
+
+
+

@@ -1,0 +1,55 @@
+@media (max-width: 900px) {
+  section.hero-img .hero-img-copy {
+    flex-direction: column;
+    gap: 2em;
+  }
+
+  section.hero-img .hero-img-copy .logo-home-page-big,
+  section.hero-img .hero-img-copy .hero-img-copy-p {
+    width: 100%;
+    pointer-events: none;
+  }
+
+  section.hero-img .hero-img-copy .hero-img-copy-p p {
+    text-align: left !important;
+  }
+
+  section.projects .projects-copy,
+  section.projects-header .projects-copy {
+    flex-direction: row;
+  }
+
+  section.projects .projects-copy .projects-copy-h1,
+  section.projects-header .projects-copy .projects-copy-h1 {
+    width: 100%;
+  }
+
+  section.projects .projects-copy .projects-copy-ws,
+  section.projects-header .projects-copy .projects-copy-ws {
+    display: none;
+  }
+
+  .projects-list {
+    flex-direction: row;
+  }
+
+  .projects-list .project .project-name p,
+  .projects-list .project .project-category p {
+    font-size: 12px;
+  }
+
+  section.services {
+    flex-direction: column-reverse;
+    gap: 2em;
+  }
+
+ 
+
+  section.contact .contact-copy {
+    width: 100% !important;
+  }
+
+  section.footer .footer-copy .footer-copy-h1 a h1 {
+    font-size: 100px !important;
+  }
+}

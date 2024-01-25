@@ -1,0 +1,68 @@
+.nav {
+  position: fixed;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  padding-left: 1.8em;
+  padding-right: 1.8em;
+  padding-top:1.2em; /* Questo padding assicura spazio intorno agli elementi */
+  mix-blend-mode: difference;
+  z-index: 100;
+}
+
+.nav .nav-items {
+  display: flex;
+  justify-content: space-between; /* Distribuisce gli elementi uniformemente */
+  width: 100%; /* Assicura che il contenitore si estenda per tutta la larghezza */
+}
+
+.nav .nav-items .nav-item {
+  padding: 0.125em;
+}
+
+.nav .logo {
+  padding: 0.125em;
+}
+
+.nav .logo a,
+.nav .nav-items .nav-item a {
+  font-size: 12px;
+  text-decoration: none;
+  color: #fff;
+  text-transform: uppercase;
+}
+
+.active-link {
+  opacity: 0.5; /* Imposta l'opacità al 50% per il link attivo */
+}
+
+@media (max-width: 900px) {
+  .nav .logo a,
+  .nav .nav-items .nav-item a {
+    font-size: 14px;
+  }
+}
+
+@media (min-width: 480px) {
+  .nav .nav-items {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+  }
+}
+
+
+/* Aggiunta di una classe specifica ai secondi e terzi elementi di navigazione */
+.nav .nav-items .nav-item.second,
+.nav .nav-items .nav-item.third {
+  margin-left: 0; /* nessun margine aggiuntivo per i dispositivi più grandi */
+}
+
+/* Media query per dispositivi mobili */
+@media (max-width: 900px) {
+  .nav .nav-items .nav-item.second,
+  .nav .nav-items .nav-item.third {
+    margin-right: -3.2em; /* Aggiunge un margine a sinistra per spostare gli elementi a destra */
+  }
+
+}

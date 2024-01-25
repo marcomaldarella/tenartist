@@ -5,7 +5,7 @@ import transition from "../transition";
 import ProjectNavbar from './ProjectNavbar';
 import ProjectFooter from './ProjectFooter';
 import "./Project.css";
-import projectData from '../Projects/projects.json'; 
+import projectData from '../Projects/Projects.json'; 
 
 const Project = () => {
   const navigate = useNavigate();

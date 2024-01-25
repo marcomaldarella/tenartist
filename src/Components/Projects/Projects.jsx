@@ -2,12 +2,15 @@ import React, { useRef } from "react";
 import ProjectItem from "./ProjectItem";
 import { LocomotiveScrollProvider } from 'react-locomotive-scroll';
 import transition from "../transition";
-import projectData from './projects.json';
+import projectData from './Projects.json';
 import { Link } from "react-router-dom";
 import "./Projects.css";
 
 const Projects = () => {
   const containerRef = useRef(null);
+
+  console.log(fileList); // This will log the object with directories and their files
+
 
   const standardProjects = projectData.filter(p => !p.isWide);
   const wideProjects = projectData.filter(p => p.isWide);

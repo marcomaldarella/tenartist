@@ -72,12 +72,15 @@ const Project = () => {
         smooth: true,
         direction: 'horizontal',
         smartphone: {
+          direction: 'horizontal',
           smooth: true
         },
         tablet: {
-          smooth: true
+          direction: 'horizontal',
+          smooth: true,
         },
       }}
+      watch={[]}
       containerRef={containerRef}
     >
       <ProjectNavbar 

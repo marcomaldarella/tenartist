@@ -4,7 +4,7 @@ import { LocomotiveScrollProvider } from "react-locomotive-scroll";
 
 import transition from "../transition";
 
-import "./about.css";
+import "./About.css";
 
 const Contact = () => {
   const containerRef = useRef(null);
@@ -44,13 +44,13 @@ const Contact = () => {
 
           <div className="image-marquee">
             <div className="image-container">
-              <img src="src/assets/about-hero.jpg"/>
-              <img src="src/assets/about-office.jpg"/>
-              <img src="src/assets/about-feature.jpg"/>
-              <img src="src/assets/about-hero.jpg"/>
-              <img src="src/assets/about-office.jpg"/>
-              <img src="src/assets/about-feature.jpg"/>
-              <img src="src/assets/about-hero.jpg"/>
+              <img src="/assets/about-hero.jpg"/>
+              <img src="/assets/about-office.jpg"/>
+              <img src="/assets/about-feature.jpg"/>
+              <img src="/assets/about-hero.jpg"/>
+              <img src="/assets/about-office.jpg"/>
+              <img src="/assets/about-feature.jpg"/>
+              <img src="/assets/about-hero.jpg"/>
             </div>
           </div>
 

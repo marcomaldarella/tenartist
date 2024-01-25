@@ -51,25 +51,25 @@ const MenuAnimation = () => {
   }, []);
 
   const menuItems = [
-    { name: "Cesare Paciotti,", imagePath: "src/assets/cesarepaciotti.jpg" },
-    { name: "Corneliani,", imagePath: "src/assets/corneliani.jpg" },
-    { name: "EA7,", imagePath: "src/assets/ea7.jpg" }, 
-    { name: "ELLE,", imagePath: "src/assets/elle.jpg" },
-    { name: "Ermenegildo Zegna,", imagePath: "src/assets/zegna.jpg" },
-    { name: "Fay,", imagePath: "src/assets/fay.jpg" },
-    { name: "Giorgio Armani,", imagePath: "src/assets/armani.jpg" },
-    { name: "Golden Point,", imagePath: "src/assets/goldenpoint.jpg" },
-    { name: "GQ China Wildlife,", imagePath: "src/assets/gq.jpg" },
-    { name: "Louis Vuitton,", imagePath: "src/assets/lv.jpg" },
-    { name: "Mia Le Journal,", imagePath: "src/assets/mialejournal.jpg" },
-    { name: "MSGM,", imagePath: "src/assets/msgm.jpg" },
-    { name: "Odda,", imagePath: "src/assets/odda.jpg" },
-    { name: "Pal Zileri,", imagePath: "src/assets/palzileri.jpg" },
-    { name: "Sisley Young,", imagePath: "src/assets/sisley.jpg" },
-    { name: "The Collector,", imagePath: "src/assets/thecollector.jpg" },
-    { name: "Tissot,", imagePath: "src/assets/tissot.jpg" },
-    { name: "Vogue,", imagePath: "src/assets/vogue.jpg" },
-    { name: "Zalando", imagePath: "src/assets/zalando.jpg" }
+    { name: "Cesare Paciotti,", imagePath: "/assets/cesarepaciotti.jpg" },
+    { name: "Corneliani,", imagePath: "/assets/corneliani.jpg" },
+    { name: "EA7,", imagePath: "/assets/ea7.jpg" }, 
+    { name: "ELLE,", imagePath: "/assets/elle.jpg" },
+    { name: "Ermenegildo Zegna,", imagePath: "/assets/zegna.jpg" },
+    { name: "Fay,", imagePath: "/assets/fay.jpg" },
+    { name: "Giorgio Armani,", imagePath: "/assets/armani.jpg" },
+    { name: "Golden Point,", imagePath: "/assets/goldenpoint.jpg" },
+    { name: "GQ China Wildlife,", imagePath: "/assets/gq.jpg" },
+    { name: "Louis Vuitton,", imagePath: "/assets/lv.jpg" },
+    { name: "Mia Le Journal,", imagePath: "/assets/mialejournal.jpg" },
+    { name: "MSGM,", imagePath: "/assets/msgm.jpg" },
+    { name: "Odda,", imagePath: "/assets/odda.jpg" },
+    { name: "Pal Zileri,", imagePath: "/assets/palzileri.jpg" },
+    { name: "Sisley Young,", imagePath: "/assets/sisley.jpg" },
+    { name: "The Collector,", imagePath: "/assets/thecollector.jpg" },
+    { name: "Tissot,", imagePath: "/assets/tissot.jpg" },
+    { name: "Vogue,", imagePath: "/assets/vogue.jpg" },
+    { name: "Zalando", imagePath: "/assets/zalando.jpg" }
 
 
   ];

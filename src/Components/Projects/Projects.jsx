@@ -80,11 +80,16 @@ const Projects = () => {
     <LocomotiveScrollProvider
       options={{
         smooth: true,
+        direction: 'vertical',
+
         smartphone: {
-          smooth: true
+          smooth: true,
+          direction: 'vertical',
+
         },
         tablet: {
-          smooth: true
+          direction: 'vertical',
+          smooth: true,
         }
       }}
       containerRef={containerRef}

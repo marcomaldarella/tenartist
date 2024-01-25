@@ -9,8 +9,6 @@ import "./Projects.css";
 const Projects = () => {
   const containerRef = useRef(null);
 
-  console.log(fileList); // This will log the object with directories and their files
-
 
   const standardProjects = projectData.filter(p => !p.isWide);
   const wideProjects = projectData.filter(p => p.isWide);

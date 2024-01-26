@@ -1,17 +1,3 @@
-.project-wrapper section.project-type .project-type-copy {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-end;
-  width: 100%;
-  height: 400px;
-}
-
-.project-wrapper section.project-hero {
-  padding: 0;
-  width: 100%;
-  height: 700px;
-}
-
 .project-wrapper section.project-hero .project-hero-img {
   width: 100%;
   height: 100%;
@@ -21,12 +7,6 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
-}
-
-.project-wrapper section.project-overview .project-overview-copy {
-  width: 100%;
-  height: 300px;
-  display: flex;
 }
 
 .project-wrapper section.project-overview .project-overview-copy > div {
@@ -56,10 +36,6 @@
 
 .project-wrapper section.project-info > div {
   flex: 1;
-}
-
-.project-wrapper section.project-info .project-info-img {
-  height: 700px;
 }
 
 .project-wrapper section.project-info .project-info-img img {
@@ -122,7 +98,7 @@ section.discover {
 
 .horizontal-scroll-container {
   display: flex;
-  overflow-x: auto;
+  overflow-x: hidden;
   overflow-y: hidden;
   width: 100%; /* o la larghezza che preferisci */
   height: 100vh; /* o l'altezza che preferisci */

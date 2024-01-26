@@ -111,7 +111,6 @@ section.discover {
 
 .project-visualizer {
   display: flex;
-  width: 300vw; /* Adjust this width based on the content width */
   /* Add more styles as needed for your content */
 }
 

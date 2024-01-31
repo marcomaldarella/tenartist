@@ -73,6 +73,7 @@ const Project = () => {
       options={{
         smooth: true,
         direction: 'horizontal',
+
         smartphone: {
           direction: 'horizontal',
           smooth: true
@@ -90,9 +91,11 @@ const Project = () => {
         onPrevious={() => handleNextPreviousProject("prev")} 
       />
       <div data-scroll-container ref={containerRef} className="content">
-        {currentProject && (
+        {
+         currentProject && (
           <div data-scroll-section>{renderProjectContent()}</div>
-        )}
+         )
+        }
       </div>
       {currentProject && (
         <ProjectFooter 

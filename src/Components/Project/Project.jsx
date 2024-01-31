@@ -83,7 +83,7 @@ const Project = () => {
           smooth: true,
         },
       }}
-      watch={[]}
+      watch={[currentProject]}
       containerRef={containerRef}
     >
       <ProjectNavbar 

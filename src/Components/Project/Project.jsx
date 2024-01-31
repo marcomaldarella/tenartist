@@ -17,7 +17,11 @@ const Project = () => {
 
   useEffect(() => {
     const projectIndex = projectData.findIndex(p => p.slug === projectSlug);
-    setCurrentProject(projectData[projectIndex]);
+    if (projectIndex !== -1) {
+      setCurrentProject(projectData[projectIndex]);
+    } else {
+      // Qui puoi gestire il caso in cui il progetto non viene trovato
+    }
   }, [projectSlug]);
 
   const handleNextPreviousProject = (direction) => {
@@ -40,12 +44,11 @@ const Project = () => {
   };
 
   const handleImageError = (e) => {
-    e.target.style.display = 'none'; // Nasconde l'immagine se non viene caricata
+    e.target.style.display = 'none';
   };
 
   const renderProjectContent = () => {
     if (currentProject?.videoPath) {
-      // Renderizza il video se 'videoPath' è presente
       return (
         <video width="100%" height="auto" controls>
           <source src={currentProject.videoPath} type="video/mp4" />
@@ -53,7 +56,6 @@ const Project = () => {
         </video>
       );
     } else {
-      // Renderizza le immagini del progetto
       return getProjectImages(currentProject.id).map((imagePath, index) => (
         <img 
           key={index} 
@@ -88,7 +90,9 @@ const Project = () => {
         onPrevious={() => handleNextPreviousProject("prev")} 
       />
       <div data-scroll-container ref={containerRef} className="content">
-        {currentProject && renderProjectContent()}
+        {currentProject && (
+          <div data-scroll-section>{renderProjectContent()}</div>
+        )}
       </div>
       {currentProject && (
         <ProjectFooter 

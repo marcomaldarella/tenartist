@@ -1,4 +1,4 @@
-import React, { useRef, useEffect } from "react";
+import  { useRef, useEffect } from "react";
 import { useLocation } from 'react-router-dom';
 import { LocomotiveScrollProvider } from 'react-locomotive-scroll';
 import ProjectItem from "./ProjectItem";
@@ -97,7 +97,7 @@ const Projects = () => {
           smooth: true,
         }
       }}
-      watch={[location]} // Osserva i cambiamenti di location
+      watch={[]} // Osserva i cambiamenti di location
       containerRef={containerRef}
     >
       <div className="projects-container" data-scroll-container ref={containerRef}>

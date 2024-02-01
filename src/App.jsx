@@ -15,7 +15,6 @@ import './App.css';
 function App() {
   const location = useLocation();
   const isProjectPage = location.pathname.startsWith('/project/');
-  const containerRef = useRef(null);
 
   const content = (
     <>
@@ -33,15 +32,7 @@ function App() {
     </>
   );
 
-  return isProjectPage ? content : (
-    <LocomotiveScrollProvider 
-      options={{ smooth: true }}
-      watch={[location]}
-      containerRef={containerRef}
-    >
-      {content}
-    </LocomotiveScrollProvider>
-  );
+  return content;
 }
 
 export default App;

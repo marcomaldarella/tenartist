@@ -13,6 +13,11 @@ const Project = () => {
   const containerRef = useRef(null);
   const [currentProject, setCurrentProject] = useState(null);
 
+  useEffect(() => {
+    // Forzare l'aggiornamento di Locomotive Scroll all'aggiornamento del componente
+    document.dispatchEvent(new Event('DOMContentLoaded'));
+  }, [currentProject]);
+
   const maxImagesPerProject = 8; // Numero massimo di immagini per progetto
 
   useEffect(() => {

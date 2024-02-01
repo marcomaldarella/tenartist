@@ -77,4 +77,25 @@
   .project .project-category {
     display: none;
   }
+
+  .projects-list-standard {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap:10px;
+  }
+}
+
+
+@media (max-width: 768px) {
+  @media (max-width: 768px) {
+    .projects-list-standard .project {
+      flex: 0 0 calc(50% - 7.5px); /* Imposta la larghezza per due progetti per fila */
+      margin-bottom: 0px; /* Spazio aggiuntivo sotto ciascun progetto */
+    }
+  }
+
+  .project-name {
+   display: none;
+  }
 }

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import { useLocation } from 'react-router-dom';
 import { LocomotiveScrollProvider } from 'react-locomotive-scroll';
 import { Routes, Route } from 'react-router-dom';
@@ -15,10 +15,10 @@ import './App.css';
 function App() {
   const location = useLocation();
   const isProjectPage = location.pathname.startsWith('/project/');
+  const containerRef = useRef(null);
 
   const content = (
     <>
-      {/* Renderizza Nav solo se non sei nella pagina Project */}
       {!isProjectPage && <Nav />}
       <AnimatePresence mode='wait'>
         <Routes location={location} key={location.pathname}>
@@ -34,7 +34,11 @@ function App() {
   );
 
   return isProjectPage ? content : (
-    <LocomotiveScrollProvider options={{ smooth: true }}>
+    <LocomotiveScrollProvider 
+      options={{ smooth: true }}
+      watch={[location]}
+      containerRef={containerRef}
+    >
       {content}
     </LocomotiveScrollProvider>
   );

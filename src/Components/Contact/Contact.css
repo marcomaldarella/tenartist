@@ -1,7 +1,6 @@
 /* contact */
 section.contact {
   width: 100%;
-  height: 100vh;
   background: #000;
   display: flex;
   justify-content: center;
@@ -47,7 +46,7 @@ section.contact .contact-copy span#copyright {
 }
 
 .empty_space {
-  padding-bottom:95vh;
+  padding-bottom:70vh;
 }
 
 ::-webkit-scrollbar {
@@ -61,15 +60,30 @@ section.contact .contact-copy span#copyright {
   
 }
 
-.fixed-logo {
+.fixed-logo-wrap {
+  display: flex;
+  top:45vh;
+  justify-content: center;
   position: fixed;
-  top: 55vh;
-  z-index: 1000; /* Assicurati che sia sopra gli altri elementi */
-  left: ;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  mix-blend-mode: difference;
+  pointer-events: none;
 }
 
-
-.fixed-logo img {
-  width: 333%; /* Ajusta secondo le tue necessità */
+.fixed-logo {
   height: auto;
+  width: 50%;
 }
+
+.fixed-contec-wrapt {
+  position: fixed;
+}
+
+.footer-year {
+  right:3em;
+  font-size:13px;
+  bottom: 3em;
+}
+

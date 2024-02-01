@@ -124,28 +124,25 @@ section.feature-img .feature-img-container img {
 }
 
 /* footer */
+/* footer */
 section.footer {
-  padding: 0;
+  display: flex;
+  justify-content: space-between; /* Distribuisce lo spazio tra gli elementi */
+  align-items: center; /* Centra gli elementi verticalmente */
+  padding: 1em; /* Aggiusta a seconda delle tue necessità */
   background: #000;
   color: #fff;
-  align-items: center;
-  text-align: left;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-between;
-  padding: 2em;
   font-size: 13px;
 }
 
 .footer-copy {
   display: flex;
-  flex-direction: row;
   align-items: center;
+  gap: 20px; /* Aggiunge spazio tra gli elementi interni del footer */
 }
 
-.footer-copy-text {
- gap:50px;
+.footer-year {
+  margin-left: auto; /* Sposta '2024' alla fine del footer */
 }
 
 section.footer .footer-copy .footer-copy-h1 a {
@@ -170,11 +167,19 @@ section.footer .footer-copy .footer-copy-text p a {
 
 .footer-links {
   color: #fff;
+  padding-left: 1em;
 }
 
 .footer-links-2 {
   color: #fff;
-  padding-left:40px;
+  padding-left:30px;
+}
+
+.footer-links-3 {
+  color: #fff;
+  text-align: right;
+  position: absolute;
+  right: 2em;
 }
 
 .footer-year {
@@ -208,6 +213,8 @@ section.footer .footer-copy .footer-copy-text p a {
     width: 89vw !important;
     margin-bottom:0px;
   }
+
+
 
 }
 
@@ -471,6 +478,14 @@ section.footer .footer-copy .footer-copy-text p a {
   .menu {
     display: none !important;
   }
+
+  .project {
+    aspect-ratio: 4 / 9; !important; /* Questa proporzione si applica agli elementi non wide */
+  }
+
+  .project-list-standard {
+    gap:10px; !important; /* Questa proporzione si applica agli elementi non wide */
+  }
   
 }
 
@@ -482,7 +497,6 @@ section.footer .footer-copy .footer-copy-text p a {
   z-index: 0;
 }
 
-/* Nasconde il video su schermi più grandi (esempio: larghezza superiore a 768px) */
 @media (min-width: 768px) {
   .background-video {
     display: none;

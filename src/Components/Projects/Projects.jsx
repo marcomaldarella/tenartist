@@ -1,6 +1,7 @@
-import React, { useRef } from "react";
-import ProjectItem from "./ProjectItem";
+import React, { useRef, useEffect } from "react";
+import { useLocation } from 'react-router-dom';
 import { LocomotiveScrollProvider } from 'react-locomotive-scroll';
+import ProjectItem from "./ProjectItem";
 import transition from "../transition";
 import projectData from './Projects.json';
 import { Link } from "react-router-dom";
@@ -8,13 +9,20 @@ import "./Projects.css";
 
 const Projects = () => {
   const containerRef = useRef(null);
-
+  const location = useLocation();
 
   const standardProjects = projectData.filter(p => !p.isWide);
   const wideProjects = projectData.filter(p => p.isWide);
 
   let projectElements = [];
   let standardIndex = 0, wideIndex = 0;
+
+  useEffect(() => {
+    if (containerRef.current && containerRef.current.update) {
+      containerRef.current.update();
+    }
+  }, [location]);
+
 
   // Inizia prima con il progetto wide
   if (wideProjects.length > 0) {
@@ -36,7 +44,6 @@ const Projects = () => {
 
   // Poi procedi con le coppie di progetti standard e il resto dei progetti wide
   while (standardIndex < standardProjects.length || wideIndex < wideProjects.length) {
-    // Aggiungi coppie di progetti standard
     if (standardIndex < standardProjects.length) {
       projectElements.push(
         <div key={`standard-pair-${standardIndex}`} className="projects-list-standard">
@@ -58,7 +65,6 @@ const Projects = () => {
       standardIndex += 2;
     }
 
-    // Continua con i progetti wide rimanenti
     if (wideIndex < wideProjects.length) {
       projectElements.push(
         <div key={wideProjects[wideIndex].id} className="projects-list-wide">
@@ -82,17 +88,16 @@ const Projects = () => {
       options={{
         smooth: true,
         direction: 'vertical',
-
         smartphone: {
           smooth: true,
           direction: 'vertical',
-
         },
         tablet: {
           direction: 'vertical',
           smooth: true,
         }
       }}
+      watch={[location]} // Osserva i cambiamenti di location
       containerRef={containerRef}
     >
       <div className="projects-container" data-scroll-container ref={containerRef}>
@@ -104,8 +109,8 @@ const Projects = () => {
             <div className="footer-copy-text">
               <a className="footer-links" href="#">info@tenartist.com</a>
               <a className="footer-links-2" href="#">Instagram</a>
+              <a className="footer-links-3" href="#">@2024</a>
             </div>
-            <p className="footer-year">@2023</p>
           </div>
         </section>
       </div>

@@ -54,7 +54,7 @@ const Home = () => {
       containerRef={containerRef}
     >
       <div className="home" data-scroll-container ref={containerRef} id="scroll-container">
-        <video autoPlay loop muted className="background-video"><source src="/assets/mobile_home.mp4" type="video/mp4" /></video>
+        <video autoPlay loop muted playsInline className="background-video"><source src="/assets/mobile_home.mp4" type="video/mp4" /></video>
         <section className="hero-img" data-scroll-section>
           <MenuAnimation className="menu-animation" />
           <div className="hero-img-copy">

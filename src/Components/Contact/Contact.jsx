@@ -21,6 +21,7 @@ const Contact = () => {
           smooth: true,
         },
       }}
+      watch={[]}
       containerRef={containerRef}
     >
       <div className="fixed-logo-wrap">
@@ -30,7 +31,7 @@ const Contact = () => {
           <p className="footer-year">@2024</p>
       </div>
       <section className="contact" data-scroll-container ref={containerRef}>
-        <div className="contact-copy" data-scroll-section>
+        <div className="contact-copy">
           <div className="empty_space"></div>
           <p>Hello,</p>
           <a href="#">info@tenartist.com</a>

@@ -192,3 +192,19 @@ span {
   transform-origin: right;
   z-index: 1000000;
 }
+
+@media (max-width: 768px) {
+  .slide-in-text {
+    position: fixed;
+    top: 47%;
+    left: 12%;
+    transform: translate(0%, 0%) !important;
+    color: #fff;
+    opacity: 0;
+    z-index: 1000000000;
+    pointer-events: none;
+    text-transform: uppercase;
+    font-size: 13px;
+  }
+}
+

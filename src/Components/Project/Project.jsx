@@ -23,40 +23,13 @@ const Project = () => {
 
   useEffect(() => {
     const projectScrollHandler = () => {
-      const container = containerRef.current;
-      const totalWidth = container.scrollWidth - container.offsetWidth;
-
-      if (container.scrollLeft >= totalWidth) {
-        // Se si raggiunge la fine, si riparte dall'inizio (con un piccolo offset per evitare un loop immediato)
-        container.scrollTo({ left: 1, behavior: 'smooth' });
-      } else if (container.scrollLeft <= 0) {
-        // Se si raggiunge l'inizio, si va verso la fine (meno un piccolo offset)
-        container.scrollTo({ left: totalWidth - 1, behavior: 'smooth' });
-      }
+      // Puoi lasciare vuoto questo gestore se non desideri che lo scroll riparta dall'inizio alla fine.
     };
 
     const container = containerRef.current;
     container.addEventListener('scroll', projectScrollHandler);
 
-    // Aggiungi un listener per ridimensionare la pagina quando la finestra del browser cambia dimensioni
-    const resizeHandler = () => {
-      if (container) {
-        // Calcola la larghezza totale in base alle dimensioni della finestra del browser
-        const totalWidth = window.innerWidth * projectData.length;
-        container.style.width = `${totalWidth}px`;
-      }
-    };
-
-    // Esegui il listener di ridimensionamento iniziale
-    resizeHandler();
-
-    // Aggiungi il listener di ridimensionamento
-    window.addEventListener('resize', resizeHandler);
-
-    return () => {
-      container.removeEventListener('scroll', projectScrollHandler);
-      window.removeEventListener('resize', resizeHandler);
-    };
+    return () => container.removeEventListener('scroll', projectScrollHandler);
   }, [currentProject]);
 
   const handleNextPreviousProject = (direction) => {

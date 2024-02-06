@@ -102,6 +102,9 @@ section.discover {
   overflow-y: hidden;
   width: 100%; /* o la larghezza che preferisci */
   height: 100vh; /* o l'altezza che preferisci */
+  margin-right:0px;
+  flex-wrap: wrap;
+
 }
 
 .project-image {
@@ -113,12 +116,20 @@ section.discover {
   border-radius:15px;
 }
 
+.project-image:first-child {
+  margin-left: 20px;
+}
 
 .project-nav {
   position: fixed;
   top: 0;
   width: 100%;
   /* Altri stili per la navbar */
+}
+
+.Project {
+  margin: 0;
+  padding: 0;
 }
 
 .project-footer {

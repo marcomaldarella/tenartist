@@ -1,51 +1,175 @@
-import React, { useRef, useEffect, useState } from "react";
-import { useNavigate, useParams } from 'react-router-dom';
-import { LocomotiveScrollProvider } from 'react-locomotive-scroll';
-import ProjectNavbar from './ProjectNavbar';
-import ProjectFooter from './ProjectFooter';
-import "./Project.css";
-import projectData from '../Projects/Projects.json';
+import { useRef, useEffect, useState } from 'react'
+import { useNavigate, useParams } from 'react-router-dom'
+import ProjectNavbar from './ProjectNavbar'
+import ProjectFooter from './ProjectFooter'
+import './Project.css'
+import { projectsData } from '../Projects/projectsData'
+import { motion, useMotionValue, useSpring } from 'framer-motion'
+import transition from '../transition'
 
-const Project = () => {
-  const navigate = useNavigate();
-  const { projectSlug } = useParams();
-  const containerRef = useRef(null);
-  const [currentProject, setCurrentProject] = useState(null);
+const Project = transition(() => {
+  const navigate = useNavigate()
+  const { projectSlug } = useParams()
+  const containerRef = useRef(null)
+  const [currentProject, setCurrentProject] = useState(null)
+
+  /////////////////////////////////////////
+  //////////// BORDELLI DI FRA ////////////
+  /////////////////////////////////////////
+  const wrapperImagesRef = useRef(null)
+
+  const xWrapper = useMotionValue(0)
+  const xWrapperSpring = useSpring(xWrapper, {
+    stiffness: 400,
+    damping: 60,
+  })
 
   useEffect(() => {
-    const projectIndex = projectData.findIndex(p => p.slug === projectSlug);
-    if (projectIndex !== -1) {
-      setCurrentProject(projectData[projectIndex]);
-    } else {
-      console.log('Project not found');
+    const handleWheel = e => {
+      if (!wrapperImagesRef.current) return
+
+      const isBeyondLeftBoundary = xWrapper.get() - e.deltaY > 0
+      if (isBeyondLeftBoundary) return xWrapper.set(0)
+
+      const imagesWidth = wrapperImagesRef.current.getBoundingClientRect().width
+      const rightBoundary = -imagesWidth + window.innerWidth
+      const isBeyondRightBoundary = xWrapper.get() - e.deltaY < rightBoundary
+      if (isBeyondRightBoundary) {
+        return xWrapper.set(rightBoundary)
+      }
+
+      xWrapper.set(xWrapper.get() - e.deltaY)
     }
-  }, [projectSlug]);
+
+    window.addEventListener('wheel', handleWheel)
+    return () => window.removeEventListener('wheel', handleWheel)
+  }, [xWrapper])
 
   useEffect(() => {
-    const projectScrollHandler = () => {
-      // Puoi lasciare vuoto questo gestore se non desideri che lo scroll riparta dall'inizio alla fine.
-    };
+    let initialTouchPosition = null
 
-    const container = containerRef.current;
-    container.addEventListener('scroll', projectScrollHandler);
+    const handleTouchStart = e => {
+      if (!wrapperImagesRef.current) return
+      initialTouchPosition = e.touches[0].clientY // Salva la posizione iniziale
+    }
 
-    return () => container.removeEventListener('scroll', projectScrollHandler);
-  }, [currentProject]);
+    const handleTouchMove = e => {
+      if (!wrapperImagesRef.current || initialTouchPosition === null) return
 
-  const handleNextPreviousProject = (direction) => {
-    const currentIndex = projectData.findIndex(p => p.slug === projectSlug);
-    let newIndex = direction === "next" ? currentIndex + 1 : currentIndex - 1;
+      const deltaY = initialTouchPosition - e.touches[0].clientY // Calcola il movimento verticale
+      initialTouchPosition = e.touches[0].clientY // Aggiorna la posizione iniziale
 
-    if (newIndex >= projectData.length) newIndex = 0;
-    if (newIndex < 0) newIndex = projectData.length - 1;
+      const isBeyondLeftBoundary = xWrapper.get() - deltaY > 0
+      if (isBeyondLeftBoundary) return xWrapper.set(0)
 
-    navigate(`/project/${projectData[newIndex].slug}`);
-  };
+      const imagesWidth = wrapperImagesRef.current.getBoundingClientRect().width
+      const rightBoundary = -imagesWidth + window.innerWidth
+      const isBeyondRightBoundary = xWrapper.get() - deltaY < rightBoundary
+      if (isBeyondRightBoundary) {
+        return xWrapper.set(rightBoundary)
+      }
 
-  const getProjectImages = (projectId) => {
-    const basePath = `/assets/${projectId}/`;
-    return Array.from({ length: 8 }, (_, i) => `${basePath}${i + 1}.jpg`);
-  };
+      xWrapper.set(xWrapper.get() - deltaY)
+    }
+
+    const handleTouchEnd = () => {
+      initialTouchPosition = null
+    }
+
+    window.addEventListener('touchstart', handleTouchStart)
+    window.addEventListener('touchmove', handleTouchMove)
+    window.addEventListener('touchend', handleTouchEnd)
+    return () => {
+      window.removeEventListener('touchstart', handleTouchStart)
+      window.removeEventListener('touchmove', handleTouchMove)
+      window.removeEventListener('touchend', handleTouchEnd)
+    }
+  }, [xWrapper])
+
+  // useEffect(() => {
+  //   let initialTouchPosition = null
+
+  //   const handleTouchStart = e => {
+  //     if (!wrapperImagesRef.current) return
+  //     initialTouchPosition = e.touches[0].clientX
+  //   }
+
+  //   const handleTouchMove = e => {
+  //     if (!wrapperImagesRef.current || initialTouchPosition === null) return
+
+  //     const deltaY = initialTouchPosition - e.touches[0].clientX
+  //     initialTouchPosition = e.touches[0].clientX
+
+  //     const isBeyondLeftBoundary = xWrapper.get() - deltaY > 0
+  //     if (isBeyondLeftBoundary) return xWrapper.set(0)
+
+  //     const imagesWidth = wrapperImagesRef.current.getBoundingClientRect().width
+  //     const rightBoundary = -imagesWidth + window.innerWidth
+  //     const isBeyondRightBoundary = xWrapper.get() - deltaY < rightBoundary
+  //     if (isBeyondRightBoundary) {
+  //       return xWrapper.set(rightBoundary)
+  //     }
+
+  //     xWrapper.set(xWrapper.get() - deltaY)
+  //   }
+
+  //   const handleTouchEnd = () => {
+  //     initialTouchPosition = null
+  //   }
+
+  //   window.addEventListener('touchstart', handleTouchStart)
+  //   window.addEventListener('touchmove', handleTouchMove)
+  //   window.addEventListener('touchend', handleTouchEnd)
+  //   return () => {
+  //     window.removeEventListener('touchstart', handleTouchStart)
+  //     window.removeEventListener('touchmove', handleTouchMove)
+  //     window.removeEventListener('touchend', handleTouchEnd)
+  //   }
+  // }, [xWrapper])
+
+  useEffect(() => {
+    const handleResize = () => {
+      if (!wrapperImagesRef.current) return
+
+      const imagesWidth = wrapperImagesRef.current.getBoundingClientRect().width
+      const rightBoundary = -imagesWidth + window.innerWidth
+      const isBeyondRightBoundary = xWrapper.get() < rightBoundary
+
+      if (isBeyondRightBoundary) {
+        xWrapperSpring.jump(rightBoundary)
+      }
+    }
+
+    window.addEventListener('resize', handleResize)
+    return () => window.removeEventListener('resize', handleResize)
+  }, [xWrapper, xWrapperSpring])
+  /////////////////////////////////////////
+  ///////// FINE BORDELLI DI FRA //////////
+  /////////////////////////////////////////
+
+  useEffect(() => {
+    const projectIndex = projectsData.findIndex(p => p.slug === projectSlug)
+    if (projectIndex !== -1) {
+      setCurrentProject(projectsData[projectIndex])
+    } else {
+      console.log('Project not found')
+    }
+  }, [projectSlug])
+
+  const handleNextPreviousProject = direction => {
+    const currentIndex = projectsData.findIndex(p => p.slug === projectSlug)
+    let newIndex = direction === 'next' ? currentIndex + 1 : currentIndex - 1
+
+    if (newIndex >= projectsData.length) newIndex = 0
+    if (newIndex < 0) newIndex = projectsData.length - 1
+
+    navigate(`/project/${projectsData[newIndex].slug}`)
+  }
+
+  const getProjectImages = projectId => {
+    const project = projectsData.find(p => p.id === projectId)
+    return project.imagesPath.map(path => path)
+  }
 
   const renderProjectContent = () => {
     if (currentProject?.videoPath) {
@@ -54,57 +178,61 @@ const Project = () => {
           <source src={currentProject.videoPath} type="video/mp4" />
           Your browser does not support the video tag.
         </video>
-      );
+      )
     } else {
-      const images = getProjectImages(currentProject.id);
+      const images = getProjectImages(currentProject.id)
       return images.map((imagePath, index) => (
-        <img 
-          key={index} 
-          src={imagePath} 
-          alt={`Project Image ${index}`} 
+        <img
+          key={index}
+          src={imagePath}
+          alt={`Project Image ${index}`}
           className="project-image"
-          onError={(e) => e.target.style.display = 'none'}
+          onError={e => (e.target.style.display = 'none')}
         />
-      ));
+      ))
     }
-  };
+  }
 
   return (
-    <LocomotiveScrollProvider
-      options={{
-        smooth: true,
-        direction: 'horizontal',
-        smartphone: {
-          direction: 'horizontal',
-          smooth: true,
-        },
-        tablet: {
-          direction: 'horizontal',
-          smooth: true,
-        },
-      }}
-      watch={[currentProject]}
-      containerRef={containerRef}
-    >
-      <div data-scroll-container ref={containerRef} className="content">
-        <ProjectNavbar 
-          onNext={() => handleNextPreviousProject("next")} 
-          onPrevious={() => handleNextPreviousProject("prev")} 
-        />
-        {currentProject && (
-          <div data-scroll-section>
+    <div data-scroll-container ref={containerRef} className="content">
+      <ProjectNavbar
+        onNext={() => handleNextPreviousProject('next')}
+        onPrevious={() => handleNextPreviousProject('prev')}
+      />
+      {currentProject && (
+        <div
+          style={{
+            position: 'relative',
+            height: 'calc(100vh - 160px)',
+            width: '100vw',
+            overflow: 'hidden',
+          }}
+        >
+          <motion.div
+            ref={wrapperImagesRef}
+            style={{
+              position: 'fixed',
+              top: 60,
+              left: 0,
+              pointerEvents: 'none',
+              display: 'flex',
+              width: 'min-content',
+              height: '100%',
+              x: xWrapperSpring,
+            }}
+          >
             {renderProjectContent()}
-          </div>
-        )}
-        {currentProject && (
-          <ProjectFooter 
-            name={currentProject.name} 
-            category={currentProject.category}
-          />
-        )}
-      </div>
-    </LocomotiveScrollProvider>
-  );
-};
+          </motion.div>
+        </div>
+      )}
+      {currentProject && (
+        <ProjectFooter
+          name={currentProject.name}
+          category={currentProject.category}
+        />
+      )}
+    </div>
+  )
+})
 
-export default Project;
+export default Project

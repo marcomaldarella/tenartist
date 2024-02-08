@@ -90,7 +90,6 @@ section.discover {
   /* Add more styles as needed for your content */
 }
 
-
 .project-visualizer {
   display: flex; /* Disponi le immagini in linea */
   height: 100%; /* Altezza pari al contenitore, cioè 100vh */
@@ -102,18 +101,17 @@ section.discover {
   overflow-y: hidden;
   width: 100%; /* o la larghezza che preferisci */
   height: 100vh; /* o l'altezza che preferisci */
-  margin-right:0px;
+  margin-right: 0px;
   flex-wrap: wrap;
-
 }
 
 .project-image {
   max-height: 100%;
   width: auto;
   object-fit: contain; /* per assicurarsi che le immagini si adattino senza essere tagliate */
-  padding-right:5px;
-  padding-left:5px;
-  border-radius:15px;
+  padding-right: 5px;
+  padding-left: 5px;
+  border-radius: 15px;
 }
 
 .project-image:first-child {
@@ -185,14 +183,13 @@ section.discover {
 
 .footer-credits {
   font-size: 10px !important;
-} 
-
+}
 
 /* Media queries per dispositivi mobili e tablet */
 @media (max-width: 768px) {
   p {
     font-size: 12px !important;
-  } 
+  }
   p {
     font-weight: 400;
     font-size: 12px;

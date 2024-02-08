@@ -23,6 +23,10 @@
   height: 100%;
 }
 
+.footer-content {
+  display: flex;
+}
+
 .project-wrapper section.project-img-full .project-img-full-wrapper img {
   width: 100%;
   height: 100%;
@@ -105,10 +109,21 @@ section.discover {
   flex-wrap: wrap;
 }
 
+.current-project-image {
+  display: flex;
+  justify-content: center; /* Centra orizzontalmente */
+  align-items: center; /* Centra verticalmente */
+  position: relative;
+  width: 100vw;
+  height: 100vh; /* o l'altezza desiderata */
+  overflow: hidden;
+}
+
 .project-image {
-  max-height: 100%;
+  max-height: 88vh; /* Imposta un'altezza massima per le immagini */
   width: auto;
-  object-fit: contain; /* per assicurarsi che le immagini si adattino senza essere tagliate */
+  margin-top: -5px;
+  object-fit: contain; /* Mantiene le proporzioni */
   padding-right: 5px;
   padding-left: 5px;
   border-radius: 15px;
@@ -116,6 +131,10 @@ section.discover {
 
 .project-image:first-child {
   margin-left: 20px;
+}
+
+.project-image:last-child {
+  margin-right: 20px;
 }
 
 .project-nav {
@@ -138,8 +157,8 @@ section.discover {
 }
 
 .content {
-  padding-top: 60px; /* A seconda dell'altezza della navbar */
-  padding-bottom: 60px; /* A seconda dell'altezza del footer */
+  padding-top: 0px; /* A seconda dell'altezza della navbar */
+  padding-bottom: 0px; /* A seconda dell'altezza del footer */
   /* Altri stili per il contenuto */
 }
 
@@ -161,7 +180,7 @@ section.discover {
   color: inherit;
   text-transform: uppercase;
   cursor: pointer;
-  padding: 0.5em 1em; /* Aggiunge spazio intorno al testo del bottone */
+  padding: 0px; /* Aggiunge spazio intorno al testo del bottone */
   font-family: 'Gotham Bold';
 }
 
@@ -176,13 +195,18 @@ section.discover {
   padding-left: 1.8em;
   padding-right: 1.8em;
   padding-top: 1.2em;
-  padding-bottom: 1.2em;
+  padding-bottom: 1.5em;
   mix-blend-mode: difference;
   z-index: 100;
 }
 
 .footer-credits {
   font-size: 10px !important;
+}
+
+.footer-credits-2 {
+  font-size: 10px !important;
+  text-align: right;
 }
 
 /* Media queries per dispositivi mobili e tablet */
@@ -196,4 +220,38 @@ section.discover {
     text-transform: uppercase;
     line-height: 120%;
   }
+
+  .project-footer {
+    display: block;
+    justify-content: space-between;
+    flex-direction: row;
+    padding-left: 1.8em;
+    padding-right: 1.8em;
+    padding-top: 1.2em;
+    padding-bottom: 1.5em;
+    mix-blend-mode: difference;
+    z-index: 100;
+  }
+  .footer-credits {
+    font-size: 11px !important;
+    text-align: left;
+  }
+
+
+  .footer-credits-2 {
+    padding-top: 4px;
+    font-size: 11px !important;
+    text-align: left;
+  }
+
+  .project-image {
+    max-height: 85vh; /* Imposta un'altezza massima per le immagini */
+    width: auto;
+    margin-top: -5px;
+    object-fit: contain; /* Mantiene le proporzioni */
+    padding-right: 5px;
+    padding-left: 5px;
+    border-radius: 15px;
+  }
+  
 }

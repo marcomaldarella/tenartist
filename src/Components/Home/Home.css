@@ -480,11 +480,16 @@ section.footer .footer-copy .footer-copy-text p a {
   }
 
   .project {
-    aspect-ratio: 4 / 9; !important; /* Questa proporzione si applica agli elementi non wide */
+    aspect-ratio: 4/9 !important;;  /* Questa proporzione si applica agli elementi non wide */
   }
 
+  .project-wide {
+    aspect-ratio: 1/1 !important;;  /* Questa proporzione si applica agli elementi non wide */
+  }
+
+
   .project-list-standard {
-    gap:10px; !important; /* Questa proporzione si applica agli elementi non wide */
+    gap:10px !important;;  /* Questa proporzione si applica agli elementi non wide */
   }
   
 }

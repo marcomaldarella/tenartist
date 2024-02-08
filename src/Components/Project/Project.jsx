@@ -20,8 +20,8 @@ const Project = transition(() => {
 
   const xWrapper = useMotionValue(0)
   const xWrapperSpring = useSpring(xWrapper, {
-    stiffness: 400,
-    damping: 60,
+    stiffness: 200,
+    damping: 120,
   })
 
   useEffect(() => {
@@ -200,14 +200,7 @@ const Project = transition(() => {
         onPrevious={() => handleNextPreviousProject('prev')}
       />
       {currentProject && (
-        <div
-          style={{
-            position: 'relative',
-            height: 'calc(100vh - 160px)',
-            width: '100vw',
-            overflow: 'hidden',
-          }}
-        >
+        <div className='current-project-image'>
           <motion.div
             ref={wrapperImagesRef}
             style={{

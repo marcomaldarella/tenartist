@@ -1,12 +1,13 @@
 export type ProjectData = {
-  id: number
-  name: string
-  slug: string
-  category: string
-  imagePath: string
-  imagesPath?: string[]
-  videoPath?: string
-  isWide: boolean
+  id: number;
+  name: string;
+  slug: string;
+  category: string;
+  imagePath: string;
+  imagesPath?: string[];
+  videoPath?: string;
+  isWide: boolean;
+  isVideo?: boolean;
 }
 
 export const projectsData: ProjectData[] = [
@@ -65,6 +66,14 @@ export const projectsData: ProjectData[] = [
       'PH: ADRIANO RUSSO, STYLIST: VIVIANA VOLPICELLA, ART DIRECTION: BRAGA+FEDERICO, LOCATION: PUGLIA',
     imagePath: '/assets/projects-thumbnail/sisley-young-1.jpg',
     isWide: true,
+    imagesPath: [
+      `/assets/4/1.jpg`,
+      `/assets/4/2.jpg`,
+      `/assets/4/3.jpg`,
+      `/assets/4/4.jpg`,
+      `/assets/4/5.jpg`,
+      `/assets/4/6.jpg`,
+    ],
   },
   {
     id: 5,
@@ -74,6 +83,13 @@ export const projectsData: ProjectData[] = [
       'PH: SEAN&SENG, STYLIST: MARGHERITA MORO, ART DIRECTION: BRAGA+FEDERICO, MODEL: MATHILDE BRANDI',
     imagePath: '/assets/projects-thumbnail/cesarepaciotti-2.jpg',
     isWide: true,
+    imagesPath: [
+      `/assets/5/1.jpg`,
+      `/assets/5/2.jpg`,
+      `/assets/5/3.jpg`,
+      `/assets/5/4.jpg`,
+      `/assets/5/5.jpg`,
+    ],
   },
   {
     id: 6,
@@ -83,6 +99,12 @@ export const projectsData: ProjectData[] = [
       'PH: BRUNO STAUB, STYLIST: JEROME ANDRÉ, ART DIRECTOR: PABLO ARROYO',
     imagePath: '/assets/projects-thumbnail/corneliani-01-01.jpg',
     isWide: false,
+    imagesPath: [
+      `/assets/6/1.jpg`,
+      `/assets/6/2.jpg`,
+      `/assets/6/3.jpg`,
+      `/assets/6/4.jpg`,
+    ],
   },
   {
     id: 7,
@@ -92,6 +114,12 @@ export const projectsData: ProjectData[] = [
       'PH: ADRIANO RUSSO, STYLIST: CLAUDIA GASTALDI, LOCATION:FORMENTERA (ES)',
     imagePath: '/assets/projects-thumbnail/goldenpoint-01.jpg',
     isWide: true,
+    imagesPath: [
+      `/assets/7/1.jpg`,
+      `/assets/7/2.jpg`,
+      `/assets/7/3.jpg`,
+      `/assets/7/4.jpg`,
+    ],
   },
   {
     id: 8,
@@ -100,6 +128,12 @@ export const projectsData: ProjectData[] = [
     category: 'PH: GIAMPAOLO SGURA, STYLIST: SISSY VIAN',
     imagePath: '/assets/projects-thumbnail/maxmara-01.jpg',
     isWide: false,
+    imagesPath: [
+      `/assets/8/1.jpg`,
+      `/assets/8/2.jpg`,
+      `/assets/8/3.jpg`,
+      `/assets/8/4.jpg`,
+    ],
   },
   {
     id: 9,
@@ -109,6 +143,12 @@ export const projectsData: ProjectData[] = [
       'PH: ADRIANO RUSSO, STYLIST: VIVIANA VOLPICELLA, ART DIRECTION: BRAGA+FEDERICO',
     imagePath: '/assets/projects-thumbnail/sisley-young-02-01.jpg',
     isWide: true,
+    imagesPath: [
+      `/assets/9/1.jpg`,
+      `/assets/9/2.jpg`,
+      `/assets/9/3.jpg`,
+      `/assets/9/4.jpg`,
+    ],
   },
   {
     id: 10,
@@ -118,6 +158,11 @@ export const projectsData: ProjectData[] = [
       'PH: ALESSIO BONI, STYLIST ADA KOKOSAR, ART DIRECTION: BRAGA+FEDERICO, MODEL: BETTE FRANKE',
     imagePath: '/assets/projects-thumbnail/cesarepaciotti-thumbnail.jpg',
     isWide: true,
+    imagesPath: [
+      `/assets/10/1.jpg`,
+      `/assets/10/2.jpg`,
+      `/assets/10/3.jpg`,
+    ],
   },
   {
     id: 11,
@@ -127,6 +172,13 @@ export const projectsData: ProjectData[] = [
       'PH: ADRIANO RUSSO, STYLIST: CLAUDIA GASTALDI, LOCATION: FORMENTERA (ES)',
     imagePath: '/assets/projects-thumbnail/goldenpoint-02-01.jpg',
     isWide: false,
+    imagesPath: [
+      `/assets/11/1.jpg`,
+      `/assets/11/2.jpg`,
+      `/assets/11/3.jpg`,
+      `/assets/11/4.jpg`,
+      `/assets/11/5.jpg`,
+    ],
   },
   {
     id: 12,
@@ -136,6 +188,15 @@ export const projectsData: ProjectData[] = [
       'STYLIST & CREATIVE DIRECTOR: KATIE GRAND, LOCATION: BAR BASSO MILANO',
     imagePath: '/assets/projects-thumbnail/barbasso1.jpg',
     isWide: false,
+    imagesPath: [
+      `/assets/12/1.jpg`,
+      `/assets/12/2.jpg`,
+      `/assets/12/3.jpg`,
+      `/assets/12/4.jpg`,
+      `/assets/12/5.jpg`,
+      `/assets/12/6.jpg`,
+      `/assets/12/7.jpg`,
+    ],
   },
   {
     id: 13,
@@ -145,6 +206,12 @@ export const projectsData: ProjectData[] = [
       'PH: DANIEL RIERA, STYLIST: JULIAN GANIO, ART DIRECTOR: PABLO ARROYO, LOCATION: TURIN',
     imagePath: '/assets/projects-thumbnail/corneliani-02-01.jpg',
     isWide: true,
+    imagesPath: [
+      `/assets/13/1.jpg`,
+      `/assets/13/2.jpg`,
+      `/assets/13/3.jpg`,
+      `/assets/13/4.jpg`,
+    ],
   },
   {
     id: 14,
@@ -153,6 +220,13 @@ export const projectsData: ProjectData[] = [
     category: 'PH: ALICE ROSATI, STYLIST: GIORGIA TAL',
     imagePath: '/assets/projects-thumbnail/zalando-01.jpg',
     isWide: false,
+    isVideo: true,
+    imagesPath: [
+      `/assets/14/1.jpg`,
+      `/assets/14/2.jpg`,
+      `/assets/14/3.jpg`,
+    ],
+
   },
   {
     id: 15,
@@ -162,6 +236,8 @@ export const projectsData: ProjectData[] = [
       'VIDEO DIRECTOR: FRANCESCO BONASIA E FABRIZIO NARCISI, STYLIST: ADA KOKOSAR, ART DIRECTION BRAGA+FEDERICO',
     imagePath: '/assets/projects-thumbnail/palzileri001.jpg',
     isWide: true,
+    isVideo: true,
+    videoPath: '/assets/15/Paciotti.mp4',
   },
   {
     id: 16,
@@ -170,6 +246,15 @@ export const projectsData: ProjectData[] = [
     category: 'PH: DANIEL CLAVERO, STYLIST: SASA THOMAN, TALENT: KATIE HOLMES',
     imagePath: '/assets/projects-thumbnail/elleuk-katieholmes-01.jpg',
     isWide: false,
+    imagesPath: [
+      `/assets/16/1.jpg`,
+      `/assets/16/2.jpg`,
+      `/assets/16/3.jpg`,
+      `/assets/16/4.jpg`,
+      `/assets/16/5.jpg`,
+      `/assets/16/6.jpg`,
+      `/assets/16/7.jpg`,
+    ],
   },
   {
     id: 17,
@@ -178,7 +263,16 @@ export const projectsData: ProjectData[] = [
     category:
       'PH: THOMAS LOHR, STYLIST: JULIAN GANIO, ART DIRECTOR: PABLO ARROYO',
     imagePath: '/assets/projects-thumbnail/corneliani-03-01.jpg',
-    isWide: false,
+    isWide: false, 
+    imagesPath: [
+      `/assets/17/1.jpg`,
+      `/assets/17/2.jpg`,
+      `/assets/17/3.jpg`,
+      `/assets/17/4.jpg`,
+      `/assets/17/5.jpg`,
+      `/assets/17/6.jpg`,
+      `/assets/17/7.jpg`,
+    ],
   },
   {
     id: 18,
@@ -187,6 +281,15 @@ export const projectsData: ProjectData[] = [
     category: 'PH: ADRIANO RUSSO, STYLIST: VIVIANA VOLPICELLA',
     imagePath: '/assets/projects-thumbnail/falconeri-01.jpg',
     isWide: false,
+    imagesPath: [
+      `/assets/18/1.jpg`,
+      `/assets/18/2.jpg`,
+      `/assets/18/3.jpg`,
+      `/assets/18/4.jpg`,
+      `/assets/18/5.jpg`,
+      `/assets/18/6.jpg`,
+      `/assets/18/7.jpg`,
+    ],
   },
   {
     id: 19,
@@ -197,6 +300,15 @@ export const projectsData: ProjectData[] = [
     imagePath:
       '/assets/projects-thumbnail/mialejournal-annainwonderland-01.jpg',
     isWide: false,
+    imagesPath: [
+      `/assets/19/1.jpg`,
+      `/assets/19/2.jpg`,
+      `/assets/19/3.jpg`,
+      `/assets/19/4.jpg`,
+      `/assets/19/5.jpg`,
+      `/assets/19/6.jpg`,
+      `/assets/19/7.jpg`,
+    ],
   },
   {
     id: 20,
@@ -206,6 +318,15 @@ export const projectsData: ProjectData[] = [
       'PH: PIERRE TOUSSAINT, CREATIVE DIRECTORS ALESSANDRO SARTORI & JERRY LORENZO, PRODUCTION: MAIN INTERLUDE PROJECT',
     imagePath: '/assets/projects-thumbnail/ermenegildo-zegna-01.jpg',
     isWide: false,
+    imagesPath: [
+      `/assets/20/1.jpg`,
+      `/assets/20/2.jpg`,
+      `/assets/20/3.jpg`,
+      `/assets/20/4.jpg`,
+      `/assets/20/5.jpg`,
+      `/assets/20/6.jpg`,
+      `/assets/20/7.jpg`,
+    ],
   },
   {
     id: 21,
@@ -214,6 +335,15 @@ export const projectsData: ProjectData[] = [
     category: ' PH: SERGE GUERARD, STYLIST: LUDOVICA NANNI, LOCATION: SARDINIA',
     imagePath: '/assets/projects-thumbnail/ea7-01.jpg',
     isWide: false,
+    imagesPath: [
+      `/assets/21/1.jpg`,
+      `/assets/21/2.jpg`,
+      `/assets/21/3.jpg`,
+      `/assets/21/4.jpg`,
+      `/assets/21/5.jpg`,
+      `/assets/21/6.jpg`,
+      `/assets/21/7.jpg`,
+    ],
   },
   {
     id: 22,
@@ -222,6 +352,15 @@ export const projectsData: ProjectData[] = [
     category: 'PH: ADRIANO RUSSO, STYLIST: EMIL REBEK',
     imagePath: '/assets/projects-thumbnail/corneliani-04-01.jpg',
     isWide: true,
+    imagesPath: [
+      `/assets/22/1.jpg`,
+      `/assets/22/2.jpg`,
+      `/assets/22/3.jpg`,
+      `/assets/22/4.jpg`,
+      `/assets/22/5.jpg`,
+      `/assets/22/6.jpg`,
+      `/assets/22/7.jpg`,
+    ],
   },
   {
     id: 23,
@@ -231,6 +370,15 @@ export const projectsData: ProjectData[] = [
       'PH: LAURA SCIACOVELLI, STYLIST: MONICA CURETTI, LOCATION: COMO LAKE (IT)',
     imagePath: '/assets/projects-thumbnail/elleit_01.jpg',
     isWide: false,
+    imagesPath: [
+      `/assets/23/1.jpg`,
+      `/assets/23/2.jpg`,
+      `/assets/23/3.jpg`,
+      `/assets/23/4.jpg`,
+      `/assets/23/5.jpg`,
+      `/assets/23/6.jpg`,
+      `/assets/23/7.jpg`,
+    ],
   },
   {
     id: 24,
@@ -240,6 +388,15 @@ export const projectsData: ProjectData[] = [
       'PH: ADRIANO RUSSO, STYLIST: ELISABETTA CAVATORTA, TALENT: ANNA CLEVELAND, LOCATION: COMO LAKE',
     imagePath: '/assets/projects-thumbnail/mialejournal-01.jpg',
     isWide: false,
+    imagesPath: [
+      `/assets/24/1.jpg`,
+      `/assets/24/2.jpg`,
+      `/assets/24/3.jpg`,
+      `/assets/24/4.jpg`,
+      `/assets/24/5.jpg`,
+      `/assets/24/6.jpg`,
+      `/assets/24/7.jpg`,
+    ],
   },
   {
     id: 25,
@@ -248,6 +405,16 @@ export const projectsData: ProjectData[] = [
     category: 'PH: ADRIANO RUSSO, STYLIST: CLAUDIA GASTALDI',
     imagePath: '/assets/projects-thumbnail/collector-01.jpg',
     isWide: false,
+    imagesPath: [
+      `/assets/25/1.jpg`,
+      `/assets/25/2.jpg`,
+      `/assets/25/3.jpg`,
+      `/assets/25/4.jpg`,
+      `/assets/25/5.jpg`,
+      `/assets/25/6.jpg`,
+      `/assets/25/7.jpg`,
+      `/assets/25/8.jpg`,
+    ],
   },
   {
     id: 26,
@@ -256,6 +423,11 @@ export const projectsData: ProjectData[] = [
     category: 'VIDEO DIRECTOR: DANIEL CLAVERO, STYLIST: CAROLA BIANCHI',
     imagePath: '/assets/projects-thumbnail/neve.jpg',
     isWide: true,
+    imagesPath: [
+      `/assets/26/1.jpg`,
+      `/assets/26/2.jpg`,
+      `/assets/26/3.jpg`,
+    ],
   },
   {
     id: 27,
@@ -264,6 +436,13 @@ export const projectsData: ProjectData[] = [
     category: 'PH: LAURA SCIACOVELLI, TALENT: JORDAN ALEXANDER',
     imagePath: '/assets/projects-thumbnail/sunday-times-01.jpg',
     isWide: false,
+    imagesPath: [
+      `/assets/27/1.jpg`,
+      `/assets/27/2.jpg`,
+      `/assets/27/3.jpg`,
+      `/assets/27/4.jpg`,
+      `/assets/27/5.jpg`,
+    ],
   },
   {
     id: 28,
@@ -273,6 +452,10 @@ export const projectsData: ProjectData[] = [
       'PH: ADRIANO RUSSO, STYLIST: GIULIO CASAGRANDE, LOCATION: IBIZA (ES)',
     imagePath: '/assets/projects-thumbnail/Tissot-01.jpg',
     isWide: false,
+    imagesPath: [
+      `/assets/28/1.jpg`,
+      `/assets/28/2.jpg`,
+    ],
   },
   {
     id: 29,
@@ -281,6 +464,15 @@ export const projectsData: ProjectData[] = [
     category: 'PH: ADRIANO RUSSO, STYLIST: KONSTANTIN SPACHIS',
     imagePath: '/assets/projects-thumbnail/madame-vivapaloma-01.jpg',
     isWide: false,
+    imagesPath: [
+      `/assets/29/1.jpg`,
+      `/assets/29/2.jpg`,
+      `/assets/29/3.jpg`,
+      `/assets/29/4.jpg`,
+      `/assets/29/5.jpg`,
+      `/assets/29/6.jpg`,
+      `/assets/29/7.jpg`,
+    ],
   },
   {
     id: 30,
@@ -290,6 +482,10 @@ export const projectsData: ProjectData[] = [
       'PH: ANGELO PENNETTA, STYLIST: EMILIE KAREH, LOCATION: VENICE, MAIN PRODUCTION: LOUIS2',
     imagePath: '/assets/projects-thumbnail/louis-vuitton-01.jpg',
     isWide: false,
+    imagesPath: [
+      `/assets/30/1.jpg`,
+      `/assets/30/2.jpg`,
+    ],
   },
   {
     id: 31,
@@ -299,6 +495,13 @@ export const projectsData: ProjectData[] = [
       'PH: MARCO IMPERATORE, STYLIST: EMIL REBEK, ART DIRECTOR: ILLUMINAM AGENCY',
     imagePath: '/assets/projects-thumbnail/corneliani-05-01.jpg',
     isWide: true,
+    imagesPath: [
+      `/assets/31/1.jpg`,
+      `/assets/31/2.jpg`,
+      `/assets/31/3.jpg`,
+      `/assets/31/4.jpg`,
+      `/assets/31/5.jpg`,
+    ],
   },
   {
     id: 32,
@@ -308,6 +511,15 @@ export const projectsData: ProjectData[] = [
       'PH: ADRIANO RUSSO, STYLIST: FLAMINIA MINNEO E ANDREA SANGIORGI, LOCATION: PANTELLERIA (IT)',
     imagePath: '/assets/projects-thumbnail/luisaviaroma-01.jpg',
     isWide: false,
+    imagesPath: [
+      `/assets/32/1.jpg`,
+      `/assets/32/2.jpg`,
+      `/assets/32/3.jpg`,
+      `/assets/32/4.jpg`,
+      `/assets/32/5.jpg`,
+      `/assets/32/6.jpg`,
+      `/assets/32/7.jpg`,
+    ],
   },
   {
     id: 33,
@@ -317,6 +529,13 @@ export const projectsData: ProjectData[] = [
       'PH: NICOLO PARSENZIANI, STYLIST: ALESSIA GIACOBINO E MIGUEL ARNAU',
     imagePath: '/assets/projects-thumbnail/fay-01.jpg',
     isWide: false,
+    imagesPath: [
+      `/assets/33/1.jpg`,
+      `/assets/33/2.jpg`,
+      `/assets/33/3.jpg`,
+      `/assets/33/4.jpg`,
+      `/assets/33/5.jpg`,
+    ],
   },
   {
     id: 34,
@@ -326,6 +545,14 @@ export const projectsData: ProjectData[] = [
       'PH: ADRIANO RUSSO, STYLIST: KONSTANTIN SPACHIS, LOCATION: PANTELLERIA (IT)',
     imagePath: '/assets/projects-thumbnail/madame-chebella-01.jpg',
     isWide: false,
+    imagesPath: [
+      `/assets/34/1.jpg`,
+      `/assets/34/2.jpg`,
+      `/assets/34/3.jpg`,
+      `/assets/34/4.jpg`,
+      `/assets/34/5.jpg`,
+      `/assets/34/6.jpg`,
+    ],
   },
   {
     id: 35,
@@ -335,6 +562,15 @@ export const projectsData: ProjectData[] = [
       'PH: CÉSAR SEGARRA, STYLIST: ANASTASIA BARBIERI, LOCATION: ISOLA BELLA (MAGGIORE LAKE), MAIN PRODUCTION: LOUIS2',
     imagePath: '/assets/projects-thumbnail/elleus-island-fantasy-01.jpg',
     isWide: true,
+    imagesPath: [
+      `/assets/35/1.jpg`,
+      `/assets/35/2.jpg`,
+      `/assets/35/3.jpg`,
+      `/assets/35/4.jpg`,
+      `/assets/35/5.jpg`,
+      `/assets/35/6.jpg`,
+      `/assets/35/7.jpg`,
+    ],
   },
   {
     id: 36,
@@ -344,6 +580,14 @@ export const projectsData: ProjectData[] = [
       'PH: MAURIZIO ANNESE, STYLIST: GIORGIA TAL, LOCATION: COMO LAKE (IT), MAIN PRODUCTION: LOUIS2',
     imagePath: '/assets/projects-thumbnail/odda-magazine-01.jpg',
     isWide: false,
+    imagesPath: [
+      `/assets/36/1.jpg`,
+      `/assets/36/2.jpg`,
+      `/assets/36/3.jpg`,
+      `/assets/36/4.jpg`,
+      `/assets/36/5.jpg`,
+      `/assets/36/6.jpg`,
+    ],
   },
   {
     id: 37,
@@ -353,6 +597,7 @@ export const projectsData: ProjectData[] = [
     imagePath: '/assets/projects-thumbnail/Tissot-01.jpg',
     videoPath: '/assets/projects-video/tissot.mp4',
     isWide: false,
+    isVideo: true,
   },
   {
     id: 38,
@@ -362,6 +607,12 @@ export const projectsData: ProjectData[] = [
       'ART DIRECTION: BRAGA + FEDERICO, PH: ADRIANO RUSSO, STYLIST: PAOLA DE CEGLI, PRODUCTION: TEN ARTIST',
     imagePath: '/assets/projects-thumbnail/church-01.jpg',
     isWide: true,
+    imagesPath: [
+      `/assets/38/1.jpg`,
+      `/assets/38/2.jpg`,
+      `/assets/38/3.jpg`,
+      `/assets/38/4.jpg`,
+    ],
   },
   {
     id: 39,
@@ -371,5 +622,12 @@ export const projectsData: ProjectData[] = [
       'PH: LEA COLOMBO, STYLIST: GIOVANNI DARIO LAUDICINA, ART DIRECTION: BRAGA + FEDERICO, PRODUCTION: TEN ARTIST',
     imagePath: '/assets/projects-thumbnail/ardusse.jpg',
     isWide: false,
+    imagesPath: [
+      `/assets/39/1.jpg`,
+      `/assets/39/2.jpg`,
+      `/assets/39/3.jpg`,
+      `/assets/39/4.jpg`,
+      `/assets/39/5.jpg`,
+    ],
   },
 ]

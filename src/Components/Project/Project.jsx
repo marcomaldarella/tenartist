@@ -181,26 +181,8 @@ const Project = transition(() => {
       )
     } else {
       const images = getProjectImages(currentProject.id)
-      return images.map((imagePath, index) => (
-        <img
-          key={index}
-          src={imagePath}
-          alt={`Project Image ${index}`}
-          className="project-image"
-          onError={e => (e.target.style.display = 'none')}
-        />
-      ))
-    }
-  }
-
-  return (
-    <div data-scroll-container ref={containerRef} className="content">
-      <ProjectNavbar
-        onNext={() => handleNextPreviousProject('next')}
-        onPrevious={() => handleNextPreviousProject('prev')}
-      />
-      {currentProject && (
-        <div className='current-project-image'>
+      return (
+        <div className="current-project-image">
           <motion.div
             ref={wrapperImagesRef}
             style={{
@@ -214,10 +196,28 @@ const Project = transition(() => {
               x: xWrapperSpring,
             }}
           >
-            {renderProjectContent()}
+            {images.map((imagePath, index) => (
+              <img
+                key={index}
+                src={imagePath}
+                alt={`Project Image ${index}`}
+                className="project-image"
+                onError={e => (e.target.style.display = 'none')}
+              />
+            ))}
           </motion.div>
         </div>
-      )}
+      )
+    }
+  }
+
+  return (
+    <div data-scroll-container ref={containerRef} className="content">
+      <ProjectNavbar
+        onNext={() => handleNextPreviousProject('next')}
+        onPrevious={() => handleNextPreviousProject('prev')}
+      />
+      {currentProject && renderProjectContent()}
       {currentProject && (
         <ProjectFooter
           name={currentProject.name}

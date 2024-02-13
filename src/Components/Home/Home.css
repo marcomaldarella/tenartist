@@ -449,7 +449,7 @@ section.footer .footer-copy .footer-copy-text p a {
   flex-direction: row;
   flex-wrap: wrap; /* Questa proprietà permette di andare a capo quando necessario */
   line-height: 1.2em;
-  bottom: 250px;
+  bottom: 292px;
   margin-left:20%;
   margin-right:20%;
 }

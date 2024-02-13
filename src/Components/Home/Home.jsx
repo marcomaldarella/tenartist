@@ -1,27 +1,15 @@
 import { React, useState, useEffect, useRef } from "react";
-import { Link } from "react-router-dom";
 import transition from "../transition";
 import { LocomotiveScrollProvider } from 'react-locomotive-scroll';
 import "./Home.css";
 import MenuAnimation from '../Home/MenuAnimation';
 
-
 const Home = () => {
   const containerRef = useRef(null);
   const [time, setTime] = useState(getCurrentTime());
+  const [showMessage, setShowMessage] = useState(false); // Aggiunto stato per controllo messaggio
 
-
-
-  useEffect(() => {
-    const intervalId = setInterval(() => {
-      setTime(getCurrentTime());
-    }, 1000);
-
-    return () => {
-      clearInterval(intervalId);
-    };
-  }, []);
-
+  // Funzione per ottenere l'orario corrente
   function getCurrentTime() {
     const now = new Date();
     const hours = String(now.getHours()).padStart(2, '0');
@@ -30,9 +18,39 @@ const Home = () => {
     return `${hours} : ${minutes} : ${seconds}`;
   }
 
-
   const [backgroundImage, setBackgroundImage] = useState("");
 
+
+  useEffect(() => {
+    const intervalId = setInterval(() => {
+      setTime(getCurrentTime());
+    }, 1000);
+
+    // Verifica se il messaggio è stato già visualizzato e chiuso
+    const messageClosedDate = localStorage.getItem('messageClosed');
+    if (messageClosedDate) {
+      const now = new Date();
+      const closedDate = new Date(messageClosedDate);
+      if (now < closedDate) {
+        setShowMessage(false);
+      } else {
+        setShowMessage(true);
+      }
+    } else {
+      setShowMessage(true); // Mostra il messaggio se non è presente nel localStorage
+    }
+
+    return () => {
+      clearInterval(intervalId);
+    };
+  }, []);
+
+  const handleCloseMessage = () => {
+    const nextYear = new Date();
+    nextYear.setFullYear(nextYear.getFullYear() + 1);
+    localStorage.setItem('messageClosed', nextYear.toISOString());
+    setShowMessage(false);
+  };
 
   return (
     <LocomotiveScrollProvider
@@ -72,6 +90,12 @@ const Home = () => {
               </svg>
             </div>
           </div>
+          {showMessage && (
+                 <div className="welcome-message">
+                    <p>Ciao amico!</p>
+                     <button onClick={handleCloseMessage}>OK</button>
+                 </div>
+              )}
         </section>
       </div>
     </LocomotiveScrollProvider>

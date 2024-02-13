@@ -16,6 +16,33 @@ section.hero-img {
 }
 
 
+.welcome-message button{
+  position: fixed;
+  z-index: 999;
+  left: 50%;
+  bottom: 20px;
+  align-items: center;
+  display: flex;
+}
+
+button {
+  background: none;
+  color: inherit;
+  border: none;
+  padding: 0;
+  font: inherit;
+  cursor: pointer;
+  outline: inherit;
+  text-decoration: none;
+}
+
+button:focus {
+  text-decoration: underline;
+}
+
+
+
+
 
 section.hero-img .hero-img-container {
   width: 100%;

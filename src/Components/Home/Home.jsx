@@ -92,8 +92,7 @@ const Home = () => {
           </div>
           {showMessage && (
                  <div className="welcome-message">
-                    <p>Ciao amico!</p>
-                     <button onClick={handleCloseMessage}>OK</button>
+                    <p>We use cookies.</p><button onClick={handleCloseMessage}>OK</button>
                  </div>
               )}
         </section>

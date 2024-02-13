@@ -16,13 +16,14 @@ section.hero-img {
 }
 
 
-.welcome-message button{
-  position: fixed;
+.welcome-message {
+  position: absolute;
   z-index: 999;
-  left: 50%;
-  bottom: 20px;
+  left: 46%;
+  bottom: 40px;
   align-items: center;
   display: flex;
+  font-family: "Gotham Book";
 }
 
 button {
@@ -34,10 +35,18 @@ button {
   cursor: pointer;
   outline: inherit;
   text-decoration: none;
+  padding-left: 5px;
+  font-size: 14px;
+  margin-bottom: 2px;
 }
 
 button:focus {
-  text-decoration: underline;
+ opacity: 50%;
+}
+
+
+button:hover {
+  opacity: 50%;
 }
 
 

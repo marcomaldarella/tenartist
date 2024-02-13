@@ -256,7 +256,7 @@ section.footer .footer-copy .footer-copy-text p a {
   }
 
   section.hero-img .hero-img-copy {
-    top:70%;
+    top:69%;
   }
 
   .footer-links {
@@ -450,8 +450,8 @@ section.footer .footer-copy .footer-copy-text p a {
   flex-wrap: wrap; /* Questa proprietà permette di andare a capo quando necessario */
   line-height: 1.2em;
   bottom: 198px;
-  margin-left:20%;
-  margin-right:20%;
+  margin-left:24%;
+  margin-right:24%;
 }
 
 .menu__item {
@@ -526,7 +526,7 @@ section.footer .footer-copy .footer-copy-text p a {
     position: absolute;
     z-index: 999;
     left: 30%;
-    bottom: 100px;
+    bottom: 170px;
     align-items: center;
     display: flex;
     font-family: "Gotham Book";
@@ -592,6 +592,8 @@ section.footer .footer-copy .footer-copy-text p a {
 
   .menu {
     line-height: 0.4em;
+    margin-left: 20px;
+    margin-right: 20px;
   }
   
 }
@@ -616,15 +618,24 @@ section.footer .footer-copy .footer-copy-text p a {
   }
 }
 
-@media (max-height: 845px) {
+@media (max-height: 844px) {
   .menu {
-    bottom: 140px;
+    bottom: 149px;
     margin-left:2%;
     margin-right:2%;
   }
   
 }
 
+
+@media (max-height: 900px) {
+  .menu {
+    bottom: 137px;
+    margin-left:2%;
+    margin-right:2%;
+  }
+  
+}
 
 
 

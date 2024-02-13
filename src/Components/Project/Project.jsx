@@ -12,10 +12,6 @@ const Project = transition(() => {
   const { projectSlug } = useParams()
   const containerRef = useRef(null)
   const [currentProject, setCurrentProject] = useState(null)
-
-  /////////////////////////////////////////
-  //////////// BORDELLI DI FRA ////////////
-  /////////////////////////////////////////
   const wrapperImagesRef = useRef(null)
 
   const xWrapper = useMotionValue(0)
@@ -23,6 +19,7 @@ const Project = transition(() => {
     stiffness: 200,
     damping: 120,
   })
+  
 
   useEffect(() => {
     const handleWheel = e => {
@@ -56,8 +53,8 @@ const Project = transition(() => {
     const handleTouchMove = e => {
       if (!wrapperImagesRef.current || initialTouchPosition === null) return
 
-      const deltaY = initialTouchPosition - e.touches[0].clientY // Calcola il movimento verticale
-      initialTouchPosition = e.touches[0].clientY // Aggiorna la posizione iniziale
+      const deltaY = initialTouchPosition - e.touches[0].clientX // Calcola il movimento verticale
+      initialTouchPosition = e.touches[0].clientX // Aggiorna la posizione iniziale
 
       const isBeyondLeftBoundary = xWrapper.get() - deltaY > 0
       if (isBeyondLeftBoundary) return xWrapper.set(0)
@@ -143,9 +140,6 @@ const Project = transition(() => {
     window.addEventListener('resize', handleResize)
     return () => window.removeEventListener('resize', handleResize)
   }, [xWrapper, xWrapperSpring])
-  /////////////////////////////////////////
-  ///////// FINE BORDELLI DI FRA //////////
-  /////////////////////////////////////////
 
   useEffect(() => {
     const projectIndex = projectsData.findIndex(p => p.slug === projectSlug)
@@ -155,6 +149,7 @@ const Project = transition(() => {
       console.log('Project not found')
     }
   }, [projectSlug])
+
 
   const handleNextPreviousProject = direction => {
     const currentIndex = projectsData.findIndex(p => p.slug === projectSlug)
@@ -174,7 +169,7 @@ const Project = transition(() => {
   const renderProjectContent = () => {
     if (currentProject?.videoPath) {
       return (
-        <video width="100%" height="auto" controls>
+        <video width="100%" height="auto" controls className='video-wrap'>
           <source src={currentProject.videoPath} type="video/mp4" />
           Your browser does not support the video tag.
         </video>

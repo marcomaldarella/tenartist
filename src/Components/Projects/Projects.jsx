@@ -1,28 +1,42 @@
-import { useRef, useEffect } from 'react'
-import { useLocation } from 'react-router-dom'
-import { LocomotiveScrollProvider } from 'react-locomotive-scroll'
-import ProjectItem from './ProjectItem'
-import transition from '../transition'
-import { projectsData } from './projectsData'
-import { Link } from 'react-router-dom'
-import './Projects.css'
+import { useRef, useEffect } from 'react';
+import { useLocation } from 'react-router-dom';
+import { LocomotiveScrollProvider } from 'react-locomotive-scroll';
+import ProjectItem from './ProjectItem';
+import transition from '../transition';
+import { projectsData } from './projectsData';
+import { Link } from 'react-router-dom';
+import './Projects.css';
 
 const Projects = transition(() => {
-  const containerRef = useRef(null)
-  const location = useLocation()
+  const containerRef = useRef(null);
+  const location = useLocation();
 
-  const standardProjects = projectsData.filter(p => !p.isWide)
-  const wideProjects = projectsData.filter(p => p.isWide)
-
-  let projectElements = []
-  let standardIndex = 0,
-    wideIndex = 0
+  const standardProjects = projectsData.filter(p => !p.isWide);
+  const wideProjects = projectsData.filter(p => p.isWide);
 
   useEffect(() => {
+    // Assicura che l'animazione venga applicata dopo il caricamento e l'aggiornamento del componente
     if (containerRef.current && containerRef.current.update) {
-      containerRef.current.update()
+      containerRef.current.update();
     }
-  }, [location])
+
+    // Applica l'effetto fade-in alle immagini
+    const images = document.querySelectorAll('.project-img-full-wrapper img');
+    let delay = 800; // Ritardo iniziale di 0.8 secondi in millisecondi
+
+    images.forEach((img, index) => {
+      setTimeout(() => {
+        img.classList.add('fade-in');
+      }, delay);
+
+      delay += 100; // Incrementiamo il ritardo per l'immagine successiva di 0.1 secondi
+    });
+  }, [location]);
+
+  // Logica per la creazione dei progetti
+  let projectElements = [];
+  let standardIndex = 0,
+      wideIndex = 0;
 
   // Inizia prima con il progetto wide
   if (wideProjects.length > 0) {
@@ -38,8 +52,8 @@ const Projects = transition(() => {
           />
         </Link>
       </div>
-    )
-    wideIndex++
+    );
+    wideIndex++;
   }
 
   // Poi procedi con le coppie di progetti standard e il resto dei progetti wide
@@ -73,8 +87,8 @@ const Projects = transition(() => {
               )
           )}
         </div>
-      )
-      standardIndex += 2
+      );
+      standardIndex += 2;
     }
 
     if (wideIndex < wideProjects.length) {
@@ -90,8 +104,8 @@ const Projects = transition(() => {
             />
           </Link>
         </div>
-      )
-      wideIndex++
+      );
+      wideIndex++;
     }
   }
 
@@ -109,7 +123,7 @@ const Projects = transition(() => {
           smooth: true,
         },
       }}
-      watch={[]} // Osserva i cambiamenti di location
+      watch={[]}
       containerRef={containerRef}
     >
       <div
@@ -123,21 +137,21 @@ const Projects = transition(() => {
         <section className="footer" data-scroll-section>
           <div className="footer-copy">
             <div className="footer-copy-text">
-              <a className="footer-links" href="#">
+              <a className="footer-links" href="mailto:info@tenartist.com">
                 info@tenartist.com
               </a>
-              <a className="footer-links-2" href="#">
+              <a className="footer-links-2" href="https://www.instagram.com/ten_artist">
                 Instagram
               </a>
-              <a className="footer-links-3" href="#">
+              <span className="footer-links-3">
                 @2024
-              </a>
+              </span>
             </div>
           </div>
         </section>
       </div>
     </LocomotiveScrollProvider>
-  )
-})
+  );
+});
 
-export default Projects
+export default Projects;

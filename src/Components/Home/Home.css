@@ -130,6 +130,8 @@ section.footer {
   justify-content: space-between; /* Distribuisce lo spazio tra gli elementi */
   align-items: center; /* Centra gli elementi verticalmente */
   padding: 1em; /* Aggiusta a seconda delle tue necessità */
+  padding-top:0px;
+  padding-bottom:0px;
   background: #000;
   color: #fff;
   font-size: 13px;
@@ -180,6 +182,8 @@ section.footer .footer-copy .footer-copy-text p a {
   text-align: right;
   position: absolute;
   right: 2em;
+  font-size: 13px;
+  line-height: 1.2em;
 }
 
 .footer-year {
@@ -214,6 +218,13 @@ section.footer .footer-copy .footer-copy-text p a {
     margin-bottom:0px;
   }
 
+  section.hero-img .hero-img-copy {
+    top: 80%;
+  }
+
+  .footer-links {
+    padding-left: 0.5em;
+  }
 
 
 }
@@ -402,8 +413,8 @@ section.footer .footer-copy .footer-copy-text p a {
   flex-wrap: wrap; /* Questa proprietà permette di andare a capo quando necessario */
   line-height: 1.2em;
   bottom: 200px;
-  margin-left:12%;
-  margin-right:12%;
+  margin-left:20%;
+  margin-right:20%;
 }
 
 .menu__item {
@@ -441,6 +452,8 @@ section.footer .footer-copy .footer-copy-text p a {
   text-transform: uppercase;
   font-family: 'Gotham' sans-serif;
   top: 75%;
+  cursor: default !important;
+
 }
 
 .menu__item:hover .menu__item-text {
@@ -471,13 +484,19 @@ section.footer .footer-copy .footer-copy-text p a {
 
 /* Nasconde il menu su schermi più piccoli (esempio: larghezza inferiore a 768px) */
 @media (max-width: 768px) {
-  .menu-animation {
-    display: none !important;
+
+  .menu__item-image_wrapper {
+    /* Disabilita le transizioni/animazioni */
+    transition: none !important;
+    animation: none !important;
+    opacity: 1; /* Rendi sempre visibile l'immagine, se desiderato */
+    transform: translate(-50%, -50%) scale(1) !important; /* Resetta la trasformazione */
   }
 
-  .menu {
-    display: none !important;
+  .menu__item:hover .menu__item-image_wrapper {
+    opacity: 1; /* Assicurati che l'immagine sia visibile */
   }
+
 
   .project {
     aspect-ratio: 4/9 !important;;  /* Questa proporzione si applica agli elementi non wide */
@@ -490,6 +509,24 @@ section.footer .footer-copy .footer-copy-text p a {
 
   .project-list-standard {
     gap:10px !important;;  /* Questa proporzione si applica agli elementi non wide */
+  }
+
+  .menu__item-text span {
+    font-size: 11px;
+    line-height: 1em;
+  }
+
+  .menu__item-text  {
+    font-size: 10px;
+    line-height: 1em;
+  }
+
+  .menu__item-image_wrapper {
+    display: none;
+  }
+
+  .menu {
+    line-height: 0.4em;
   }
   
 }
@@ -516,8 +553,11 @@ section.footer .footer-copy .footer-copy-text p a {
 
 @media (max-height: 845px) {
   .menu {
-    bottom: 160px;
+    bottom: 80px;
+    margin-left:2%;
+    margin-right:2%;
   }
+  
 }
 
 

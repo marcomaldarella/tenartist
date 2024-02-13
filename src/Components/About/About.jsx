@@ -6,7 +6,7 @@ import transition from "../transition";
 
 import "./About.css";
 
-const Contact = () => {
+const About = () => {
   const containerRef = useRef(null);
 
   return (
@@ -37,33 +37,45 @@ const Contact = () => {
           </p>
           <br />
           <br />
-          <span id="copyright">
-            COPYRIGHT 2023 TEN ARTIST. MILANO, ITALY © 2023 ALL
-            RIGHTS RESERVED.
+          <span className="about-copy-2" >
+             Our space, located in Milan, is available for photo shooting and events
           </span>
 
           <div className="image-marquee">
             <div className="image-container">
-              <img src="/assets/about-hero.jpg"/>
-              <img src="/assets/about-office.jpg"/>
-              <img src="/assets/about-feature.jpg"/>
-              <img src="/assets/about-hero.jpg"/>
-              <img src="/assets/about-office.jpg"/>
-              <img src="/assets/about-feature.jpg"/>
-              <img src="/assets/about-hero.jpg"/>
+              <span>
+                <img src="/assets/about-hero.jpg" alt="About Hero"/>
+                <img src="/assets/about-office.jpg" alt="About Office"/>
+                <img src="/assets/about-office-2.jpg" alt="About Office"/>
+                <img src="/assets/about-studio.jpg" alt="About Office"/>
+                <img src="/assets/about-feature.jpg" alt="About Feature"/>
+                <img src="/assets/about-doors.jpg" alt="About Feature"/>
+                <img src="/assets/about-outside.jpg" alt="About Feature"/>
+              </span>
+              <span>
+                <img src="/assets/about-hero.jpg" alt="About Hero"/>
+                <img src="/assets/about-office.jpg" alt="About Office"/>
+                <img src="/assets/about-office-2.jpg" alt="About Office"/>
+                <img src="/assets/about-studio.jpg" alt="About Office"/>
+                <img src="/assets/about-feature.jpg" alt="About Feature"/>
+                <img src="/assets/about-doors.jpg" alt="About Feature"/>
+                <img src="/assets/about-outside.jpg" alt="About Feature"/>
+              </span>
             </div>
           </div>
 
           <div className="marquee">
             <span>
               Creative Direction, Budget Management, Art buying, Crew selection, Location research and scouting, Municipality permits, Casting, Logistics, Transportations, Insurance, Lighting and Equipment, Digital tech and retouching services, Props, Set design/building, Location vehicles and prop cars, Catering services
+            </span>
+            <span>
               Creative Direction, Budget Management, Art buying, Crew selection, Location research and scouting, Municipality permits, Casting, Logistics, Transportations, Insurance, Lighting and Equipment, Digital tech and retouching services, Props, Set design/building, Location vehicles and prop cars, Catering services
             </span>
-        </div>
+          </div>
         </div>
       </div>
     </LocomotiveScrollProvider>
   );
 };
 
-export default transition(Contact);
+export default transition(About);

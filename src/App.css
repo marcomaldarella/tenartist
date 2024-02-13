@@ -17,6 +17,7 @@
   section.projects .projects-copy,
   section.projects-header .projects-copy {
     flex-direction: row;
+    padding-bottom:0px;
   }
 
   section.projects .projects-copy .projects-copy-h1,

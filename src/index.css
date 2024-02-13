@@ -196,8 +196,8 @@ span {
 @media (max-width: 768px) {
   .slide-in-text {
     position: fixed;
-    top: 47%;
-    left: 12%;
+    top: 49%;
+    left: 8.4%;
     transform: translate(0%, 0%) !important;
     color: #fff;
     opacity: 0;
@@ -206,5 +206,11 @@ span {
     text-transform: uppercase;
     font-size: 13px;
   }
+
+  section {
+    width: 100%;
+    padding: 1em;
+  }
+  
 }
 

@@ -208,7 +208,6 @@ section.discover {
   padding-right: 1.8em;
   padding-top: 1.2em;
   padding-bottom: 1.5em;
-  mix-blend-mode: difference;
   z-index: 100;
 }
 
@@ -252,7 +251,6 @@ section.discover {
     padding-right: 1.2em;
     padding-top: 1.2em;
     padding-bottom: 1.5em;
-    mix-blend-mode: difference;
     z-index: 100;
     gap:2px;
     align-items: flex-end;

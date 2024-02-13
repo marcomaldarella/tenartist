@@ -256,7 +256,7 @@ section.footer .footer-copy .footer-copy-text p a {
   }
 
   section.hero-img .hero-img-copy {
-    top:%;
+    top:70%;
   }
 
   .footer-links {
@@ -449,7 +449,7 @@ section.footer .footer-copy .footer-copy-text p a {
   flex-direction: row;
   flex-wrap: wrap; /* Questa proprietà permette di andare a capo quando necessario */
   line-height: 1.2em;
-  bottom: 250px;
+  bottom: 198px;
   margin-left:20%;
   margin-right:20%;
 }
@@ -526,7 +526,7 @@ section.footer .footer-copy .footer-copy-text p a {
     position: absolute;
     z-index: 999;
     left: 30%;
-    bottom: 40px;
+    bottom: 100px;
     align-items: center;
     display: flex;
     font-family: "Gotham Book";

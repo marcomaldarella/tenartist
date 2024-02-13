@@ -56,7 +56,7 @@ const MenuAnimation = () => {
     { name: "EA7,", imagePath: "/assets/ea7.jpg" }, 
     { name: "ELLE,", imagePath: "/assets/elle.jpg" },
     { name: "Ermenegildo Zegna,", imagePath: "/assets/zegna.jpg" },
-    { name: "Fay,", imagePath: "/assets/fay.jpg" },
+    { name: "Fay,", imagePath: "/assets/project-img-fay.jpg" },
     { name: "Giorgio Armani,", imagePath: "/assets/armani.jpg" },
     { name: "Golden Point,", imagePath: "/assets/goldenpoint.jpg" },
     { name: "GQ China Wildlife,", imagePath: "/assets/gq.jpg" },

@@ -46,7 +46,7 @@ export const projectsData: ProjectData[] = [
   id: 3,
   name: 'TISSOT SEASTAR 2021 Video Campaign',
   slug: 'tissot-video',
-  category: 'DOP: ANDREA DUTTO, PRODUCTION: TEN ARTIST',
+  category: 'DOP: ANDREA DUTTO',
   imagePath: '/assets/projects-thumbnail/Tissot-01.jpg',
   videoPath: '/assets/3/tissot.mp4',
   isWide: false,

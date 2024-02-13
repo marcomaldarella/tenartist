@@ -214,11 +214,13 @@ section.discover {
 
 .footer-credits {
   font-size: 10px !important;
+  font-family: 'Gotham Book';
 }
 
 .footer-credits-2 {
   font-size: 10px !important;
   text-align: right;
+  font-family: 'Gotham Book';
 }
 
 /* Media queries per dispositivi mobili e tablet */

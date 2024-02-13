@@ -19,7 +19,7 @@ section.hero-img {
 .welcome-message {
   position: absolute;
   z-index: 999;
-  left: 46%;
+  left: 45.8%;
   bottom: 40px;
   align-items: center;
   display: flex;
@@ -38,6 +38,7 @@ button {
   padding-left: 5px;
   font-size: 14px;
   margin-bottom: 2px;
+  text-decoration: underline;
 }
 
 button:focus {
@@ -520,6 +521,34 @@ section.footer .footer-copy .footer-copy-text p a {
 
 /* Nasconde il menu su schermi più piccoli (esempio: larghezza inferiore a 768px) */
 @media (max-width: 768px) {
+
+  .welcome-message {
+    position: absolute;
+    z-index: 999;
+    left: 30%;
+    bottom: 40px;
+    align-items: center;
+    display: flex;
+    font-family: "Gotham Book";
+  }
+
+  .welcome-message p {
+    font-size: 13px;
+  }
+  
+  button {
+    background: none;
+    color: inherit;
+    border: none;
+    padding: 0;
+    font: inherit;
+    cursor: pointer;
+    outline: inherit;
+    text-decoration: none;
+    padding-left: 5px;
+    font-size: 13px;
+    margin-bottom: 0px;
+  }
 
   .menu__item-image_wrapper {
     /* Disabilita le transizioni/animazioni */

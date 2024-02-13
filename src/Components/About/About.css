@@ -83,15 +83,15 @@
   
   .about-copy-2 {
     font-size: 9px; /* Dimensione del testo per .about-copy-2 su dispositivi mobili */
-    padding-left: 15vw;
-    padding-right: 15vw;
-
+    padding-left: 10vw;
+    padding-right: 10vw;
   }
 
   .image-container img {
     width: auto;
-    border-radius: 15px;
+    border-radius: 9px;
     margin-left:1vw;
+    width: 58vw;
   }
   
 }

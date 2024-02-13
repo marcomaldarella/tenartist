@@ -256,7 +256,7 @@ section.footer .footer-copy .footer-copy-text p a {
   }
 
   section.hero-img .hero-img-copy {
-    top:59%;
+    top:%;
   }
 
   .footer-links {
@@ -449,7 +449,7 @@ section.footer .footer-copy .footer-copy-text p a {
   flex-direction: row;
   flex-wrap: wrap; /* Questa proprietà permette di andare a capo quando necessario */
   line-height: 1.2em;
-  bottom: 292px;
+  bottom: 250px;
   margin-left:20%;
   margin-right:20%;
 }
@@ -618,7 +618,7 @@ section.footer .footer-copy .footer-copy-text p a {
 
 @media (max-height: 845px) {
   .menu {
-    bottom: 100px;
+    bottom: 140px;
     margin-left:2%;
     margin-right:2%;
   }

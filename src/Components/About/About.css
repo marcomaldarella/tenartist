@@ -36,7 +36,7 @@
 .marquee span {
   display: inline-block;
   animation: marquee 20s linear infinite;
-  font-size: 16px;
+  font-size: 15px;
   font-family: 'Gotham Book';
   text-transform: none;
 }
@@ -54,13 +54,13 @@
 
 .image-container {
   display: flex;
-  animation: imageMarquee 20s linear infinite;
+  animation: imageMarquee 30s linear infinite;
   white-space: nowrap;
 }
 
 .image-container img {
   width: auto;
-  border-radius: 20px;
+  border-radius: 15px;
   margin-left:1vw;
   width: 52vw; /* Imposta la larghezza delle immagini come percentuale della larghezza della viewport */
 }
@@ -78,7 +78,7 @@
 @media (max-width: 768px) { /* 768px è un breakpoint comune per tablet e dispositivi mobili */
   .copy-about-margins {
     font-size: 12px; /* Dimensione del testo principale per dispositivi mobili */
-    padding-top: 25vw;
+    padding-top: 12vh;
   }
   
   .about-copy-2 {
@@ -88,7 +88,11 @@
 
   }
 
-
+  .image-container img {
+    width: auto;
+    border-radius: 15px;
+    margin-left:1vw;
+  }
   
 }
 

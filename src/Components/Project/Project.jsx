@@ -43,45 +43,56 @@ const Project = transition(() => {
   }, [xWrapper])
 
   useEffect(() => {
-    let initialTouchPosition = null
+    let initialTouchPositionX = null;
+    let initialTouchPositionY = null;
 
     const handleTouchStart = e => {
-      if (!wrapperImagesRef.current) return
-      initialTouchPosition = e.touches[0].clientY // Salva la posizione iniziale
-    }
+        if (!wrapperImagesRef.current) return;
+        initialTouchPositionX = e.touches[0].clientX; // Salva la posizione iniziale del tocco sull'asse X
+        initialTouchPositionY = e.touches[0].clientY; // Salva la posizione iniziale del tocco sull'asse Y
+    };
 
     const handleTouchMove = e => {
-      if (!wrapperImagesRef.current || initialTouchPosition === null) return
+        if (!wrapperImagesRef.current || initialTouchPositionX === null || initialTouchPositionY === null) return;
 
-      const deltaY = initialTouchPosition - e.touches[0].clientX // Calcola il movimento verticale
-      initialTouchPosition = e.touches[0].clientX // Aggiorna la posizione iniziale
+        const deltaX = initialTouchPositionX - e.touches[0].clientX;
+        const deltaY = initialTouchPositionY - e.touches[0].clientY;
 
-      const isBeyondLeftBoundary = xWrapper.get() - deltaY > 0
-      if (isBeyondLeftBoundary) return xWrapper.set(0)
+        // Determina se il movimento è più significativo sull'asse X che sull'asse Y
+        if (Math.abs(deltaX) > Math.abs(deltaY)) {
+            e.preventDefault(); // Previene lo scroll verticale se il movimento è prevalentemente orizzontale
 
-      const imagesWidth = wrapperImagesRef.current.getBoundingClientRect().width
-      const rightBoundary = -imagesWidth + window.innerWidth
-      const isBeyondRightBoundary = xWrapper.get() - deltaY < rightBoundary
-      if (isBeyondRightBoundary) {
-        return xWrapper.set(rightBoundary)
-      }
+            const imagesWidth = wrapperImagesRef.current.getBoundingClientRect().width;
+            const rightBoundary = -imagesWidth + window.innerWidth;
+            const newPosX = xWrapper.get() - deltaX;
 
-      xWrapper.set(xWrapper.get() - deltaY)
-    }
+            if (newPosX > 0) {
+                xWrapper.set(0);
+            } else if (newPosX < rightBoundary) {
+                xWrapper.set(rightBoundary);
+            } else {
+                xWrapper.set(newPosX);
+            }
+        }
+
+        // Aggiorna la posizione iniziale per il prossimo movimento
+        initialTouchPositionX = e.touches[0].clientX;
+    };
 
     const handleTouchEnd = () => {
-      initialTouchPosition = null
-    }
+        initialTouchPositionX = null;
+        initialTouchPositionY = null;
+    };
 
-    window.addEventListener('touchstart', handleTouchStart)
-    window.addEventListener('touchmove', handleTouchMove)
-    window.addEventListener('touchend', handleTouchEnd)
+    window.addEventListener('touchstart', handleTouchStart, { passive: false });
+    window.addEventListener('touchmove', handleTouchMove, { passive: false });
+    window.addEventListener('touchend', handleTouchEnd);
     return () => {
-      window.removeEventListener('touchstart', handleTouchStart)
-      window.removeEventListener('touchmove', handleTouchMove)
-      window.removeEventListener('touchend', handleTouchEnd)
-    }
-  }, [xWrapper])
+        window.removeEventListener('touchstart', handleTouchStart);
+        window.removeEventListener('touchmove', handleTouchMove);
+        window.removeEventListener('touchend', handleTouchEnd);
+    };
+  }, [xWrapper]);
 
   // useEffect(() => {
   //   let initialTouchPosition = null

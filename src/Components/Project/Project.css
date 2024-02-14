@@ -194,6 +194,7 @@ section.discover {
   cursor: pointer;
   padding: 0px; /* Aggiunge spazio intorno al testo del bottone */
   font-family: 'Gotham Bold';
+  text-decoration: none !important;
 }
 
 .project-nav button:hover {
@@ -220,6 +221,7 @@ section.discover {
   font-size: 10px !important;
   text-align: right;
   font-family: 'Gotham Book';
+  white-space: wrap;
 }
 
 /* Media queries per dispositivi mobili e tablet */
@@ -266,6 +268,8 @@ section.discover {
   .footer-credits-2 {
     font-size: 10px !important;
     text-align: right;
+    white-space: pre-wrap;
+
   }
 
   .project-image {

@@ -1,4 +1,7 @@
-/* Stili di base per il contenitore dell'about */
+html,body{
+  overflow: hidden;
+}
+
 .about-copy {
   width: 100%;
   display: flex;
@@ -15,7 +18,7 @@
   padding-left: 10vw;
   padding-right: 10vw;
   margin-top: 10vh;
-  font-size: 19px;
+  font-size: 18px;
 }
 
 /* Stili per il testo dell'about più piccolo */
@@ -62,7 +65,7 @@
   width: auto;
   border-radius: 15px;
   margin-left:1vw;
-  width: 52vw; /* Imposta la larghezza delle immagini come percentuale della larghezza della viewport */
+  width: 52vw;
 }
 
 @keyframes imageMarquee {
@@ -93,6 +96,13 @@
     margin-left:1vw;
     width: 58vw;
   }
+
+  .marquee span {
+    font-size: 12px;
+    font-family: 'Gotham Book';
+    text-transform: none;
+  }
+  
   
 }
 

@@ -1,4 +1,8 @@
 /* hero */
+html,body {
+  overflow: hidden;
+}
+
 section.hero {
   height: 400px;
   display: flex;
@@ -15,15 +19,28 @@ section.hero-img {
   overflow: hidden;
 }
 
+.welcome-message-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  position: relative;
+  top: 85vh;
+}
+
 
 .welcome-message {
   position: absolute;
   z-index: 999;
-  left: 45.8%;
-  bottom: 50px;
   align-items: center;
-  display: flex;
   font-family: "Gotham Book";
+}
+
+.welcome-message p {
+  font-size: 12px;
+}
+
+.welcome-message button {
+  font-size: 12px;
 }
 
 button {
@@ -521,19 +538,20 @@ section.footer .footer-copy .footer-copy-text p a {
 
 /* Nasconde il menu su schermi più piccoli (esempio: larghezza inferiore a 768px) */
 @media (max-width: 768px) {
-
+  /* 
   .welcome-message {
     position: absolute;
     z-index: 999;
     left: 30%;
-    bottom: 170px;
+    bottom: 100px;
     align-items: center;
     display: flex;
     font-family: "Gotham Book";
   }
+  */
 
   .welcome-message p {
-    font-size: 13px;
+    font-size: 12px;
   }
   
   button {
@@ -637,6 +655,20 @@ section.footer .footer-copy .footer-copy-text p a {
   
 }
 
+@media (max-height: 667px) {
 
+  .menu {
+    bottom: 100px;
+    margin-left:2%;
+    margin-right:2%;
+  }
+}
 
-
+@media only screen and (width: 820px) and (height: 1180px) {
+  .menu {
+    bottom: 190px;
+    margin-left:10%;
+    margin-right:10%;
+  }
+  
+}

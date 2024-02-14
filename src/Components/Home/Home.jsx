@@ -91,9 +91,11 @@ const Home = () => {
             </div>
           </div>
           {showMessage && (
-                 <div className="welcome-message">
-                    <p>We use cookies.</p><button onClick={handleCloseMessage}>OK</button>
-                 </div>
+                <div className="welcome-message-container">
+                  <div className="welcome-message">
+                      <p>We use cookies. <button onClick={handleCloseMessage}>OK</button> </p>
+                  </div>
+                </div>
               )}
         </section>
       </div>

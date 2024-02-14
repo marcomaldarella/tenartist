@@ -14,33 +14,35 @@ const Project = transition(() => {
   const [currentProject, setCurrentProject] = useState(null)
   const wrapperImagesRef = useRef(null)
 
-  const xWrapper = useMotionValue(0)
+  const xWrapper = useMotionValue(0); // Inizializzazione di xWrapper
+
+  // Adattamento della stiffness e damping in base alla dimensione dello schermo
+  let stiffness = window.innerWidth < 768 ? 400 : 200;
+  let damping = window.innerWidth < 768 ? 80 : 120;
+
   const xWrapperSpring = useSpring(xWrapper, {
-    stiffness: 200,
-    damping: 120,
-  })
-  
+    stiffness,
+    damping,
+  }); // Definizione di xWrapperSpring
 
   useEffect(() => {
     const handleWheel = e => {
-      if (!wrapperImagesRef.current) return
+      if (!wrapperImagesRef.current) return;
 
-      const isBeyondLeftBoundary = xWrapper.get() - e.deltaY > 0
-      if (isBeyondLeftBoundary) return xWrapper.set(0)
+      const deltaX = e.deltaY;
+      const currentX = xWrapper.get();
+      const imagesWidth = wrapperImagesRef.current.getBoundingClientRect().width;
+      const rightBoundary = -imagesWidth + window.innerWidth;
 
-      const imagesWidth = wrapperImagesRef.current.getBoundingClientRect().width
-      const rightBoundary = -imagesWidth + window.innerWidth
-      const isBeyondRightBoundary = xWrapper.get() - e.deltaY < rightBoundary
-      if (isBeyondRightBoundary) {
-        return xWrapper.set(rightBoundary)
-      }
+      const newX = Math.min(Math.max(currentX - deltaX, rightBoundary), 0);
 
-      xWrapper.set(xWrapper.get() - e.deltaY)
-    }
+      xWrapper.set(newX);
+    };
 
-    window.addEventListener('wheel', handleWheel)
-    return () => window.removeEventListener('wheel', handleWheel)
-  }, [xWrapper])
+    window.addEventListener('wheel', handleWheel);
+    return () => window.removeEventListener('wheel', handleWheel);
+  }, [xWrapper]);
+
 
   useEffect(() => {
     let initialTouchPositionX = null;

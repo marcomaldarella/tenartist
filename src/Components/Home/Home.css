@@ -1,6 +1,7 @@
 /* hero */
 html,body {
   overflow: hidden;
+  overscroll-behavior: none;
 }
 
 section.hero {

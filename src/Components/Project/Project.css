@@ -269,6 +269,7 @@ section.discover {
     font-size: 10px !important;
     text-align: right;
     white-space: pre-wrap;
+    white-space: pre-line !important; /* Aggiunto per garantire il rispetto degli a capo
 
   }
 

@@ -19,7 +19,7 @@ const Project = transition(() => {
   // Adattamento della stiffness e damping in base alla dimensione dello schermo
   let stiffness = window.innerWidth < 768 ? 100 : 200;
   let damping = window.innerWidth < 768 ? 60 : 120;
-  let mass = 3;
+  let mass = 0.2;
 
   const xWrapperSpring = useSpring(xWrapper, {
     stiffness,

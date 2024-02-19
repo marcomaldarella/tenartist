@@ -16,7 +16,7 @@ export const projectsData: ProjectData[] = [
   name: 'PUMA PALERMO',
   slug: 'puma-palermo',
   category:
-    'PH: FRANCESCO NAZARDO,\nSTYLIST: LORENZO POSOCCO, TALENT:DUA LIPA,\nPRODUCTION:TURO PRODUCTION',
+    'PH: FRANCESCO NAZARDO,\nSTYLIST: LORENZO POSOCCO, \nTALENT:DUA LIPA,\nPRODUCTION:TURO PRODUCTION',
   imagePath: '/assets/projects-thumbnail/dualipaxpuma.jpg',
   isWide: true,
   imagesPath: [

@@ -17,9 +17,9 @@ const Project = transition(() => {
   const xWrapper = useMotionValue(0); // Inizializzazione di xWrapper
 
   // Adattamento della stiffness e damping in base alla dimensione dello schermo
-  let stiffness = window.innerWidth < 768 ? 100 : 200;
+  let stiffness = window.innerWidth < 768 ? 500 : 200;
   let damping = window.innerWidth < 768 ? 60 : 120;
-  let mass = 0.2;
+  let mass = 1;
 
   const xWrapperSpring = useSpring(xWrapper, {
     stiffness,

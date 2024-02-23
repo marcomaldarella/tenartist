@@ -16,13 +16,17 @@ export const projectsData: ProjectData[] = [
   name: 'PUMA PALERMO',
   slug: 'puma-palermo',
   category:
-    'PH: FRANCESCO NAZARDO,\nSTYLIST: LORENZO POSOCCO, \nTALENT:DUA LIPA,\nPRODUCTION:TURO PRODUCTION',
+    'PH: FRANCESCO NAZARDO,\nSTYLIST: LORENZO POSOCCO, \n TESTIMONIAL:DUA LIPA,\nMAIN PRODUCTION:TRURO PRODUCTION',
   imagePath: '/assets/projects-thumbnail/dualipaxpuma.jpg',
   isWide: true,
   imagesPath: [
     `/assets/1/1.jpg`,
     `/assets/1/2.jpg`,
     `/assets/1/3.jpg`,
+    `/assets/1/6.jpg`,
+    `/assets/1/4.jpg`,
+    `/assets/1/5.jpg`,
+    `/assets/1/7.jpg`,
   ],
 },
 {
@@ -30,9 +34,9 @@ export const projectsData: ProjectData[] = [
   name: 'ELLE US – ISLAND FANTASY',
   slug: 'elle-us-island-fantasy',
   category:
-    'PH: CÉSAR SEGARRA, \nSTYLIST: ANASTASIA BARBIERI, MAIN PRODUCTION: LOUIS2',
+    'PH: CÉSAR SEGARRA, \nSTYLIST: ANASTASIA BARBIERI, \nMAIN PRODUCTION: LOUIS2 \nLOCATION: ISOLA BELLA \n(MAGGIORE LAKE)',
   imagePath: '/assets/projects-thumbnail/elleus-island-fantasy-01.jpg',
-  isWide: false,
+  isWide: true,
   imagesPath: [
     `/assets/6/1.jpg`,
     `/assets/6/2.jpg`,
@@ -48,7 +52,7 @@ export const projectsData: ProjectData[] = [
   name: 'ODDA MAGAZINE - Island Fantasy',
   slug: 'odda-magazine',
   category:
-    'PH: MAURIZIO ANNESE, \nSTYLIST: GIORGIA TAL,  \nMAIN PRODUCTION: LOUIS2',
+    'PH: MAURIZIO ANNESE, \nSTYLIST: GIORGIA TAL, \nMAIN PRODUCTION: LOUIS2, \n LOCATION: COMO LAKE(IT)',
   imagePath: '/assets/projects-thumbnail/odda-magazine-01.jpg',
   isWide: false,
   imagesPath: [
@@ -81,7 +85,7 @@ export const projectsData: ProjectData[] = [
   category:
     'PH: MARCO IMPERATORE, \nSTYLIST: EMIL REBEK, \nART DIRECTOR: ILLUMINAM AGENCY',
   imagePath: '/assets/projects-thumbnail/corneliani-05-01.jpg',
-  isWide: true,
+  isWide: false,
   imagesPath: [
     `/assets/10/1.jpg`,
     `/assets/10/2.jpg`,
@@ -94,7 +98,7 @@ export const projectsData: ProjectData[] = [
   id: 6,
   name: 'TISSOT SEASTAR 2021 Video Campaign',
   slug: 'tissot-video',
-  category: 'DOP: ANDREA DUTTO',
+  category: 'PH: ADRIANO RUSSO \nSTYLIST: GIULIO CASAGRANDE \n LOCATION: IBIZA (ES)',
   imagePath: '/assets/projects-thumbnail/Tissot-01.jpg',
   videoPath: '/assets/4/tissot.mp4',
   isWide: false,
@@ -105,7 +109,7 @@ export const projectsData: ProjectData[] = [
   name: 'MADAME – CHE BELLA!',
   slug: 'madame-che-bella!',
   category:
-    'PH: ADRIANO RUSSO, \nSTYLIST: KONSTANTIN SPACHIS',
+    'PH: ADRIANO RUSSO, \nSTYLIST: KONSTANTIN SPACHIS, \n LOCATION: PANTELLERIA (IT)',
   imagePath: '/assets/projects-thumbnail/madame-chebella-01.jpg',
   isWide: false,
   imagesPath: [
@@ -122,7 +126,7 @@ export const projectsData: ProjectData[] = [
   name: 'LUISAVIAROMA',
   slug: 'luisaviaroma',
   category:
-    'PH: ADRIANO RUSSO, \nSTYLIST: FLAMINIA MINNEO \nE ANDREA SANGIORGI',
+    'PH: ADRIANO RUSSO, \nSTYLIST: FLAMINIA MINNEO \nE ANDREA SANGIORGI, \nLOCATION: PANTELLERIA(IT)',
   imagePath: '/assets/projects-thumbnail/luisaviaroma-01.jpg',
   isWide: false,
   imagesPath: [
@@ -137,37 +141,6 @@ export const projectsData: ProjectData[] = [
 },
 {
   id: 9,
-  name: 'ARDUSSE SS 2021',
-  slug: 'ardusse-ss-2021',
-  category:
-    'PH: LEA COLOMBO,\nSTYLIST: GIOVANNI DARIO LAUDICINA,\nART DIRECTION: BRAGA+FEDERICO',
-  imagePath: '/assets/projects-thumbnail/ardusse.jpg',
-  isWide: false,
-  imagesPath: [
-    `/assets/2/1.jpg`,
-    `/assets/2/2.jpg`,
-    `/assets/2/3.jpg`,
-    `/assets/2/4.jpg`,
-    `/assets/2/5.jpg`,
-  ],
-},
-{
-  id: 10,
-  name: 'CHURCH FW2020',
-  slug: 'church-fw2020',
-  category:
-    'ART DIRECTION: BRAGA+FEDERICO, \nPH: ADRIANO RUSSO, \nSTYLIST: PAOLA DE CEGLI',
-  imagePath: '/assets/projects-thumbnail/church-01.jpg',
-  isWide: true,
-  imagesPath: [
-    `/assets/3/1.jpg`,
-    `/assets/3/2.jpg`,
-    `/assets/3/3.jpg`,
-    `/assets/3/4.jpg`,
-  ],
-},
-{
-  id: 11,
   name: 'LOUIS VUITTON THE BOOK',
   slug: 'louis-vuitton-the-book',
   category:
@@ -180,7 +153,7 @@ export const projectsData: ProjectData[] = [
   ],
 },
 {
-  id: 12,
+  id: 10,
   name: 'MADAME – VIVA PALOMA',
   slug: 'madame-viva-paloma',
   category: 'PH: ADRIANO RUSSO, \nSTYLIST: KONSTANTIN SPACHIS',
@@ -197,7 +170,7 @@ export const projectsData: ProjectData[] = [
   ],
 },
 {
-  id: 13,
+  id: 11,
   name: 'TISSOT SEASTAR 2021',
   slug: 'tissot-seastar-2021',
   category:
@@ -210,10 +183,10 @@ export const projectsData: ProjectData[] = [
   ],
 },
 {
-  id: 14,
+  id: 12,
   name: 'THE SUNDAY TIMES STYLE',
   slug: 'the-sunday-times-style',
-  category: 'PH: LAURA SCIACOVELLI, \nTALENT: JORDAN ALEXANDER',
+  category: 'PH: ADRIANO RUSSO, \nTALENT: JORDAN ALEXANDER',
   imagePath: '/assets/projects-thumbnail/sunday-times-01.jpg',
   isWide: false,
   imagesPath: [
@@ -225,17 +198,7 @@ export const projectsData: ProjectData[] = [
   ],
 },
 {
-  id: 15,
-  name: 'GIORGIO ARMANI NEVE 2021',
-  slug: 'giorgio-armani-neve-2021',
-  category: 'VIDEO DIRECTOR: DANIEL CLAVERO, \nSTYLIST: CAROLA BIANCHI',
-  imagePath: '/assets/projects-thumbnail/neve.jpg',
-  isWide: true,
-  videoPath: '/assets/15/giorgio-armani-neve.mp4',
-  isVideo: true,
-},
-{
-  id: 16,
+  id: 13,
   name: 'THE COLLECTOR - SUNGLASSES AT NIGHT',
   slug: 'the-collector-sunglasses-at-night',
   category: 'PH: ADRIANO RUSSO, \nSTYLIST: CLAUDIA GASTALDI',
@@ -252,11 +215,11 @@ export const projectsData: ProjectData[] = [
   ],
 },
 {
-  id: 17,
-  name: 'MIA LE JOURNAL – FEMININ SINGULIER',
+  id: 14,
+  name: 'MIA LE JOURNAL – HOW DO YOU FEEL',
   slug: 'mia-le-journal-feminin-singulier',
   category:
-    'PH: ADRIANO RUSSO, \nSTYLIST: ELISABETTA CAVATORTA, \nTALENT: ANNA CLEVELAND',
+    'PH: ADRIANO RUSSO, \nSTYLIST: ELISABETTA CAVATORTA',
   imagePath: '/assets/projects-thumbnail/mialejournal-01.jpg',
   isWide: false,
   imagesPath: [
@@ -270,11 +233,11 @@ export const projectsData: ProjectData[] = [
   ],
 },
 {
-  id: 18,
+  id: 15,
   name: 'ELLE ITALIA – LA BELLA VITA',
   slug: 'elle-italia-la-bella-vita',
   category:
-    'PH: LAURA SCIACOVELLI, \nSTYLIST: MONICA CURETTI',
+    'PH: LAURA SCIACOVELLI, \nSTYLIST: MONICA CURETTI, \n LOCATION: COMO LAKE(IT)',
   imagePath: '/assets/projects-thumbnail/elleit_01.jpg',
   isWide: false,
   imagesPath: [
@@ -286,7 +249,7 @@ export const projectsData: ProjectData[] = [
   ],
 },
 {
-  id: 19,
+  id: 16,
   name: 'CORNELIANI SS2020',
   slug: 'corneliani-ss20',
   category: 'PH: ADRIANO RUSSO, \nSTYLIST: EMIL REBEK',
@@ -300,10 +263,10 @@ export const projectsData: ProjectData[] = [
   ]
 },
 {
-  id: 20,
+  id: 17,
   name: 'EA7 ARMANI SS2020',
   slug: 'ea7-armani-ss20',
-  category: ' PH: SERGE GUERARD, \nSTYLIST: LUDOVICA NANNI',
+  category: ' PH: SERGE GUERARD, \nSTYLIST: LUDOVICA NANNI, \nLOCATION: SARDINIA',
   imagePath: '/assets/projects-thumbnail/ea7-01.jpg',
   isWide: false,
   imagesPath: [
@@ -313,11 +276,11 @@ export const projectsData: ProjectData[] = [
   ],
 },
 {
-  id: 21,
+  id: 18,
   name: 'ERMENEGILDO ZEGNA SS2020',
   slug: 'ermenegildo-zegna-ss20',
   category:
-    'PH: PIERRE TOUSSAINT, \nCREATIVE DIRECTORS: \nALESSANDRO SARTORI \n& JERRY LORENZO, \nPRODUCTION: INTERLUDE PROJECT',
+    'PH: PIERRE TOUSSAINT, \nCREATIVE DIRECTORS: \nALESSANDRO SARTORI \nE JERRY LORENZO, \nPRODUCTION: INTERLUDE PROJECT',
   imagePath: '/assets/projects-thumbnail/ermenegildo-zegna-01.jpg',
   isWide: false,
   imagesPath: [
@@ -327,11 +290,11 @@ export const projectsData: ProjectData[] = [
   ],
 },
 {
-  id: 22,
+  id: 19,
   name: 'MIA LE JOURNAL – ANNA IN WONDERLAND',
   slug: 'mia-le-journal-anna-in-wonderland',
   category:
-    'PH: ADRIANO RUSSO, STYLIST: ELISABETTA CAVATORTA, \nTALENT: ANNA CLEVELAND',
+    'PH: ADRIANO RUSSO, STYLIST: ELISABETTA CAVATORTA, \nTALENT: ANNA CLEVELAND, \n LOCATION: COMO LAKE',
   imagePath:
     '/assets/projects-thumbnail/mialejournal-annainwonderland-01.jpg',
   isWide: false,
@@ -346,10 +309,10 @@ export const projectsData: ProjectData[] = [
   ],
 },
 {
-  id: 23,
+  id: 20,
   name: 'FALCONERI FW2019/20',
   slug: 'falconeri-fw-19-20',
-  category: 'PH: ADRIANO RUSSO, \nSTYLIST: VIVIANA VOLPICELLA',
+  category: 'PH: ADRIANO RUSSO, \nSTYLIST: VIVIANA VOLPICELLA, \nLOCATIOn: COURMAYEOUR (AO)',
   imagePath: '/assets/projects-thumbnail/falconeri-01.jpg',
   isWide: false,
   imagesPath: [
@@ -359,7 +322,7 @@ export const projectsData: ProjectData[] = [
   ],
 },
 {
-  id: 24,
+  id: 21,
   name: 'CORNELIANI ADV FW2020',
   slug: 'corneliani-adv-fw2020',
   category:
@@ -373,7 +336,7 @@ export const projectsData: ProjectData[] = [
   ],
 },
 {
-  id: 25,
+  id: 22,
   name: 'ELLE UK _ THINK YOU KNOW KATIE HOLMES?',
   slug: 'elle-uk-think-you-know-katie-holmes',
   category: 'PH: DANIEL CLAVERO, \nSTYLIST: SASA THOMAN, \nTALENT: KATIE HOLMES',
@@ -390,18 +353,18 @@ export const projectsData: ProjectData[] = [
   ],
 },
 {
-  id: 26,
+  id: 23,
   name: 'CESARE PACIOTTI SS2019',
   slug: 'cesare-paciotti-ss19',
   category:
-    'VIDEO DIRECTOR: \nFRANCESCO BONASIA & FABRIZIO NARCISI, \nSTYLIST: ADA KOKOSAR, \nART DIRECTION BRAGA+FEDERICO',
+    'VIDEO DIRECTOR: ART DIRECTION: BRAGA+FEDERICO \nFRANCESCO BONASIA E FABRIZIO NARCISI, \nSTYLIST: ADA KOKOSAR,',
   imagePath: '/assets/projects-thumbnail/cesare-pacciotti-02.jpg',
   isWide: true,
   isVideo: true,
   videoPath: '/assets/26/Paciotti.mp4',
 },
 {
-  id: 27,
+  id: 24,
   name: 'ZALANDO',
   slug: 'zalando',
   category: 'PH: ALICE ROSATI, \nSTYLIST: GIORGIA TAL',
@@ -415,7 +378,7 @@ export const projectsData: ProjectData[] = [
   ],
 },
 {
-  id: 28,
+  id: 25,
   name: 'CORNELIANI ADV FW2019',
   slug: 'corneliani-adv-fw2019',
   category:
@@ -430,11 +393,11 @@ export const projectsData: ProjectData[] = [
   ],
 },
 {
-  id: 29,
+  id: 26,
   name: 'MSGM',
   slug: 'msgm-bar-basso',
   category:
-    'STYLIST & CREATIVE DIRECTOR: KATIE GRAND',
+    'PH: ALASDAIR MCLELLAN, \nSTYLIST & CREATIVE DIRECTOR: KATIE GRAND, \nLOCATION: BAR BASSO MILANO',
   imagePath: '/assets/projects-thumbnail/barbasso1.jpg',
   isWide: false,
   imagesPath: [
@@ -448,11 +411,11 @@ export const projectsData: ProjectData[] = [
   ],
 },
 {
-  id: 30,
+  id: 27,
   name: 'GOLDENPOINT MARE 2019',
   slug: 'goldenpoint-mare-2019',
   category:
-    'PH: ADRIANO RUSSO, \nSTYLIST: CLAUDIA GASTALDI, \nModels: ALENA BLOHM',
+    'PH: ADRIANO RUSSO, \nSTYLIST: CLAUDIA GASTALDI, \nModels: ALENA BLOHM, \nLOCATION FORMENTERA(ES)',
   imagePath: '/assets/projects-thumbnail/goldenpoint-02-01.jpg',
   isWide: false,
   imagesPath: [
@@ -464,7 +427,7 @@ export const projectsData: ProjectData[] = [
   ],
 },
 {
-  id: 31,
+  id: 28,
   name: 'CESARE PACIOTTI FW2018/19',
   slug: 'cesare-paciotti-fw18-19',
   category:
@@ -478,11 +441,11 @@ export const projectsData: ProjectData[] = [
   ],
 },
 {
-  id: 32,
+  id: 29,
   name: 'SISLEY YOUNG SS2018',
   slug: 'sisley-young-ss18',
   category:
-    'PH: ADRIANO RUSSO, \nSTYLIST: VIVIANA VOLPICELLA, \nART DIRECTION: BRAGA+FEDERICO',
+    'PH: ADRIANO RUSSO, \nSTYLIST: VIVIANA VOLPICELLA, \nART DIRECTION: BRAGA+FEDERIO, \nLOCATION PUGLIA(IT)',
   imagePath: '/assets/projects-thumbnail/sisley-young-02-01.jpg',
   isWide: true,
   imagesPath: [
@@ -497,7 +460,7 @@ export const projectsData: ProjectData[] = [
   ],
 },
 {
-  id: 33,
+  id: 30,
   name: 'MAX MARA STUDIO SS2017',
   slug: 'max-mara-studio-ss17',
   category: 'PH: GIAMPAOLO SGURA, \nSTYLIST: SISSY VIAN',
@@ -512,11 +475,11 @@ export const projectsData: ProjectData[] = [
   ],
 },
 {
-  id: 34,
+  id: 31,
   name: 'GOLDENPOINT MARE 2017',
   slug: 'goldenpoint-mare-17',
   category:
-    'PH: ADRIANO RUSSO, \nSTYLIST: CLAUDIA GASTALDI',
+    'PH: ADRIANO RUSSO, \nSTYLIST: CLAUDIA GASTALDI, \nLOCATION FORMENTERA(ES)',
   imagePath: '/assets/projects-thumbnail/goldenpoint-01.jpg',
   isWide: true,
   imagesPath: [
@@ -531,11 +494,11 @@ export const projectsData: ProjectData[] = [
   ],
 },
 {
-  id: 35,
+  id: 32,
   name: 'CORNELIANI ADV FW2017/18',
   slug: 'corneliani-adv-fw17-18',
   category:
-    'PH: BRUNO STAUB, \nSTYLIST: JEROME ANDRÉ, \nART DIRECTOR: PABLO ARROYO',
+    'PH: BRUNO STAUB, \nSTYLIST: JEROME ANDRÉ, \nART DIRECTOR: PABLO ARROYO \n LOCATION: TURIN',
   imagePath: '/assets/projects-thumbnail/corneliani-01-01.jpg',
   isWide: false,
   imagesPath: [
@@ -546,7 +509,7 @@ export const projectsData: ProjectData[] = [
   ],
 },
 {
-  id: 36,
+  id: 33,
   name: 'CESARE PACIOTTI SS2017',
   slug: 'cesare-paciotti-ss17',
   category:
@@ -562,7 +525,7 @@ export const projectsData: ProjectData[] = [
   ],
 },
 {
-  id: 37,
+  id: 34,
   name: 'SISLEY YOUNG SS2017',
   slug: 'sisley-young-ss17',
   category:
@@ -579,11 +542,11 @@ export const projectsData: ProjectData[] = [
   ],
 },
 {
-  id: 38,
+  id: 35,
   name: 'PAL ZILERI SS2017',
   slug: 'pal-zileri-ss17',
   category:
-    'PH: DYLAN DON, \nSTYLIST: ANDREA TENERANI, \nTALENT: MATTHEW GOODE',
+    'PH: DYLAN DON, \nSTYLIST: ANDREA TENERANI, \nTALENT: MATTHEW GOODE\n LOCATION MURALLA ROJA (ALICANTE - ES)',
   imagePath: '/assets/projects-thumbnail/palzileri001.jpg',
   isWide: true,
   imagesPath: [
@@ -594,12 +557,12 @@ export const projectsData: ProjectData[] = [
   ],
 },
   {
-    id: 39,
-    name: 'GQ China – Wildlife',
+    id: 36,
+    name: 'GQ China',
     slug: 'gq-china-wildlife',
     category: 'PH: GIAMPAOLO SGURA, \nSTYLIST: GRANT PEARCE',
-    imagePath: '/assets/projects-thumbnail/gq-01.jpg',
-    isWide: false,
+    imagePath: '/assets/projects-thumbnail/gq-china.jpg',
+    isWide: true,
     imagesPath: [
       `/assets/39/1.jpg`,
       `/assets/39/2.jpg`,

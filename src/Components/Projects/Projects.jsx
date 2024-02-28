@@ -11,20 +11,15 @@ const Projects = transition(() => {
   const containerRef = useRef(null);
   const location = useLocation();
 
-  const standardProjects = projectsData.filter(p => !p.isWide);
-  const wideProjects = projectsData.filter(p => p.isWide);
-
   useEffect(() => {
-    // Assicura che l'animazione venga applicata dopo il caricamento e l'aggiornamento del componente
     if (containerRef.current && containerRef.current.update) {
       containerRef.current.update();
     }
 
-    // Applica l'effetto fade-in alle immagini
     const images = document.querySelectorAll('.project-img-full-wrapper img');
     let delay = 800; // Ritardo iniziale di 0.8 secondi in millisecondi
 
-    images.forEach((img, index) => {
+    images.forEach((img) => {
       setTimeout(() => {
         img.classList.add('fade-in');
       }, delay);
@@ -33,64 +28,37 @@ const Projects = transition(() => {
     });
   }, [location]);
 
-  // Logica per la creazione dei progetti
   let projectElements = [];
-  let standardIndex = 0,
-      wideIndex = 0;
+  let standardProjects = projectsData.filter(p => !p.isWide);
+  let wideProjects = projectsData.filter(p => p.isWide);
+  let standardIndex = 0, wideIndex = 0;
 
-  // Inizia prima con il progetto wide
-  if (wideProjects.length > 0) {
-    projectElements.push(
-      <div key={wideProjects[wideIndex].id} className="projects-list-wide">
-        <Link to={`/project/${wideProjects[wideIndex].slug}`}>
-          <ProjectItem
-            name={wideProjects[wideIndex].name}
-            category={wideProjects[wideIndex].category}
-            imagePath={wideProjects[wideIndex].imagePath}
-            projectId={wideProjects[wideIndex].id}
-            isWide={true}
-          />
-        </Link>
-      </div>
-    );
-    wideIndex++;
-  }
-
-  // Poi procedi con le coppie di progetti standard e il resto dei progetti wide
-  while (
-    standardIndex < standardProjects.length ||
-    wideIndex < wideProjects.length
-  ) {
-    if (standardIndex < standardProjects.length) {
-      projectElements.push(
-        <div
-          key={`standard-pair-${standardIndex}`}
-          className="projects-list-standard"
-        >
-          {[
-            standardProjects[standardIndex],
-            standardProjects[standardIndex + 1],
-          ].map(
-            project =>
-              project && (
-                <div key={project.id} className="project">
-                  <Link to={`/project/${project.slug}`}>
-                    <ProjectItem
-                      name={project.name}
-                      category={project.category}
-                      imagePath={project.imagePath}
-                      projectId={project.id}
-                      isWide={false}
-                    />
-                  </Link>
-                </div>
-              )
-          )}
-        </div>
-      );
-      standardIndex += 2;
+  // Inserisci due volte le coppie di progetti non wide
+  while (standardIndex < standardProjects.length) {
+    for (let i = 0; i < 2; i++) { // Duplica questo blocco per avere due coppie prima di un wide
+      if (standardIndex < standardProjects.length) {
+        projectElements.push(
+          <div key={`standard-pair-${standardIndex}`} className="projects-list-standard">
+            {standardProjects.slice(standardIndex, standardIndex + 2).map(project => (
+              <div key={project.id} className="project">
+                <Link to={`/project/${project.slug}`}>
+                  <ProjectItem
+                    name={project.name}
+                    category={project.category}
+                    imagePath={project.imagePath}
+                    projectId={project.id}
+                    isWide={false}
+                  />
+                </Link>
+              </div>
+            ))}
+          </div>
+        );
+        standardIndex += 2; // Incrementa per processare la prossima coppia
+      }
     }
 
+    // Dopo aver inserito due coppie di progetti non wide, inserisci un progetto wide se disponibile
     if (wideIndex < wideProjects.length) {
       projectElements.push(
         <div key={wideProjects[wideIndex].id} className="projects-list-wide">
@@ -105,7 +73,7 @@ const Projects = transition(() => {
           </Link>
         </div>
       );
-      wideIndex++;
+      wideIndex++; // Passa al prossimo progetto wide
     }
   }
 
@@ -126,11 +94,7 @@ const Projects = transition(() => {
       watch={[]}
       containerRef={containerRef}
     >
-      <div
-        className="projects-container"
-        data-scroll-container
-        ref={containerRef}
-      >
+      <div className="projects-container" data-scroll-container ref={containerRef}>
         <section className="projects" data-scroll-section>
           {projectElements}
         </section>

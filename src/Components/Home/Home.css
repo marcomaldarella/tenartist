@@ -378,11 +378,6 @@ section.footer .footer-copy .footer-copy-text p a {
 
 
 
-/* Keyframes per l'animazione di blinking blur */
-@keyframes blinkingBlur {
-  0%, 100% { filter: blur(0); }
-  50% { filter: blur(2px); }
-}
 
 /* Stili base per le immagini dei progetti */
 .project-img {
@@ -394,11 +389,6 @@ section.footer .footer-copy .footer-copy-text p a {
   background-size: cover;
   background-position: center;
   transition: filter 0.2s ease;
-}
-
-/* Applicazione dell'animazione di blur all'hover */
-.project-img:hover, .project-img-wide:hover {
-  animation: blinkingBlur 1s infinite;
 }
 
 /* Stili per Project Name e Project Category */

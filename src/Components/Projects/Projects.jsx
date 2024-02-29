@@ -33,32 +33,30 @@ const Projects = transition(() => {
   let wideProjects = projectsData.filter(p => p.isWide);
   let standardIndex = 0, wideIndex = 0;
 
-  // Inserisci due volte le coppie di progetti non wide
-  while (standardIndex < standardProjects.length) {
-    for (let i = 0; i < 2; i++) { // Duplica questo blocco per avere due coppie prima di un wide
-      if (standardIndex < standardProjects.length) {
-        projectElements.push(
-          <div key={`standard-pair-${standardIndex}`} className="projects-list-standard">
-            {standardProjects.slice(standardIndex, standardIndex + 2).map(project => (
-              <div key={project.id} className="project">
-                <Link to={`/project/${project.slug}`}>
-                  <ProjectItem
-                    name={project.name}
-                    category={project.category}
-                    imagePath={project.imagePath}
-                    projectId={project.id}
-                    isWide={false}
-                  />
-                </Link>
-              </div>
-            ))}
-          </div>
-        );
-        standardIndex += 2; // Incrementa per processare la prossima coppia
-      }
+  while (standardIndex < standardProjects.length || wideIndex < wideProjects.length) {
+    // Inserisci due coppie di progetti standard
+    for (let i = 0; i < 2 && standardIndex < standardProjects.length; i++) {
+      projectElements.push(
+        <div key={`standard-pair-${standardIndex}`} className="projects-list-standard">
+          {standardProjects.slice(standardIndex, standardIndex + 2).map(project => (
+            <div key={project.id} className="project">
+              <Link to={`/project/${project.slug}`}>
+                <ProjectItem
+                  name={project.name}
+                  category={project.category}
+                  imagePath={project.imagePath}
+                  projectId={project.id}
+                  isWide={false}
+                />
+              </Link>
+            </div>
+          ))}
+        </div>
+      );
+      standardIndex += 2; // Aggiorna l'indice per la prossima coppia
     }
 
-    // Dopo aver inserito due coppie di progetti non wide, inserisci un progetto wide se disponibile
+    // Inserisci un progetto wide se disponibile
     if (wideIndex < wideProjects.length) {
       projectElements.push(
         <div key={wideProjects[wideIndex].id} className="projects-list-wide">
@@ -75,6 +73,24 @@ const Projects = transition(() => {
       );
       wideIndex++; // Passa al prossimo progetto wide
     }
+  }
+
+  // Alla fine, se ci sono ancora progetti wide da mostrare, aggiungili tutti
+  while (wideIndex < wideProjects.length) {
+    projectElements.push(
+      <div key={wideProjects[wideIndex].id} className="projects-list-wide">
+        <Link to={`/project/${wideProjects[wideIndex].slug}`}>
+          <ProjectItem
+            name={wideProjects[wideIndex].name}
+            category={wideProjects[wideIndex].category}
+            imagePath={wideProjects[wideIndex].imagePath}
+            projectId={wideProjects[wideIndex].id}
+            isWide={true}
+          />
+        </Link>
+      </div>
+    );
+    wideIndex++; // Continua con il prossimo progetto wide
   }
 
   return (

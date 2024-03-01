@@ -1,3 +1,8 @@
+body {
+  cursor: none !important;
+}
+
+
 @media (max-width: 900px) {
   section.hero-img .hero-img-copy {
     flex-direction: column;

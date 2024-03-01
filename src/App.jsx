@@ -3,7 +3,7 @@ import { useLocation } from 'react-router-dom';
 import { LocomotiveScrollProvider } from 'react-locomotive-scroll';
 import { Routes, Route } from 'react-router-dom';
 import { AnimatePresence } from 'framer-motion';
-
+import AnimatedCursor from "react-animated-cursor"
 import Nav from './Components/Nav/Nav';
 import Home from './Components/Home/Home';
 import About from './Components/About/About';
@@ -18,6 +18,7 @@ function App() {
 
   const content = (
     <>
+     <AnimatedCursor         color="255,255,255"/>
       {!isProjectPage && <Nav />}
       <AnimatePresence mode='wait'>
         <Routes location={location} key={location.pathname}>

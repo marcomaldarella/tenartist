@@ -4,14 +4,6 @@ html,body {
   overscroll-behavior: none;
 }
 
-section.hero {
-  height: 400px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: flex-end;
-}
-
 /* hero-img */
 section.hero-img {
   position: relative;
@@ -66,8 +58,6 @@ button:focus {
 button:hover {
   opacity: 50%;
 }
-
-
 
 
 
@@ -403,6 +393,12 @@ section.footer .footer-copy .footer-copy-text p a {
   bottom: 24px;
 }
 
+.menu__item-image {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: cover;
+}
+
 .project-category {
   bottom: 10px;
 }
@@ -473,16 +469,19 @@ section.footer .footer-copy .footer-copy-text p a {
 
 .menu__item-image_wrapper {
   position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-55%, -50%);
+  top: 0;
+  left: 0;
   width: 100vw;
   height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   pointer-events: none;
-  opacity: 0;
+  opacity: 0; /* Gestisci l'opacità con GSAP o in base allo stato di hover */
   transition: opacity 0.3s ease;
-  z-index: 2; /* Sopra gli elementi normali della pagina, ma sotto il testo del menu */
+  z-index: -1; /* Regola se necessario per evitare conflitti di sovrapposizione */
 }
+
 
 .menu__item:hover .menu__item-image_wrapper {
   opacity: 1; /* Mostra l'immagine al passaggio del mouse */
@@ -554,14 +553,6 @@ section.footer .footer-copy .footer-copy-text p a {
     padding-left: 5px;
     font-size: 13px;
     margin-bottom: 0px;
-  }
-
-  .menu__item-image_wrapper {
-    /* Disabilita le transizioni/animazioni */
-    transition: none !important;
-    animation: none !important;
-    opacity: 1; /* Rendi sempre visibile l'immagine, se desiderato */
-    transform: translate(-50%, -50%) scale(1) !important; /* Resetta la trasformazione */
   }
 
   .menu__item:hover .menu__item-image_wrapper {

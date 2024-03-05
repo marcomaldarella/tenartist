@@ -1,4 +1,4 @@
-import React, { useRef } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { useLocation } from 'react-router-dom';
 import { LocomotiveScrollProvider } from 'react-locomotive-scroll';
 import { Routes, Route } from 'react-router-dom';
@@ -15,10 +15,15 @@ import './App.css';
 function App() {
   const location = useLocation();
   const isProjectPage = location.pathname.startsWith('/project/');
+  const [isTouchDevice, setIsTouchDevice] = useState(false);
+
+  useEffect(() => {
+    setIsTouchDevice('ontouchstart' in window || navigator.maxTouchPoints > 0 || navigator.msMaxTouchPoints > 0);
+  }, []);
 
   const content = (
     <>
-     <AnimatedCursor         color="255,255,255"/>
+      {(!isTouchDevice) && <AnimatedCursor color="255,255,255" />}
       {!isProjectPage && <Nav />}
       <AnimatePresence mode='wait'>
         <Routes location={location} key={location.pathname}>

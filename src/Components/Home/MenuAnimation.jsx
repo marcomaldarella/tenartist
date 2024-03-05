@@ -5,50 +5,47 @@ const MenuAnimation = () => {
   const menuItemsRef = useRef([]);
 
   useEffect(() => {
-    const tl = gsap.timeline().set('.menu', { autoAlpha: 1 });
+    gsap.set('.menu__item-image_wrapper', { autoAlpha: 0 });
+
+    const onMouseEnter = (imageWrapper, image) => {
+      gsap.to(imageWrapper, { autoAlpha: 1, duration: 0.3 });
+      gsap.to(image, { scale: 1, autoAlpha: 1, duration: 0.3 });
+    };
+
+    const onMouseLeave = (imageWrapper) => {
+      gsap.to(imageWrapper, { autoAlpha: 0, duration: 0.3 });
+    };
 
     menuItemsRef.current.forEach((item, index) => {
       const imageWrapper = item.querySelector('.menu__item-image_wrapper');
+      const image = imageWrapper.querySelector('.menu__item-image');
 
-      const onMouseEnter = () => {
-        gsap.set(imageWrapper, { scale: 0.5 });
-        gsap.to(imageWrapper, { opacity: 1, scale: 1, zIndex: 0 });
-      };
+      gsap.set(image, { scale: 1.5, autoAlpha: 0, xPercent: 0, yPercent: 0 });
 
-      const onMouseLeave = () => {
-        gsap.to(imageWrapper, { opacity: 0, scale: 1 });
-      };
+      item.addEventListener('mouseenter', () => onMouseEnter(imageWrapper, image));
+      item.addEventListener('mouseleave', () => onMouseLeave(imageWrapper));
 
-      const onMouseMove = ({ x, y }) => {
-        let yOffset = item.getBoundingClientRect().top / imageWrapper.getBoundingClientRect().height;
-        yOffset = gsap.utils.mapRange(0, 1.5, -150, 150, yOffset);
-        gsap.to(imageWrapper, { duration: 1 });
-      };
-
-      tl.fromTo(
-        item.querySelectorAll('.menu__item-innertext'),
-        { duration: 0.85, skewY: gsap.utils.wrap([-8, 8]), ease: 'expo.out' },
-        { opacity: 1, stagger: 0.095, skewY: 0 },
-        index * 0.1
+      gsap.fromTo(
+        item.querySelector('.menu__item-innertext'),
+        { autoAlpha: 0, x: -10 },
+        { autoAlpha: 1, x: 0, duration: 0.3, delay: index * 0.1 }
       );
-
-      item.addEventListener('mouseenter', onMouseEnter);
-      item.addEventListener('mouseleave', onMouseLeave);
-      item.addEventListener('mousemove', onMouseMove);
     });
 
-    tl.set('.menu', { pointerEvents: 'all' });
+    gsap.set('.menu', { pointerEvents: 'all' });
 
     return () => {
       menuItemsRef.current.forEach((item) => {
-        if (item) {
-          item.removeEventListener('mouseenter', onMouseEnter);
-          item.removeEventListener('mouseleave', onMouseLeave);
-          item.removeEventListener('mousemove', onMouseMove);
+        const imageWrapper = item ? item.querySelector('.menu__item-image_wrapper') : null;
+        if (imageWrapper) {
+          imageWrapper.removeEventListener('mouseenter', () => onMouseEnter(imageWrapper, imageWrapper.querySelector('.menu__item-image')));
+          imageWrapper.removeEventListener('mouseleave', () => onMouseLeave(imageWrapper));
         }
       });
     };
   }, []);
+
+
 
   const menuItems = [
     { name: "Cesare Paciotti,", imagePath: "/assets/cesarepaciotti.jpg" },

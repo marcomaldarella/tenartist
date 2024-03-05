@@ -49,8 +49,8 @@ export const projectsData: ProjectData[] = [
       `/assets/42/5.jpg`,
       `/assets/42/6.jpg`,
       `/assets/42/7.jpg`,
-      `/assets/41/8.jpg`,
-      `/assets/41/9.jpg`,
+      `/assets/42/8.jpg`,
+      `/assets/42/9.jpg`,
     ],
   },
   {
@@ -477,9 +477,6 @@ export const projectsData: ProjectData[] = [
       `/assets/29/2.jpg`,
       `/assets/29/3.jpg`,
       `/assets/29/4.jpg`,
-      `/assets/29/5.jpg`,
-      `/assets/29/6.jpg`,
-      `/assets/29/7.jpg`,
     ],
   },
   {
@@ -630,23 +627,34 @@ export const projectsData: ProjectData[] = [
   },
   {
     id: 41,
-    name: 'GQ China - Madness',
-    slug: 'gq-china',
+    name: 'GQ China - Wildlife',
+    slug: 'gq-china-wildlife',
     category: 'PH: GIAMPAOLO SGURA, \nSTYLIST: GRANT PEARCE',
-    imagePath: '/assets/projects-thumbnail/gq-madness.jpg',
-    isWide: false,
+    imagePath: '/assets/projects-thumbnail/gq-wildlife.jpg',
+    isWide: true,
     imagesPath: [
       `/assets/39/1.jpg`,
       `/assets/39/2.jpg`,
       `/assets/39/3.jpg`,
       `/assets/39/4.jpg`,
-      `/assets/39/5.jpg`,
-      `/assets/39/6.jpg`,
-      `/assets/39/7.jpg`,
     ],
   },
   {
     id: 42,
+    name: 'GQ China - Madness',
+    slug: 'gq-china-madness',
+    category:
+      'PH: ADRIANO RUSSO, \nSTYLIST: JACKIE TAM',
+    imagePath: '/assets/projects-thumbnail/gq-madness.jpg',
+    isWide: false,
+    imagesPath: [
+      `/assets/44/1.jpg`,
+      `/assets/44/2.jpg`,
+      `/assets/44/3.jpg`,
+    ],
+  },
+  {
+    id: 43,
     name: 'VOGUE BRASIL - COSA NOSTRA',
     slug: 'vogue-brasil-cosa-nostra',
     category:

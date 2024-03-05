@@ -1,11 +1,8 @@
-import { React, useState, useEffect, useRef } from "react";
-import transition from "../transition";
-import { LocomotiveScrollProvider } from 'react-locomotive-scroll';
+import React, { useState, useEffect, useRef } from "react";
 import "./Home.css";
 import MenuAnimation from '../Home/MenuAnimation';
 
 const Home = () => {
-  const containerRef = useRef(null);
   const [time, setTime] = useState(getCurrentTime());
   const [showMessage, setShowMessage] = useState(false); // Aggiunto stato per controllo messaggio
 
@@ -17,9 +14,6 @@ const Home = () => {
     const seconds = String(now.getSeconds()).padStart(2, '0');
     return `${hours} : ${minutes} : ${seconds}`;
   }
-
-  const [backgroundImage, setBackgroundImage] = useState("");
-
 
   useEffect(() => {
     const intervalId = setInterval(() => {
@@ -40,9 +34,7 @@ const Home = () => {
       setShowMessage(true); // Mostra il messaggio se non è presente nel localStorage
     }
 
-    return () => {
-      clearInterval(intervalId);
-    };
+    return () => clearInterval(intervalId);
   }, []);
 
   const handleCloseMessage = () => {
@@ -53,30 +45,14 @@ const Home = () => {
   };
 
   return (
-    <LocomotiveScrollProvider
-      options={{
-        smooth: true,
-        direction: 'vertical',
-
-        smartphone: {
-          smooth: true,
-          direction: 'vertical',
-
-        },
-        tablet: {
-          direction: 'vertical',
-          smooth: true,
-        }
-      }}
-      watch={[]}
-      containerRef={containerRef}
-    >
-      <div className="home" data-scroll-container ref={containerRef} id="scroll-container">
-        <video autoPlay loop muted playsInline className="background-video"><source src="/assets/mobile_home.mp4" type="video/mp4" /></video>
-        <section className="hero-img" data-scroll-section>
-          <MenuAnimation className="menu-animation" />
-          <div className="hero-img-copy">
-            <div className="logo-home-page-big" style={{ zIndex: 999 }}>
+    <div className="home" id="scroll-container">
+      <video autoPlay loop muted playsInline className="background-video">
+        <source src="/assets/mobile_home.mp4" type="video/mp4" />
+      </video>
+      <section className="hero-img" data-scroll-section>
+        <MenuAnimation className="menu-animation" />
+        <div className="hero-img-copy">
+           <div className="logo-home-page-big" style={{ zIndex: 999 }}>
               <svg id="logo" viewBox="0 0 905 123" fill="none" xmlns="http://www.w3.org/2000/svg" style={{ zIndex: 999 }}>
                 <path d="M0 82.2261L23.7618 83.2518V1.88037H67.0117V83.2518L90.7736 82.2261V120.86H0V82.2261Z" fill="white" />
                 <path d="M98.6372 1.88037H179.838V34.3605H142.229V45.985H175.564V76.9267H142.229V88.2093H178.641V120.689H98.6372V1.88037Z" fill="white" />
@@ -89,19 +65,17 @@ const Home = () => {
                 <path d="M814.227 82.2261L837.988 83.2518V1.88037H881.238V83.2518L905 82.2261V120.86H814.227V82.2261Z" fill="white" />
               </svg>
             </div>
+        </div>
+        {showMessage && (
+          <div className="welcome-message-container">
+            <div className="welcome-message">
+                <p>We use cookies. <button onClick={handleCloseMessage}>OK</button> </p>
+            </div>
           </div>
-          {showMessage && (
-                <div className="welcome-message-container">
-                  <div className="welcome-message">
-                      <p>We use cookies. <button onClick={handleCloseMessage}>OK</button> </p>
-                  </div>
-                </div>
-              )}
-        </section>
-      </div>
-    </LocomotiveScrollProvider>
+        )}
+      </section>
+    </div>
   );
 };
 
-export default transition(Home);
-
+export default Home;

@@ -79,7 +79,7 @@ const MenuAnimation = () => {
       {menuItems.map((item, index) => (
         <div className="menu__item" key={index} ref={(el) => (menuItemsRef.current[index] = el)}>
           <div className="menu__item-image_wrapper">
-            <div className="menu__item-image_inner">
+            <div className="menu__item-image_inner"> {/* Aggiunto contenitore inner */}
               <img className="menu__item-image" src={item.imagePath} alt={item.name} />
             </div>
           </div>

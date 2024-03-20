@@ -113,4 +113,8 @@ html,body {
   .project-name {
    display: none;
   }
+
+  html,body {
+    overflow: auto !important;
+  }
 }

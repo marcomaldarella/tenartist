@@ -12,12 +12,19 @@ section.hero-img {
   overflow: hidden;
 }
 
+.caption_home {
+  font-family: "Gotham Book";
+  font-size: 9px;
+  position: absolute;
+  bottom:25%
+}
+
 .welcome-message-container {
   display: flex;
   flex-direction: row;
   justify-content: center;
   position: relative;
-  top: 85vh;
+  top: 90vh;
 }
 
 
@@ -269,6 +276,15 @@ section.footer .footer-copy .footer-copy-text p a {
   .footer-links {
     padding-left: 0.5em;
   }
+
+  .welcome-message-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    position: relative;
+    top: 86vh;
+  }
+  
 
 
 }

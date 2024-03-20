@@ -13,29 +13,30 @@ const Project = transition(() => {
   const containerRef = useRef(null)
   const [currentProject, setCurrentProject] = useState(null)
   const wrapperImagesRef = useRef(null)
+  const isMobile = window.innerWidth < 768; // Soglia per definire un dispositivo come mobile
 
-  const xWrapper = useMotionValue(0); // Inizializzazione di xWrapper
+  const xWrapper = useMotionValue(0);
 
-  // Adattamento della stiffness e damping in base alla dimensione dello schermo
-  let stiffness = window.innerWidth < 768 ? 900 : 200;
-  let damping = window.innerWidth < 768 ? 100 : 120;
-  let mass = 1;
+  // Per dispositivi mobili, usiamo direttamente xWrapper senza molla
+  const xWrapperSpring = isMobile ? xWrapper : useSpring(xWrapper, {
+    stiffness: 200,
+    damping: 120,
+    mass: 1,
+  });
 
-  const xWrapperSpring = useSpring(xWrapper, {
-    stiffness,
-    damping,
-    mass,
-  }); // Definizione di xWrapperSpring
-
+  // Disabilitiamo lo scroll orizzontale e il resize su dispositivi mobili
   useEffect(() => {
-    const handleWheel = e => {
+    if (isMobile) {
+      return;
+    }
+
+    const handleWheel = (e) => {
       if (!wrapperImagesRef.current) return;
 
       const deltaX = e.deltaY;
       const currentX = xWrapper.get();
       const imagesWidth = wrapperImagesRef.current.getBoundingClientRect().width;
       const rightBoundary = -imagesWidth + window.innerWidth;
-
       const newX = Math.min(Math.max(currentX - deltaX, rightBoundary), 0);
 
       xWrapper.set(newX);
@@ -43,138 +44,75 @@ const Project = transition(() => {
 
     window.addEventListener('wheel', handleWheel);
     return () => window.removeEventListener('wheel', handleWheel);
-  }, [xWrapper]);
+  }, [isMobile, xWrapper]);
 
-
+  // Gestione del touch per dispositivi non mobili
   useEffect(() => {
+    if (isMobile) {
+      return;
+    }
+
     let initialTouchPositionX = null;
     let initialTouchPositionY = null;
 
-    const handleTouchStart = e => {
-        if (!wrapperImagesRef.current) return;
-        initialTouchPositionX = e.touches[0].clientX; // Salva la posizione iniziale del tocco sull'asse X
-        initialTouchPositionY = e.touches[0].clientY; // Salva la posizione iniziale del tocco sull'asse Y
+    const handleTouchStart = (e) => {
+      initialTouchPositionX = e.touches[0].clientX;
+      initialTouchPositionY = e.touches[0].clientY;
     };
 
-    const handleTouchMove = e => {
-        if (!wrapperImagesRef.current || initialTouchPositionX === null || initialTouchPositionY === null) return;
+    const handleTouchMove = (e) => {
+      if (initialTouchPositionX === null || initialTouchPositionY === null) return;
 
-        const deltaX = initialTouchPositionX - e.touches[0].clientX;
-        const deltaY = initialTouchPositionY - e.touches[0].clientY;
+      const deltaX = initialTouchPositionX - e.touches[0].clientX;
+      const deltaY = initialTouchPositionY - e.touches[0].clientY;
 
-        // Determina se il movimento è più significativo sull'asse X che sull'asse Y
-        if (Math.abs(deltaX) > Math.abs(deltaY)) {
-            e.preventDefault(); // Previene lo scroll verticale se il movimento è prevalentemente orizzontale
+      if (Math.abs(deltaX) > Math.abs(deltaY)) {
+        e.preventDefault();
 
-            const imagesWidth = wrapperImagesRef.current.getBoundingClientRect().width;
-            const rightBoundary = -imagesWidth + window.innerWidth;
-            const newPosX = xWrapper.get() - deltaX;
+        const currentX = xWrapper.get();
+        const newX = currentX - deltaX;
 
-            if (newPosX > 0) {
-                xWrapper.set(0);
-            } else if (newPosX < rightBoundary) {
-                xWrapper.set(rightBoundary);
-            } else {
-                xWrapper.set(newPosX);
-            }
-        }
+        xWrapper.set(newX);
+      }
 
-        // Aggiorna la posizione iniziale per il prossimo movimento
-        initialTouchPositionX = e.touches[0].clientX;
+      initialTouchPositionX = e.touches[0].clientX;
     };
 
     const handleTouchEnd = () => {
-        initialTouchPositionX = null;
-        initialTouchPositionY = null;
+      initialTouchPositionX = null;
+      initialTouchPositionY = null;
     };
 
     window.addEventListener('touchstart', handleTouchStart, { passive: false });
     window.addEventListener('touchmove', handleTouchMove, { passive: false });
     window.addEventListener('touchend', handleTouchEnd);
+
     return () => {
-        window.removeEventListener('touchstart', handleTouchStart);
-        window.removeEventListener('touchmove', handleTouchMove);
-        window.removeEventListener('touchend', handleTouchEnd);
+      window.removeEventListener('touchstart', handleTouchStart);
+      window.removeEventListener('touchmove', handleTouchMove);
+      window.removeEventListener('touchend', handleTouchEnd);
     };
-  }, [xWrapper]);
-
-  // useEffect(() => {
-  //   let initialTouchPosition = null
-
-  //   const handleTouchStart = e => {
-  //     if (!wrapperImagesRef.current) return
-  //     initialTouchPosition = e.touches[0].clientX
-  //   }
-
-  //   const handleTouchMove = e => {
-  //     if (!wrapperImagesRef.current || initialTouchPosition === null) return
-
-  //     const deltaY = initialTouchPosition - e.touches[0].clientX
-  //     initialTouchPosition = e.touches[0].clientX
-
-  //     const isBeyondLeftBoundary = xWrapper.get() - deltaY > 0
-  //     if (isBeyondLeftBoundary) return xWrapper.set(0)
-
-  //     const imagesWidth = wrapperImagesRef.current.getBoundingClientRect().width
-  //     const rightBoundary = -imagesWidth + window.innerWidth
-  //     const isBeyondRightBoundary = xWrapper.get() - deltaY < rightBoundary
-  //     if (isBeyondRightBoundary) {
-  //       return xWrapper.set(rightBoundary)
-  //     }
-
-  //     xWrapper.set(xWrapper.get() - deltaY)
-  //   }
-
-  //   const handleTouchEnd = () => {
-  //     initialTouchPosition = null
-  //   }
-
-  //   window.addEventListener('touchstart', handleTouchStart)
-  //   window.addEventListener('touchmove', handleTouchMove)
-  //   window.addEventListener('touchend', handleTouchEnd)
-  //   return () => {
-  //     window.removeEventListener('touchstart', handleTouchStart)
-  //     window.removeEventListener('touchmove', handleTouchMove)
-  //     window.removeEventListener('touchend', handleTouchEnd)
-  //   }
-  // }, [xWrapper])
+  }, [isMobile, xWrapper]);
 
   useEffect(() => {
-    const handleResize = () => {
-      if (!wrapperImagesRef.current) return
-
-      const imagesWidth = wrapperImagesRef.current.getBoundingClientRect().width
-      const rightBoundary = -imagesWidth + window.innerWidth
-      const isBeyondRightBoundary = xWrapper.get() < rightBoundary
-
-      if (isBeyondRightBoundary) {
-        xWrapperSpring.jump(rightBoundary)
-      }
-    }
-
-    window.addEventListener('resize', handleResize)
-    return () => window.removeEventListener('resize', handleResize)
-  }, [xWrapper, xWrapperSpring])
-
-  useEffect(() => {
-    const projectIndex = projectsData.findIndex(p => p.slug === projectSlug)
+    const projectIndex = projectsData.findIndex((p) => p.slug === projectSlug);
     if (projectIndex !== -1) {
-      setCurrentProject(projectsData[projectIndex])
+      setCurrentProject(projectsData[projectIndex]);
     } else {
-      console.log('Project not found')
+      console.log('Project not found');
     }
-  }, [projectSlug])
+  }, [projectSlug]);
 
+  const handleNextPreviousProject = (direction) => {
+    const currentIndex = projectsData.findIndex((p) => p.slug === projectSlug);
+    let newIndex = direction === 'next' ? currentIndex + 1 : currentIndex - 1;
 
-  const handleNextPreviousProject = direction => {
-    const currentIndex = projectsData.findIndex(p => p.slug === projectSlug)
-    let newIndex = direction === 'next' ? currentIndex + 1 : currentIndex - 1
+    if (newIndex >= projectsData.length) newIndex = 0;
+    if (newIndex < 0) newIndex = projectsData.length - 1;
 
-    if (newIndex >= projectsData.length) newIndex = 0
-    if (newIndex < 0) newIndex = projectsData.length - 1
+    navigate(`/project/${projectsData[newIndex].slug}`);
+  };
 
-    navigate(`/project/${projectsData[newIndex].slug}`)
-  }
 
   const getProjectImages = projectId => {
     const project = projectsData.find(p => p.id === projectId)
@@ -193,17 +131,19 @@ const Project = transition(() => {
       const images = getProjectImages(currentProject.id)
       return (
         <div className="current-project-image">
-          <motion.div
+           <motion.div
             ref={wrapperImagesRef}
             style={{
-              position: 'fixed',
-              top: 60,
+              position: window.innerWidth < 768 ? 'relative' : 'fixed',
+              top: window.innerWidth < 768 ? 'auto' : '60px',
               left: 0,
-              pointerEvents: 'none',
+              pointerEvents: 'auto', // Impostato su auto per permettere interazioni su mobile
               display: 'flex',
-              width: 'min-content',
-              height: '100%',
-              x: xWrapperSpring,
+              flexDirection: window.innerWidth < 768 ? 'column' : 'row',
+              width: window.innerWidth < 768 ? '100%' : 'min-content',
+              height: window.innerWidth < 768 ? 'auto' : '100%',
+              overflowY: window.innerWidth < 768 ? 'auto' : 'hidden', // Permette lo scroll su mobile se necessario
+              x: window.innerWidth < 768 ? 0 : xWrapperSpring,
             }}
           >
             {images.map((imagePath, index) => (

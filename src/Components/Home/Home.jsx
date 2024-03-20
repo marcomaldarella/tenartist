@@ -1,11 +1,8 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect } from "react";
 import "./Home.css";
 import MenuAnimation from '../Home/MenuAnimation';
 
 const Home = () => {
-  const [time, setTime] = useState(getCurrentTime());
-  const [showMessage, setShowMessage] = useState(false); // Aggiunto stato per controllo messaggio
-
   // Funzione per ottenere l'orario corrente
   function getCurrentTime() {
     const now = new Date();
@@ -15,23 +12,30 @@ const Home = () => {
     return `${hours} : ${minutes} : ${seconds}`;
   }
 
+  const [time, setTime] = useState(getCurrentTime());
+  const [messageText, setMessageText] = useState("");
+  const [showOkButton, setShowOkButton] = useState(true);
+
   useEffect(() => {
     const intervalId = setInterval(() => {
       setTime(getCurrentTime());
     }, 1000);
 
-    // Verifica se il messaggio è stato già visualizzato e chiuso
+    // Gestione della logica per mostrare il messaggio corretto
     const messageClosedDate = localStorage.getItem('messageClosed');
+    const now = new Date();
+
     if (messageClosedDate) {
-      const now = new Date();
       const closedDate = new Date(messageClosedDate);
       if (now < closedDate) {
-        setShowMessage(false);
-      } else {
-        setShowMessage(true);
-      }
+        // Se l'utente ha già chiuso il messaggio, mostriamo "Production company"
+        setMessageText("Production company");
+        setShowOkButton(false); // Nascondiamo il bottone OK
+      } 
     } else {
-      setShowMessage(true); // Mostra il messaggio se non è presente nel localStorage
+      // Se l'utente non ha mai accettato, mostriamo "We use cookies"
+      setMessageText("We use cookies.");
+      setShowOkButton(true);
     }
 
     return () => clearInterval(intervalId);
@@ -41,7 +45,8 @@ const Home = () => {
     const nextYear = new Date();
     nextYear.setFullYear(nextYear.getFullYear() + 1);
     localStorage.setItem('messageClosed', nextYear.toISOString());
-    setShowMessage(false);
+    setMessageText("Production company"); // Aggiorniamo il messaggio
+    setShowOkButton(false); // Nascondiamo il bottone OK
   };
 
   return (
@@ -53,7 +58,7 @@ const Home = () => {
         <MenuAnimation className="menu-animation" />
         <div className="hero-img-copy">
            <div className="logo-home-page-big" style={{ zIndex: 999 }}>
-              <svg id="logo" viewBox="0 0 905 123" fill="none" xmlns="http://www.w3.org/2000/svg" style={{ zIndex: 999 }}>
+            <svg id="logo" viewBox="0 0 905 123" fill="none" xmlns="http://www.w3.org/2000/svg" style={{ zIndex: 999 }}>
                 <path d="M0 82.2261L23.7618 83.2518V1.88037H67.0117V83.2518L90.7736 82.2261V120.86H0V82.2261Z" fill="white" />
                 <path d="M98.6372 1.88037H179.838V34.3605H142.229V45.985H175.564V76.9267H142.229V88.2093H178.641V120.689H98.6372V1.88037Z" fill="white" />
                 <path d="M194.025 1.88037H235.395V40.5147C235.395 48.3783 234.198 56.071 232.66 64.2765H233.856L271.807 1.88037H313.176V120.86H271.807V85.3031C271.807 75.2172 273.687 64.9603 275.397 55.0453H274.2L235.395 121.031H193.854V1.88037H194.025Z" fill="white" />
@@ -66,13 +71,11 @@ const Home = () => {
               </svg>
             </div>
         </div>
-        {showMessage && (
-          <div className="welcome-message-container">
-            <div className="welcome-message">
-                <p>We use cookies. <button onClick={handleCloseMessage}>OK</button> </p>
-            </div>
+        <div className="welcome-message-container">
+          <div className="welcome-message">
+              <p>{messageText} {showOkButton && <button onClick={handleCloseMessage}>OK</button>}</p>
           </div>
-        )}
+        </div>
       </section>
     </div>
   );

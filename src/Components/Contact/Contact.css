@@ -87,3 +87,8 @@ section.contact .contact-copy span#copyright {
   bottom: 3em;
 }
 
+h6 {
+ font-size: 14px;
+ font-family: 'Gotham Book';
+ line-height: 1.6em;
+}

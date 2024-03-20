@@ -157,6 +157,8 @@ section.discover {
   /* Altri stili per la navbar */
 }
 
+
+
 .Project {
   margin: 0;
   padding: 0;
@@ -269,18 +271,19 @@ section.discover {
     font-size: 10px !important;
     text-align: right;
     white-space: pre-wrap;
-    white-space: pre-line !important; /* Aggiunto per garantire il rispetto degli a capo
+    white-space: pre-line !important; 
 
   }
 
   .project-image {
     max-height: 85vh; /* Imposta un'altezza massima per le immagini */
     width: auto;
-    margin-top: -5px;
     object-fit: contain; /* Mantiene le proporzioni */
-    padding-right: 5px;
-    padding-left: 5px;
+    margin-right: 0.7em;
+    margin-left: 0.7em;
     border-radius: 15px;
+    margin-bottom:1.5em;
+    overflow: hidden;
   }
 
   .project-nav {
@@ -291,6 +294,28 @@ section.discover {
     padding-right: 1.2em;
     padding-top: 1.2em;
     z-index: 100;
+  }
+
+  .current-project-image {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative !important;
+    width: 100%;
+    height: auto;
+    overflow: scroll !important;
+  }
+
+  .project-image:first-child {
+    margin-top: 3em;
+    margin-left: 0.7em;
+
+  }
+
+  .project-image:last-child {
+    margin-bottom: 5em;
+    margin-right: 0.7em;
   }
   
 }

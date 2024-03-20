@@ -30,10 +30,7 @@ const About = () => {
         id="scroll-container"
       >
         <div className="about-copy">
-          <p className="copy-about-margins">TEN ARTIST is a production company specialized in Print Campaigns, Digital and Social Contents, we are based
-              in Milan but we take care of projects everywhere in Italy and Europe. Ten Artist has more than 10 years of experience. We organize photo and video shootings, starting from the very beginning with the creative brief,
-              until the finalization and delivery of the final images, ready to be published. We collaborate with amazing Clients, big photographers, great stylist either for commercial or editorial projects. We work in studio
-              as in private location of all sort, outdoor in the city as in the wild nature.
+          <p className="copy-about-margins">TEN ARTIST IS A PRODUCTION COMPANY SPECIALIZED IN PRINT AND VIDEO CAMPAIGNS, DIGITAL AND SOCIAL CONTENTS, WE ARE BASED IN MILAN BUT WE TAKE CARE OF PROJECTS EVERYWHERE IN ITALY AND EUROPE. TEN ARTIST HAS MORE THAN 10 YEARS OF EXPERIENCE. WE ORGANIZE PHOTO AND VIDEO SHOOTINGS, STARTING FROM THE VERY BEGINNING WITH THE CREATIVE BRIEF, UNTIL THE FINALIZATION AND DELIVERY OF THE FINAL IMAGES, READY TO BE PUBLISHED. WE COLLABORATE WITH AMAZING CLIENTS, BIG PHOTOGRAPHERS, GREAT STYLIST EITHER FOR COMMERCIAL OR EDITORIAL PROJECTS. WE WORK IN STUDIO AS IN PRIVATE LOCATION OF ALL SORT, OUTDOOR IN THE CITY AS IN THE WILD NATURE.
           </p>
           <br />
           <br />

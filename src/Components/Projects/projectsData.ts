@@ -16,7 +16,7 @@ export const projectsData: ProjectData[] = [
     name: 'FAY SS24',
     slug: 'fay-ss24',
     category:
-      'PH: FEDERICO SORRENTINO,\nSTYLIST: ALESSIA GIACOBINO',
+      'PH: FEDERICO SORRENTINO,\nSTYLIST: ALESSIA GIACOBINO\nLOCATION GARDA LAKE(IT)',
     imagePath: '/assets/projects-thumbnail/fay-ss24.jpg',
     isWide: false,
     imagesPath: [
@@ -58,7 +58,7 @@ export const projectsData: ProjectData[] = [
     name: 'PUMA PALERMO',
     slug: 'puma-palermo',
     category:
-      'PH: FRANCESCO NAZARDO,\nSTYLIST: LORENZO POSOCCO, \n TESTIMONIAL:DUA LIPA,\nMAIN PRODUCTION:TRURO PRODUCTION',
+      'PH: FRANCESCO NAZARDO,\nSTYLIST: LORENZO POSOCCO, \n TESTIMONIAL:DUA LIPA,\nMAIN PRODUCTION:TRURO PRODUCTION \nLOCATION:PALERMO(IT)',
     imagePath: '/assets/projects-thumbnail/dualipaxpuma.jpg',
     isWide: false,
     imagesPath: [
@@ -76,7 +76,7 @@ export const projectsData: ProjectData[] = [
     name: 'PUMA PALERMO',
     slug: 'puma-palermo-video',
     category:
-      'PH: FRANCESCO NAZARDO,\nSTYLIST: LORENZO POSOCCO, \n TESTIMONIAL:DUA LIPA,\nMAIN PRODUCTION:TRURO PRODUCTION',
+      'VIDEO DIRECTORS: I RAGAZZI NEI PARAGGI \n Stylist: Lorenzo Posocco\n TESTIMONIAL:DUA LIPA,\nMAIN PRODUCTION:TRURO PRODUCTION \nLOCATION:PALERMO(IT)',
     imagePath: '/assets/projects-thumbnail/dualipaxpuma-video.jpg',
     isWide: false,
     isVideo: true,
@@ -187,7 +187,7 @@ export const projectsData: ProjectData[] = [
     name: 'LOUIS VUITTON THE BOOK',
     slug: 'louis-vuitton-the-book',
     category:
-      'PH: ANGELO PENNETTA, \nSTYLIST: EMILIE KAREH, \nMAIN PRODUCTION: LOUIS2',
+      'PH: ANGELO PENNETTA, \nSTYLIST: EMILIE KAREH, \nMAIN PRODUCTION: LOUIS2\nLOCATION: VENICE(IT)',
     imagePath: '/assets/projects-thumbnail/louis-vuitton-01.jpg',
     isWide: false,
     imagesPath: [
@@ -217,7 +217,7 @@ export const projectsData: ProjectData[] = [
     name: 'TISSOT SEASTAR 2021',
     slug: 'tissot-seastar-2021',
     category:
-      'PH: ADRIANO RUSSO, \nSTYLIST: GIULIO CASAGRANDE',
+      'PH: ADRIANO RUSSO, \nSTYLIST: GIULIO CASAGRANDE\n LOCATION:IBIZA(ES)',
     imagePath: '/assets/projects-thumbnail/Tissot-02.jpg',
     isWide: false,
     imagesPath: [
@@ -247,7 +247,6 @@ export const projectsData: ProjectData[] = [
       `/assets/14/2.jpg`,
       `/assets/14/3.jpg`,
       `/assets/14/4.jpg`,
-      `/assets/14/5.jpg`,
     ],
   },
   {
@@ -429,7 +428,7 @@ export const projectsData: ProjectData[] = [
     name: 'CESARE PACIOTTI SS2019',
     slug: 'cesare-paciotti-ss19',
     category:
-      'VIDEO DIRECTOR: ART DIRECTION: BRAGA+FEDERICO \nFRANCESCO BONASIA E FABRIZIO NARCISI, \nSTYLIST: ADA KOKOSAR,',
+      'ART DIRECTION: BRAGA+FEDERICO \nVIDEO DIRECTOR: FRANCESCO BONASIA E FABRIZIO NARCISI, \nSTYLIST: ADA KOKOSAR,',
     imagePath: '/assets/projects-thumbnail/cesare-pacciotti-02.jpg',
     isWide: true,
     isVideo: true,

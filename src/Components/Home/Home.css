@@ -275,7 +275,7 @@ section.footer .footer-copy .footer-copy-text p a {
   .logo-home-page-big  {
     width: 89vw !important;
     position: fixed;
-    bottom: 200px;
+    bottom: 100px;
   }
 
 
@@ -290,7 +290,7 @@ section.footer .footer-copy .footer-copy-text p a {
     justify-content: center;
     position: fixed;
     width: 100vw;
-    bottom: 100px;
+    bottom: 50px;
     top:auto;
   }
   

@@ -24,7 +24,8 @@ section.hero-img {
   display: flex;
   flex-direction: row;
   justify-content: center;
-  position: relative;
+  position: -webkit-sticky; /* Per il supporto a Safari */
+  position: sticky;
   top: 90vh;
 }
 
@@ -634,7 +635,7 @@ section.footer .footer-copy .footer-copy-text p a {
 
 @media (max-height: 844px) {
   .menu {
-    bottom: 149px;
+    bottom: 159px;
     margin-left:2%;
     margin-right:2%;
   }
@@ -644,7 +645,7 @@ section.footer .footer-copy .footer-copy-text p a {
 
 @media (max-height: 900px) {
   .menu {
-    bottom: 200px;
+    bottom: 220px;
     margin-left:2%;
     margin-right:2%;
   }

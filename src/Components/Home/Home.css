@@ -274,12 +274,8 @@ section.footer .footer-copy .footer-copy-text p a {
 
   .logo-home-page-big  {
     width: 89vw !important;
-    margin-bottom:100px;
   }
 
-  section.hero-img .hero-img-copy {
-    height: 50vh;
-  }
 
   .footer-links {
     padding-left: 0.5em;
@@ -458,6 +454,14 @@ section.footer .footer-copy .footer-copy-text p a {
   .project-wide {
     aspect-ratio: 9 / 16;
   }
+
+  section.hero-img {
+    position: fixed;
+    padding: 0;
+    height: 90vh;
+    overflow: hidden !important;
+  }
+  
 
 }
 

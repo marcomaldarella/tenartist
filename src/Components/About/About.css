@@ -81,7 +81,7 @@ html,body{
 @media (max-width: 768px) { /* 768px è un breakpoint comune per tablet e dispositivi mobili */
   .copy-about-margins {
     font-size: 12px; /* Dimensione del testo principale per dispositivi mobili */
-    padding-top: 9vh;
+    padding-top: 7vh;
   }
   
   .about-copy-2 {

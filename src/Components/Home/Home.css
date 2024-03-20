@@ -292,6 +292,7 @@ section.footer .footer-copy .footer-copy-text p a {
     justify-content: center;
     position: fixed;
     width: 100vw;
+    bottom: 100px;
   }
   
 

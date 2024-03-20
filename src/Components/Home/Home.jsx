@@ -15,6 +15,8 @@ const Home = () => {
   useEffect(() => {
     // Blocca lo scroll aggiungendo overflow: hidden al body
     document.body.style.overflow = 'hidden';
+    window.scrollTo(0, 0); // Opzionale: forza la pagina a tornare all'inizio
+
 
     // Funzione di pulizia che verrà chiamata quando il componente viene smontato
     return () => {
@@ -66,11 +68,11 @@ const Home = () => {
   
 
   return (
-    <div className="home" id="scroll-container">
+    <div className="home">
       <video autoPlay loop muted playsInline className="background-video">
         <source src="/assets/mobile_home.mp4" type="video/mp4" />
       </video>
-      <section className="hero-img" data-scroll-section>
+      <section className="hero-img">
         <MenuAnimation className="menu-animation" />
         <div className="hero-img-copy">
            <div className="logo-home-page-big" style={{ zIndex: 999 }}>

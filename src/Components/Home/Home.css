@@ -1,9 +1,15 @@
 /* hero */
 html,body {
-  overflow: hidden;
+  overflow: hidden !important;
   overscroll-behavior: none;
   max-height: 100vh;
 }
+
+.home {
+ height: auto;
+ overflow: hidden !important;
+}
+
 
 /* hero-img */
 section.hero-img {
@@ -272,7 +278,7 @@ section.footer .footer-copy .footer-copy-text p a {
   }
 
   section.hero-img .hero-img-copy {
-    top:66%;
+    height: 50vh;
   }
 
   .footer-links {
@@ -282,9 +288,10 @@ section.footer .footer-copy .footer-copy-text p a {
   .welcome-message-container {
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
     justify-content: center;
-    position: relative;
-    top: 80vh;
+    position: fixed;
+    width: 100vw;
   }
   
 

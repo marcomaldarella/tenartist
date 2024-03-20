@@ -12,6 +12,18 @@ const Home = () => {
     return `${hours} : ${minutes} : ${seconds}`;
   }
 
+  useEffect(() => {
+    // Blocca lo scroll aggiungendo overflow: hidden al body
+    document.body.style.overflow = 'hidden';
+
+    // Funzione di pulizia che verrà chiamata quando il componente viene smontato
+    return () => {
+      // Riabilita lo scroll rimuovendo lo stile overflow
+      document.body.style.overflow = '';
+    };
+  }, []);
+
+
   const [time, setTime] = useState(getCurrentTime());
   const [messageText, setMessageText] = useState("");
   const [showOkButton, setShowOkButton] = useState(true);
@@ -41,6 +53,8 @@ const Home = () => {
     return () => clearInterval(intervalId);
   }, []);
 
+  
+
   const handleCloseMessage = () => {
     const nextYear = new Date();
     nextYear.setFullYear(nextYear.getFullYear() + 1);
@@ -48,6 +62,8 @@ const Home = () => {
     setMessageText("Production company"); // Aggiorniamo il messaggio
     setShowOkButton(false); // Nascondiamo il bottone OK
   };
+
+  
 
   return (
     <div className="home" id="scroll-container">

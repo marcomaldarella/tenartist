@@ -2,6 +2,10 @@ html,body{
   overflow: hidden;
 }
 
+.about {
+  overflow: hidden;
+}
+
 .about-copy {
   width: 100%;
   display: flex;
@@ -39,9 +43,9 @@ html,body{
 .marquee span {
   display: inline-block;
   animation: marquee 20s linear infinite;
-  font-size: 15px;
+  font-size: 10px;
   font-family: 'Gotham Book';
-  text-transform: none;
+  text-transform: uppercase;
 }
 
 @keyframes marquee {
@@ -98,7 +102,7 @@ html,body{
   }
 
   .marquee span {
-    font-size: 12px;
+    font-size: 9px;
     font-family: 'Gotham Book';
     text-transform: none;
   }

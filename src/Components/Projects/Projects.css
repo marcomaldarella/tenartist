@@ -1,9 +1,10 @@
 html,body {
-  overflow: hidden !important;
+  overflow: auto !important;
 }
 
 .project {
   position: relative;
+  overflow: auto;
 }
 
 .project-img-wide {

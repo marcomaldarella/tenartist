@@ -27,9 +27,6 @@ const Contact = () => {
       <div className="fixed-logo-wrap">
             <img className="fixed-logo" src={Logo} alt="Logo" />
       </div>
-      <div className="fixed-contact">
-          <p className="footer-year">@2024</p>
-      </div>
       <section className="contact" data-scroll-container ref={containerRef}>
         <div className="contact-copy">
           <div className="empty_space"></div>

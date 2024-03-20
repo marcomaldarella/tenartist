@@ -279,10 +279,8 @@ section.discover {
     max-height: 85vh; /* Imposta un'altezza massima per le immagini */
     width: auto;
     object-fit: contain; /* Mantiene le proporzioni */
-    margin-right: 0.7em;
-    margin-left: 0.7em;
     border-radius: 15px;
-    margin-bottom:1.5em;
+    margin-bottom:1em;
     overflow: hidden;
   }
 
@@ -309,13 +307,13 @@ section.discover {
 
   .project-image:first-child {
     margin-top: 3em;
-    margin-left: 0.7em;
+    margin-left:0px;
 
   }
 
   .project-image:last-child {
     margin-bottom: 5em;
-    margin-right: 0.7em;
+    margin-right:0px;
   }
   
 }

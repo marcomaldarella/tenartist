@@ -271,7 +271,7 @@ section.footer .footer-copy .footer-copy-text p a {
   }
 
   section.hero-img .hero-img-copy {
-    top:69%;
+    top:66%;
   }
 
   .footer-links {
@@ -644,7 +644,7 @@ section.footer .footer-copy .footer-copy-text p a {
 
 @media (max-height: 900px) {
   .menu {
-    bottom: 137px;
+    bottom: 200px;
     margin-left:2%;
     margin-right:2%;
   }

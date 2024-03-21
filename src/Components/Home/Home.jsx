@@ -45,7 +45,7 @@ const Home = () => {
         // Se l'utente ha già chiuso il messaggio, mostriamo "Production company"
         setMessageText("Production company");
         setShowOkButton(false); // Nascondiamo il bottone OK
-      } 
+      }
     } else {
       // Se l'utente non ha mai accettato, mostriamo "We use cookies"
       setMessageText("We use cookies.");
@@ -55,7 +55,7 @@ const Home = () => {
     return () => clearInterval(intervalId);
   }, []);
 
-  
+
 
   const handleCloseMessage = () => {
     const nextYear = new Date();
@@ -65,18 +65,21 @@ const Home = () => {
     setShowOkButton(false); // Nascondiamo il bottone OK
   };
 
-  
+
 
   return (
-    <div className="home">
+    <div>
       <video autoPlay loop muted playsInline className="background-video">
         <source src="/assets/mobile_home.mp4" type="video/mp4" />
       </video>
       <section className="hero-img">
-        <MenuAnimation className="menu-animation" />
-        <div className="hero-img-copy">
-           <div className="logo-home-page-big" style={{ zIndex: 999 }}>
-            <svg id="logo" viewBox="0 0 905 123" fill="none" xmlns="http://www.w3.org/2000/svg" style={{ zIndex: 999 }}>
+        <div className="hero-logo">
+
+
+          {/* <div className="hero-img-copy"> */}
+          <div className="title-container">
+            <div style={{ zIndex: 999 }}>
+              <svg id="logo" viewBox="0 0 905 123" fill="none" xmlns="http://www.w3.org/2000/svg" style={{ zIndex: 999 }}>
                 <path d="M0 82.2261L23.7618 83.2518V1.88037H67.0117V83.2518L90.7736 82.2261V120.86H0V82.2261Z" fill="white" />
                 <path d="M98.6372 1.88037H179.838V34.3605H142.229V45.985H175.564V76.9267H142.229V88.2093H178.641V120.689H98.6372V1.88037Z" fill="white" />
                 <path d="M194.025 1.88037H235.395V40.5147C235.395 48.3783 234.198 56.071 232.66 64.2765H233.856L271.807 1.88037H313.176V120.86H271.807V85.3031C271.807 75.2172 273.687 64.9603 275.397 55.0453H274.2L235.395 121.031H193.854V1.88037H194.025Z" fill="white" />
@@ -88,13 +91,17 @@ const Home = () => {
                 <path d="M814.227 82.2261L837.988 83.2518V1.88037H881.238V83.2518L905 82.2261V120.86H814.227V82.2261Z" fill="white" />
               </svg>
             </div>
+          </div>
+          <MenuAnimation />
+
         </div>
         <div className="welcome-message-container">
           <div className="welcome-message">
-              <p>{messageText} {showOkButton && <button onClick={handleCloseMessage}>OK</button>}</p>
+            <p>{messageText} {showOkButton && <button onClick={handleCloseMessage}>OK</button>}</p>
           </div>
         </div>
       </section>
+
     </div>
   );
 };

@@ -50,7 +50,7 @@ const MenuAnimation = () => {
   const menuItems = [
     { name: "Cesare Paciotti,", imagePath: "/assets/cesarepaciotti.jpg" },
     { name: "Corneliani,", imagePath: "/assets/corneliani.jpg" },
-    { name: "EA7,", imagePath: "/assets/armani.jpg" }, 
+    { name: "EA7,", imagePath: "/assets/armani.jpg" },
     { name: "ELLE,", imagePath: "/assets/elle.jpg" },
     { name: "Ermenegildo Zegna,", imagePath: "/assets/zegna.jpg" },
     { name: "Fay,", imagePath: "/assets/project-img-fay.jpg" },
@@ -72,17 +72,21 @@ const MenuAnimation = () => {
   ];
 
   return (
-    <div className="menu">
+    <div className="menu" style={{
+      display: 'flex',
+      flexDirection: 'row',
+      textAlign: 'center',
+    }}>
       {menuItems.map((item, index) => (
         <div className="menu__item" key={index} ref={(el) => (menuItemsRef.current[index] = el)}>
-          <div className="menu__item-image_wrapper">
-            <div className="menu__item-image_inner"> {/* Aggiunto contenitore inner */}
-              <img className="menu__item-image" src={item.imagePath} alt={item.name} />
-            </div>
-          </div>
           <span className="menu__item-text">
             <span className="menu__item-innertext">{item.name}</span>
           </span>
+          <div className="menu__item-image_wrapper">
+            <div className="menu__item-image_inner">
+              <img className="menu__item-image" src={item.imagePath} alt={item.name} />
+            </div>
+          </div>
         </div>
       ))}
     </div>

@@ -1,4 +1,5 @@
-html,body{
+html,
+body {
   overflow: hidden;
 }
 
@@ -38,6 +39,7 @@ html,body{
   overflow: hidden;
   white-space: nowrap;
   box-sizing: border-box;
+  text-transform: uppercase;
 }
 
 .marquee span {
@@ -49,8 +51,13 @@ html,body{
 }
 
 @keyframes marquee {
-  from { transform: translateX(0); }
-  to { transform: translateX(-100%); }
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-100%);
+  }
 }
 
 /* Stili per il marquee di immagini */
@@ -68,13 +75,18 @@ html,body{
 .image-container img {
   width: auto;
   border-radius: 15px;
-  margin-left:1vw;
+  margin-left: 1vw;
   width: 52vw;
 }
 
 @keyframes imageMarquee {
-  from { transform: translateX(-371%); }
-  to { transform: translateX(0); }
+  from {
+    transform: translateX(-371%);
+  }
+
+  to {
+    transform: translateX(0);
+  }
 }
 
 /* Stili esistenti per il contenitore dell'about e altri elementi */
@@ -82,14 +94,18 @@ html,body{
 /* Altri stili CSS... */
 
 /* Media query per dispositivi mobili */
-@media (max-width: 768px) { /* 768px è un breakpoint comune per tablet e dispositivi mobili */
+@media (max-width: 768px) {
+
+  /* 768px è un breakpoint comune per tablet e dispositivi mobili */
   .copy-about-margins {
-    font-size: 12px; /* Dimensione del testo principale per dispositivi mobili */
+    font-size: 12px;
+    /* Dimensione del testo principale per dispositivi mobili */
     padding-top: 7vh;
   }
-  
+
   .about-copy-2 {
-    font-size: 9px; /* Dimensione del testo per .about-copy-2 su dispositivi mobili */
+    font-size: 9px;
+    /* Dimensione del testo per .about-copy-2 su dispositivi mobili */
     padding-left: 10vw;
     padding-right: 10vw;
   }
@@ -97,7 +113,7 @@ html,body{
   .image-container img {
     width: auto;
     border-radius: 9px;
-    margin-left:1vw;
+    margin-left: 1vw;
     width: 58vw;
   }
 
@@ -105,8 +121,8 @@ html,body{
     font-size: 9px;
     font-family: 'Gotham Book';
     text-transform: none;
+    text-transform: uppercase;
   }
-  
-  
-}
 
+
+}

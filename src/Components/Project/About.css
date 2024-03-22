@@ -23,8 +23,13 @@
 
 
 @keyframes fadeIn {
-  from { opacity: 0; }
-  to { opacity: 1; }
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
 }
 
 .marquee {
@@ -38,15 +43,19 @@
 .marquee span {
   display: inline-block;
   animation: marquee 30s linear infinite;
-  font-size: 20px; /* Regola la dimensione del font a piacimento */
   text-transform: capitalize;
   font-family: 'Gotham Book';
 }
 
 /* Keyframes per l'animazione del marquee */
 @keyframes marquee {
-  0% { transform: translateX(0%); }
-  100% { transform: translateX(-50%); }
+  0% {
+    transform: translateX(0%);
+  }
+
+  100% {
+    transform: translateX(-50%);
+  }
 }
 
 .copy-about-margins {
@@ -57,10 +66,10 @@
 
 @media (max-width: 900px) {
   .copy-about-margins {
-    padding-left: 23px;
-    padding-right: 23px;
+    padding-left: 30px;
+    padding-right: 30px;
     font-size: 13px;
-  
+
   }
 
   #copyright {
@@ -68,9 +77,12 @@
   }
 
   .image-container img {
-    width: auto; /* O la larghezza specifica che preferisci */
-    height: 23vh !important; /* Regola l'altezza secondo le tue necessità */
-    margin-right: 12px; /* Spazio tra le immagini */
+    width: auto;
+    /* O la larghezza specifica che preferisci */
+    height: 23vh !important;
+    /* Regola l'altezza secondo le tue necessità */
+    margin-right: 12px;
+    /* Spazio tra le immagini */
     padding-bottom: 24px;
     padding-top: 20px;
     border-radius: 5px;
@@ -93,22 +105,31 @@
 }
 
 .image-container img {
-  width: auto; /* O la larghezza specifica che preferisci */
-  height: 44vh; /* Regola l'altezza secondo le tue necessità */
-  margin-right: 10px; /* Spazio tra le immagini */
+  width: auto;
+  /* O la larghezza specifica che preferisci */
+  height: 44vh;
+  /* Regola l'altezza secondo le tue necessità */
+  margin-right: 10px;
+  /* Spazio tra le immagini */
   padding-bottom: 24px;
   padding-top: 20px;
 }
 
 .image-container img {
-  border-radius: 15px !important;/* Esempio di valore per il border-radius */
+  border-radius: 15px !important;
+  /* Esempio di valore per il border-radius */
   /* altre proprietà */
 }
 
 /* Keyframes per l'animazione del marquee di immagini */
 @keyframes imageMarquee {
-  0% { transform: translateX(-50%); }
-  100% { transform: translateX(0%); }
+  0% {
+    transform: translateX(-50%);
+  }
+
+  100% {
+    transform: translateX(0%);
+  }
 }
 
 
@@ -118,15 +139,17 @@
 }
 
 ::-webkit-scrollbar-track {
-  background: #000; /* colore dello sfondo della barra */
+  background: #000;
+  /* colore dello sfondo della barra */
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #000; /* colore dello slider della barra */
+  background: #000;
+  /* colore dello slider della barra */
 }
 
 /* Per Firefox */
 .contact {
-  scrollbar-color: #000 #000; /* colore dello slider e dello sfondo della barra */
+  scrollbar-color: #000 #000;
+  /* colore dello slider e dello sfondo della barra */
 }
-

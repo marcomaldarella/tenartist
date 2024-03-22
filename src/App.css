@@ -1,5 +1,13 @@
 body {
   cursor: none !important;
+  caret-color: transparent;
+
+}
+
+input,
+[contenteditable] {
+  color: transparent;
+  /* Rende il testo trasparente (incluso il caret) */
 }
 
 
@@ -22,7 +30,7 @@ body {
   section.projects .projects-copy,
   section.projects-header .projects-copy {
     flex-direction: row;
-    padding-bottom:0px;
+    padding-bottom: 0px;
   }
 
   section.projects .projects-copy .projects-copy-h1,
@@ -49,7 +57,7 @@ body {
     gap: 2em;
   }
 
- 
+
 
   section.contact .contact-copy {
     width: 100% !important;

@@ -118,7 +118,7 @@ body {
   }
 
   .marquee span {
-    font-size: 9px;
+    font-size: 9px !important;
     font-family: 'Gotham Book';
     text-transform: none;
     text-transform: uppercase;

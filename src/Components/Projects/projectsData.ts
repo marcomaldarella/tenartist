@@ -16,7 +16,7 @@ export const projectsData: ProjectData[] = [
     name: 'FAY SS24',
     slug: 'fay-ss24',
     category:
-      'PH: FEDERICO SORRENTINO,\nSTYLIST: ALESSIA GIACOBINO\nLOCATION GARDA LAKE(IT)',
+      'PH: FEDERICO SORRENTINO,\nSTYLIST: ALESSIA GIACOBINO\nLOCATION GARDA LAKE (IT)',
     imagePath: '/assets/projects-thumbnail/fay-ss24.jpg',
     isWide: false,
     imagesPath: [
@@ -58,7 +58,7 @@ export const projectsData: ProjectData[] = [
     name: 'PUMA PALERMO',
     slug: 'puma-palermo',
     category:
-      'PH: FRANCESCO NAZARDO,\nSTYLIST: LORENZO POSOCCO, \n TESTIMONIAL:DUA LIPA,\nMAIN PRODUCTION:TRURO PRODUCTION \nLOCATION:PALERMO(IT)',
+      'PH: FRANCESCO NAZARDO,\nSTYLIST: LORENZO POSOCCO, \n TESTIMONIAL:DUA LIPA,\nMAIN PRODUCTION:TRURO PRODUCTION \nLOCATION:PALERMO (IT)',
     imagePath: '/assets/projects-thumbnail/dualipaxpuma.jpg',
     isWide: false,
     imagesPath: [
@@ -76,7 +76,7 @@ export const projectsData: ProjectData[] = [
     name: 'PUMA PALERMO',
     slug: 'puma-palermo-video',
     category:
-      'VIDEO DIRECTORS: I RAGAZZI NEI PARAGGI \n Stylist: Lorenzo Posocco\n TESTIMONIAL:DUA LIPA,\nMAIN PRODUCTION:TRURO PRODUCTION \nLOCATION:PALERMO(IT)',
+      'VIDEO DIRECTORS: I RAGAZZI NEI PARAGGI \n Stylist: Lorenzo Posocco\n TESTIMONIAL:DUA LIPA,\nMAIN PRODUCTION:TRURO PRODUCTION \nLOCATION:PALERMO (IT)',
     imagePath: '/assets/projects-thumbnail/dualipaxpuma-video.jpg',
     isWide: false,
     isVideo: true,
@@ -87,7 +87,7 @@ export const projectsData: ProjectData[] = [
     name: 'ODDA MAGAZINE - Island Fantasy',
     slug: 'odda-magazine',
     category:
-      'PH: MAURIZIO ANNESE, \nSTYLIST: GIORGIA TAL, \nMAIN PRODUCTION: LOUIS2, \n LOCATION: COMO LAKE(IT)',
+      'PH: MAURIZIO ANNESE, \nSTYLIST: GIORGIA TAL, \nMAIN PRODUCTION: LOUIS2, \n LOCATION: COMO LAKE (IT)',
     imagePath: '/assets/projects-thumbnail/odda-magazine-01.jpg',
     isWide: false,
     imagesPath: [
@@ -153,7 +153,7 @@ export const projectsData: ProjectData[] = [
     name: 'LUISAVIAROMA',
     slug: 'luisaviaroma',
     category:
-      'PH: ADRIANO RUSSO, \nSTYLIST: FLAMINIA MINNEO \nE ANDREA SANGIORGI, \nLOCATION: PANTELLERIA(IT)',
+      'PH: ADRIANO RUSSO, \nSTYLIST: FLAMINIA MINNEO \nE ANDREA SANGIORGI, \nLOCATION: PANTELLERIA (IT)',
     imagePath: '/assets/projects-thumbnail/luisaviaroma-01.jpg',
     isWide: false,
     imagesPath: [
@@ -187,7 +187,7 @@ export const projectsData: ProjectData[] = [
     name: 'LOUIS VUITTON THE BOOK',
     slug: 'louis-vuitton-the-book',
     category:
-      'PH: ANGELO PENNETTA, \nSTYLIST: EMILIE KAREH, \nMAIN PRODUCTION: LOUIS2\nLOCATION: VENICE(IT)',
+      'PH: ANGELO PENNETTA, \nSTYLIST: EMILIE KAREH, \nMAIN PRODUCTION: LOUIS2\nLOCATION: VENICE (IT)',
     imagePath: '/assets/projects-thumbnail/louis-vuitton-01.jpg',
     isWide: false,
     imagesPath: [
@@ -217,7 +217,7 @@ export const projectsData: ProjectData[] = [
     name: 'TISSOT SEASTAR 2021',
     slug: 'tissot-seastar-2021',
     category:
-      'PH: ADRIANO RUSSO, \nSTYLIST: GIULIO CASAGRANDE\n LOCATION:IBIZA(ES)',
+      'PH: ADRIANO RUSSO, \nSTYLIST: GIULIO CASAGRANDE\n LOCATION:IBIZA (ES)',
     imagePath: '/assets/projects-thumbnail/Tissot-02.jpg',
     isWide: false,
     imagesPath: [
@@ -318,7 +318,7 @@ export const projectsData: ProjectData[] = [
     category:
       'PH: THOMAS LOHR, \nSTYLIST: JULIAN GANIO, \nART DIRECTOR: PABLO ARROYO',
     imagePath: '/assets/projects-thumbnail/corneliani-03-01.jpg',
-    isWide: false, 
+    isWide: false,
     imagesPath: [
       `/assets/24/1.jpg`,
       `/assets/24/2.jpg`,
@@ -392,7 +392,7 @@ export const projectsData: ProjectData[] = [
       `/assets/23/3.jpg`,
     ],
   },
-  { 
+  {
     id: 26,
     name: 'CORNELIANI SS2020',
     slug: 'corneliani-ss20',
@@ -483,7 +483,7 @@ export const projectsData: ProjectData[] = [
     name: 'GOLDENPOINT MARE 2019',
     slug: 'goldenpoint-mare-2019',
     category:
-      'PH: ADRIANO RUSSO, \nSTYLIST: CLAUDIA GASTALDI, \nModels: ALENA BLOHM, \nLOCATION FORMENTERA(ES)',
+      'PH: ADRIANO RUSSO, \nSTYLIST: CLAUDIA GASTALDI, \nModels: ALENA BLOHM, \nLOCATION FORMENTERA (ES)',
     imagePath: '/assets/projects-thumbnail/goldenpoint-02-01.jpg',
     isWide: false,
     imagesPath: [
@@ -513,7 +513,7 @@ export const projectsData: ProjectData[] = [
     name: 'SISLEY YOUNG SS2018',
     slug: 'sisley-young-ss18',
     category:
-      'PH: ADRIANO RUSSO, \nSTYLIST: VIVIANA VOLPICELLA, \nART DIRECTION: BRAGA+FEDERIO, \nLOCATION PUGLIA(IT)',
+      'PH: ADRIANO RUSSO, \nSTYLIST: VIVIANA VOLPICELLA, \nART DIRECTION: BRAGA+FEDERIO, \nLOCATION PUGLIA (IT)',
     imagePath: '/assets/projects-thumbnail/sisley-young-02-01.jpg',
     isWide: true,
     imagesPath: [

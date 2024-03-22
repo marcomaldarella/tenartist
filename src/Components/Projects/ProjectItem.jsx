@@ -1,4 +1,4 @@
-const ProjectItem = ({ name, category, imagePath, videoPath, isWide, isVideo }) => {
+const ProjectItem = ({ name, category, imagePath, videoPath, isWide, isVideo, projectId }) => {
   const renderContent = () => {
     if (isVideo && videoPath) {
       // Controlla se il videoPath è un URL Vimeo
@@ -42,10 +42,14 @@ const ProjectItem = ({ name, category, imagePath, videoPath, isWide, isVideo }) 
     }
   };
 
+  const projectNameClass = projectId === 4 ? "project-name special-project-name" : "project-name";
+
+
+
   return (
     <div className={`project ${isWide ? 'project-wide' : ''}`}>
       {renderContent()}
-      <div className="project-name">
+      <div className={projectNameClass}> {/* Utilizza qui la variabile projectNameClass */}
         <p>{name}</p>
       </div>
       <div className="project-category">

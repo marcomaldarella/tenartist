@@ -28,6 +28,8 @@ body {
   padding-top: 4px;
 }
 
+
+
 .project-name {
   bottom: 30px;
 }
@@ -131,4 +133,14 @@ body {
   body {
     overflow: auto !important;
   }
+}
+
+
+.project-name .special-project-name {
+  bottom: 60px !important;
+}
+
+
+.special-project-name {
+  bottom: 40px !important;
 }

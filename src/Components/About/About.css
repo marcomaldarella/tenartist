@@ -3,6 +3,11 @@ body {
   overflow: hidden;
 }
 
+span {
+  font-size: 9px !important;
+}
+
+
 .about {
   overflow: hidden;
 }

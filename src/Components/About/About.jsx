@@ -2,7 +2,9 @@ import React, { useRef } from "react";
 import transition from "../transition";
 import "./About.css";
 
+
 const About = () => {
+
   return (
     <div className="about" data-scroll-container id="scroll-container">
       <div className="about-copy">
@@ -18,22 +20,38 @@ const About = () => {
         <div className="image-marquee">
           <div className="image-container">
             <span>
-              <img src="/assets/about-hero.jpg" alt="About Hero" />
-              <img src="/assets/about-office.jpg" alt="About Office" />
-              <img src="/assets/about-office-2.jpg" alt="About Office" />
-              <img src="/assets/about-studio.jpg" alt="About Office" />
-              <img src="/assets/about-feature.jpg" alt="About Feature" />
-              <img src="/assets/about-doors.jpg" alt="About Feature" />
-              <img src="/assets/about-outside.jpg" alt="About Feature" />
+              <img src="/assets/ab9.jpg" alt="About Hero" />
+              <img src="/assets/ab1.jpg" alt="About Office" />
+              <img src="/assets/ab12.jpg" alt="About Office" />
+              <img src="/assets/ab3.jpg" alt="About Office" />
+              <img src="/assets/ab14.jpg" alt="About Feature" />
+              <img src="/assets/ab4.jpg" alt="About Feature" />
+              <img src="/assets/ab11.jpg" alt="About Feature" />
+              <img src="/assets/ab2.jpg" alt="About Feature" />
+              <img src="/assets/ab10.jpg" alt="About Feature" />
+              <img src="/assets/ab7.jpg" alt="About Feature" />
+              <img src="/assets/ab13.jpg" alt="About Feature" />
+              <img src="/assets/ab5.jpg" alt="About Feature" />
+              <img src="/assets/ab6.jpg" alt="About Feature" />
+              <img src="/assets/ab15.jpg" alt="About Feature" />
+              <img src="/assets/ab8.jpg" alt="About Feature" />
             </span>
             <span>
-              <img src="/assets/about-hero.jpg" alt="About Hero" />
-              <img src="/assets/about-office.jpg" alt="About Office" />
-              <img src="/assets/about-office-2.jpg" alt="About Office" />
-              <img src="/assets/about-studio.jpg" alt="About Office" />
-              <img src="/assets/about-feature.jpg" alt="About Feature" />
-              <img src="/assets/about-doors.jpg" alt="About Feature" />
-              <img src="/assets/about-outside.jpg" alt="About Feature" />
+              <img src="/assets/ab9.jpg" alt="About Hero" />
+              <img src="/assets/ab1.jpg" alt="About Office" />
+              <img src="/assets/ab12.jpg" alt="About Office" />
+              <img src="/assets/ab3.jpg" alt="About Office" />
+              <img src="/assets/ab14.jpg" alt="About Feature" />
+              <img src="/assets/ab4.jpg" alt="About Feature" />
+              <img src="/assets/ab11.jpg" alt="About Feature" />
+              <img src="/assets/ab2.jpg" alt="About Feature" />
+              <img src="/assets/ab10.jpg" alt="About Feature" />
+              <img src="/assets/ab7.jpg" alt="About Feature" />
+              <img src="/assets/ab13.jpg" alt="About Feature" />
+              <img src="/assets/ab5.jpg" alt="About Feature" />
+              <img src="/assets/ab6.jpg" alt="About Feature" />
+              <img src="/assets/ab15.jpg" alt="About Feature" />
+              <img src="/assets/ab8.jpg" alt="About Feature" />
             </span>
           </div>
         </div>

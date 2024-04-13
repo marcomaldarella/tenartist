@@ -31,7 +31,7 @@ const Contact = () => {
         <div className="contact-copy">
           <div className="empty_space"></div>
           <p>Hello,</p>
-          <a href="#">info@tenartist.com</a>
+          <a href="mailto:info@tenartist.com">info@tenartist.com</a>
           <div className="empty_space_2"></div>
           <p>Silvia Cammilli</p>
           <h6>Producer Manager</h6>
@@ -49,44 +49,7 @@ const Contact = () => {
           </span>
           <div className="empty_space"></div>
           <p>Hello,</p>
-          <a href="#">info@tenartist.com</a>
-          <div className="empty_space_2"></div>
-          <p>Silvia Cammilli</p>
-          <h6>Producer Manager</h6>
-          <a href="mailto:silvia@tenartist.com">silvia@tenartist.com</a>
-          <br /><br />
-          <p>Valentina Tarolli</p>
-          <h6>Producer</h6>
-          <a href="mailto:valentina@tenartist.com">valentina@tenartist.com</a>
-          <br /><br />
-          <a href="https://www.instagram.com/ten_artist/">Instagram</a>
-          <br /><br /><br />
-          <span id="copyright">
-            COPYRIGHT 2024 TEN ARTIST. MILANO, ITALY <br />
-            © 2024 ALLRIGHTS RESERVED.
-          </span>
-          <div className="empty_space"></div>
-          <div className="empty_space"></div>
-          <p>Hello,</p>
-          <a href="#">info@tenartist.com</a>
-          <div className="empty_space_2"></div>
-          <p>Silvia Cammilli</p>
-          <h6>Producer Manager</h6>
-          <a href="mailto:silvia@tenartist.com">silvia@tenartist.com</a>
-          <br /><br />
-          <p>Valentina Tarolli</p>
-          <h6>Producer</h6>
-          <a href="mailto:valentina@tenartist.com">valentina@tenartist.com</a>
-          <br /><br />
-          <a href="https://www.instagram.com/ten_artist/">Instagram</a>
-          <br /><br /><br />
-          <span id="copyright">
-            COPYRIGHT 2024 TEN ARTIST. MILANO, ITALY <br />
-            © 2024 ALLRIGHTS RESERVED.
-          </span>
-          <div className="empty_space"></div>
-          <p>Hello,</p>
-          <a href="#">info@tenartist.com</a>
+          <a href="mailto:info@tenartist.com">info@tenartist.com</a>
           <div className="empty_space_2"></div>
           <p>Silvia Cammilli</p>
           <h6>Producer Manager</h6>
@@ -105,7 +68,7 @@ const Contact = () => {
           <div className="empty_space"></div>
           <div className="empty_space"></div>
           <p>Hello,</p>
-          <a href="#">info@tenartist.com</a>
+          <a href="mailto:info@tenartist.com">info@tenartist.com</a>
           <div className="empty_space_2"></div>
           <p>Silvia Cammilli</p>
           <h6>Producer Manager</h6>
@@ -123,7 +86,7 @@ const Contact = () => {
           </span>
           <div className="empty_space"></div>
           <p>Hello,</p>
-          <a href="#">info@tenartist.com</a>
+          <a href="mailto:info@tenartist.com">info@tenartist.com</a>
           <div className="empty_space_2"></div>
           <p>Silvia Cammilli</p>
           <h6>Producer Manager</h6>
@@ -142,7 +105,7 @@ const Contact = () => {
           <div className="empty_space"></div>
           <div className="empty_space"></div>
           <p>Hello,</p>
-          <a href="#">info@tenartist.com</a>
+          <a href="mailto:info@tenartist.com">info@tenartist.com</a>
           <div className="empty_space_2"></div>
           <p>Silvia Cammilli</p>
           <h6>Producer Manager</h6>
@@ -160,7 +123,44 @@ const Contact = () => {
           </span>
           <div className="empty_space"></div>
           <p>Hello,</p>
-          <a href="#">info@tenartist.com</a>
+          <a href="mailto:info@tenartist.com">info@tenartist.com</a>
+          <div className="empty_space_2"></div>
+          <p>Silvia Cammilli</p>
+          <h6>Producer Manager</h6>
+          <a href="mailto:silvia@tenartist.com">silvia@tenartist.com</a>
+          <br /><br />
+          <p>Valentina Tarolli</p>
+          <h6>Producer</h6>
+          <a href="mailto:valentina@tenartist.com">valentina@tenartist.com</a>
+          <br /><br />
+          <a href="https://www.instagram.com/ten_artist/">Instagram</a>
+          <br /><br /><br />
+          <span id="copyright">
+            COPYRIGHT 2024 TEN ARTIST. MILANO, ITALY <br />
+            © 2024 ALLRIGHTS RESERVED.
+          </span>
+          <div className="empty_space"></div>
+          <div className="empty_space"></div>
+          <p>Hello,</p>
+          <a href="mailto:info@tenartist.com">info@tenartist.com</a>
+          <div className="empty_space_2"></div>
+          <p>Silvia Cammilli</p>
+          <h6>Producer Manager</h6>
+          <a href="mailto:silvia@tenartist.com">silvia@tenartist.com</a>
+          <br /><br />
+          <p>Valentina Tarolli</p>
+          <h6>Producer</h6>
+          <a href="mailto:valentina@tenartist.com">valentina@tenartist.com</a>
+          <br /><br />
+          <a href="https://www.instagram.com/ten_artist/">Instagram</a>
+          <br /><br /><br />
+          <span id="copyright">
+            COPYRIGHT 2024 TEN ARTIST. MILANO, ITALY <br />
+            © 2024 ALLRIGHTS RESERVED.
+          </span>
+          <div className="empty_space"></div>
+          <p>Hello,</p>
+          <a href="mailto:info@tenartist.com">info@tenartist.com</a>
           <div className="empty_space_2"></div>
           <p>Silvia Cammilli</p>
           <h6>Producer Manager</h6>

@@ -58,7 +58,7 @@ export const projectsData: ProjectData[] = [
     name: 'PUMA PALERMO\n ',
     slug: 'puma-palermo',
     category:
-      'PH: FRANCESCO NAZARDO,\nSTYLIST: LORENZO POSOCCO, \n TESTIMONIAL:DUA LIPA,\nMAIN PRODUCTION:TRURO PRODUCTION \nLOCATION:PALERMO (IT)',
+      'PH: FRANCESCO NAZARDO,\nSTYLIST: LORENZO POSOCCO, \n TESTIMONIAL:DUA LIPA,\nMAIN PRODUCTION:TRURO PRODUCTION',
     imagePath: '/assets/projects-thumbnail/dualipaxpuma.jpg',
     isWide: false,
     imagesPath: [
@@ -76,7 +76,7 @@ export const projectsData: ProjectData[] = [
     name: 'PUMA PALERMO',
     slug: 'puma-palermo-video',
     category:
-      'VIDEO DIRECTORS: I RAGAZZI NEI PARAGGI \n Stylist: Lorenzo Posocco\n TESTIMONIAL: DUA LIPA,\nMAIN PRODUCTION: TRURO PRODUCTION \nLOCATION: PALERMO (IT)',
+      'VIDEO DIRECTORS: I RAGAZZI NEI PARAGGI \n Stylist: Lorenzo Posocco\n TESTIMONIAL: DUA LIPA,\nMAIN PRODUCTION: TRURO PRODUCTION',
     imagePath: '/assets/projects-thumbnail/dualipaxpuma-video.jpg',
     isWide: false,
     isVideo: true,

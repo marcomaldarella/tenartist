@@ -9,19 +9,19 @@ section.contact {
   flex-direction: column;
 }
 
-.contact-copy a{
+.contact-copy a {
   color: #fff !important;
-  text-transform: none;  
+  text-transform: none;
 }
 
 .empty_space_2 {
   margin-bottom: 20px;
 }
 
-section.contact p{
- text-transform: none;
- font-weight: 400;
-} 
+section.contact p {
+  text-transform: none;
+  font-weight: 400;
+}
 
 section.contact .contact-copy {
   width: 60%;
@@ -46,7 +46,7 @@ section.contact .contact-copy span#copyright {
 }
 
 .empty_space {
-  padding-bottom:70vh;
+  padding-bottom: 70vh;
 }
 
 ::-webkit-scrollbar {
@@ -55,14 +55,16 @@ section.contact .contact-copy span#copyright {
 
 /* Nasconde la barra di scorrimento in IE, Edge e Firefox */
 .contact {
-  -ms-overflow-style: none;  /* per Internet Explorer e Edge */
-  scrollbar-width: none;  /* per Firefox */
-  
+  -ms-overflow-style: none;
+  /* per Internet Explorer e Edge */
+  scrollbar-width: none;
+  /* per Firefox */
+
 }
 
 .fixed-logo-wrap {
   display: flex;
-  top:45vh;
+  top: 45vh;
   justify-content: center;
   position: fixed;
   left: 0;
@@ -82,8 +84,14 @@ section.contact .contact-copy span#copyright {
 }
 
 .footer-year {
-  right:3em;
-  font-size:13px;
+  right: 3em;
+  font-size: 13px;
   bottom: 3em;
 }
 
+h6 {
+  font-size: 9px;
+  font-family: 'Gotham Book';
+  line-height: 1.6em;
+  text-transform: uppercase;
+}

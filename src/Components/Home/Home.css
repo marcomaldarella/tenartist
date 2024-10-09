@@ -1,11 +1,16 @@
 /* hero */
-section.hero {
-  height: 400px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: flex-end;
+html,
+body {
+  overflow: hidden !important;
+  overscroll-behavior: none;
+  max-height: 100vh;
 }
+
+.home {
+  height: auto;
+  overflow: hidden !important;
+}
+
 
 /* hero-img */
 section.hero-img {
@@ -13,6 +18,61 @@ section.hero-img {
   padding: 0;
   height: 100vh;
   overflow: hidden;
+}
+
+.caption_home {
+  font-family: "Gotham Book";
+  font-size: 9px;
+  position: absolute;
+  bottom: 25%
+}
+
+.welcome-message-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  position: -webkit-sticky;
+  position: fixed;
+  bottom: 10vh;
+  width: 100%;
+}
+
+.welcome-message {
+  position: absolute;
+  z-index: 999;
+  align-items: center;
+  font-family: "Gotham Book";
+}
+
+.welcome-message p {
+  font-size: 12px;
+}
+
+.welcome-message button {
+  font-size: 12px;
+}
+
+button {
+  background: none;
+  color: inherit;
+  border: none;
+  padding: 0;
+  font: inherit;
+  outline: inherit;
+  text-decoration: none;
+  padding-left: 5px;
+  font-size: 14px;
+  margin-bottom: 2px;
+  text-decoration: underline;
+}
+
+button:focus {
+  opacity: 50%;
+}
+
+
+button:hover {
+  opacity: 50%;
 }
 
 
@@ -49,7 +109,7 @@ section.hero-img .hero-img-copy {
 /* projects */
 .projects,
 .projects-header {
-  padding-top:3.5em;
+  padding-top: 3.5em;
 }
 
 section.projects .projects-copy,
@@ -127,9 +187,14 @@ section.feature-img .feature-img-container img {
 /* footer */
 section.footer {
   display: flex;
-  justify-content: space-between; /* Distribuisce lo spazio tra gli elementi */
-  align-items: center; /* Centra gli elementi verticalmente */
-  padding: 1em; /* Aggiusta a seconda delle tue necessità */
+  justify-content: space-between;
+  /* Distribuisce lo spazio tra gli elementi */
+  align-items: center;
+  /* Centra gli elementi verticalmente */
+  padding: 1em;
+  /* Aggiusta a seconda delle tue necessità */
+  padding-top: 0px;
+  padding-bottom: 0px;
   background: #000;
   color: #fff;
   font-size: 13px;
@@ -138,11 +203,13 @@ section.footer {
 .footer-copy {
   display: flex;
   align-items: center;
-  gap: 20px; /* Aggiunge spazio tra gli elementi interni del footer */
+  gap: 20px;
+  /* Aggiunge spazio tra gli elementi interni del footer */
 }
 
 .footer-year {
-  margin-left: auto; /* Sposta '2024' alla fine del footer */
+  margin-left: auto;
+  /* Sposta '2024' alla fine del footer */
 }
 
 section.footer .footer-copy .footer-copy-h1 a {
@@ -172,7 +239,7 @@ section.footer .footer-copy .footer-copy-text p a {
 
 .footer-links-2 {
   color: #fff;
-  padding-left:30px;
+  padding-left: 18px;
 }
 
 .footer-links-3 {
@@ -180,12 +247,14 @@ section.footer .footer-copy .footer-copy-text p a {
   text-align: right;
   position: absolute;
   right: 2em;
+  font-size: 13px;
+  line-height: 1.2em;
 }
 
 .footer-year {
   position: absolute;
-  right:3em;
-  font-size:13px;
+  right: 3em;
+  font-size: 13px;
 }
 
 .clients {
@@ -203,15 +272,32 @@ section.footer .footer-copy .footer-copy-text p a {
 }
 
 
-.logo-home-page-big  {
- width: 60vw;
+.logo-home-page-big {
+  width: 60vw;
 }
 
 @media (max-width: 900px) {
 
-  .logo-home-page-big  {
+  .logo-home-page-big {
     width: 89vw !important;
-    margin-bottom:0px;
+    position: fixed;
+    bottom: 100px;
+  }
+
+
+  .footer-links {
+    padding-left: 0.5em;
+  }
+
+  .welcome-message-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    position: fixed;
+    width: 100vw;
+    bottom: 50px;
+    top: auto;
   }
 
 
@@ -219,7 +305,10 @@ section.footer .footer-copy .footer-copy-text p a {
 }
 
 /* Stili Comuni per Project Name e Project Category */
-.project-name, .project-category, .project-wide .project-name, .project-wide .project-category {
+.project-name,
+.project-category,
+.project-wide .project-name,
+.project-wide .project-category {
   position: absolute;
   left: 10px;
   color: white;
@@ -236,7 +325,8 @@ section.footer .footer-copy .footer-copy-text p a {
 }
 
 /* Stili per il Project Img */
-.project-img, .project-img-wide {
+.project-img,
+.project-img-wide {
   position: relative;
   width: 100%;
   height: 100%;
@@ -248,9 +338,9 @@ section.footer .footer-copy .footer-copy-text p a {
 
 
 /* Mostra Name e Category all'Hover */
-.project:hover .project-name, 
+.project:hover .project-name,
 .project:hover .project-category,
-.project-wide:hover .project-name, 
+.project-wide:hover .project-name,
 .project-wide:hover .project-category {
   opacity: 1;
 }
@@ -263,18 +353,22 @@ section.footer .footer-copy .footer-copy-text p a {
 }
 
 @media (max-width: 768px) {
+
   /* Mostra sempre il nome del progetto e nasconde la categoria sui dispositivi più piccoli */
-  .project-name, .project-wide .project-name {
+  .project-name,
+  .project-wide .project-name {
     opacity: 1;
   }
 
-  .project-category, .project-wide .project-category {
+  .project-category,
+  .project-wide .project-category {
     display: none;
   }
 }
 
 /* Stili per le Liste dei Progetti */
-.projects-list, .projects-list-wide {
+.projects-list,
+.projects-list-wide {
   padding: 0;
   margin: 0;
   list-style: none;
@@ -282,12 +376,14 @@ section.footer .footer-copy .footer-copy-text p a {
   justify-content: space-around;
 }
 
-.projects-list a, .projects-list-wide a {
+.projects-list a,
+.projects-list-wide a {
   width: 100%;
 }
 
 /* Stili per i singoli progetti */
-.project, .project-wide {
+.project,
+.project-wide {
   color: white;
   font-weight: bold;
   font-size: 1.5em;
@@ -297,26 +393,23 @@ section.footer .footer-copy .footer-copy-text p a {
 }
 
 .project-wide {
- aspect-ratio: 16 / 9;
+  aspect-ratio: 16 / 9;
 }
 
 .project {
   flex: 1 0 auto;
-  aspect-ratio: 7 / 9; /* Questa proporzione si applica agli elementi non wide */
+  aspect-ratio: 7 / 9;
+  /* Questa proporzione si applica agli elementi non wide */
 }
 
 .project-wide {
   flex: 1 0 auto;
-  aspect-ratio: 16 / 8; /* Questa proporzione si applica agli elementi wide */
+  aspect-ratio: 16 / 8;
+  /* Questa proporzione si applica agli elementi wide */
 }
 
 
 
-/* Keyframes per l'animazione di blinking blur */
-@keyframes blinkingBlur {
-  0%, 100% { filter: blur(0); }
-  50% { filter: blur(2px); }
-}
 
 /* Stili base per le immagini dei progetti */
 .project-img {
@@ -330,17 +423,14 @@ section.footer .footer-copy .footer-copy-text p a {
   transition: filter 0.2s ease;
 }
 
-/* Applicazione dell'animazione di blur all'hover */
-.project-img:hover, .project-img-wide:hover {
-  animation: blinkingBlur 1s infinite;
-}
-
 /* Stili per Project Name e Project Category */
-.project-name, .project-category {
+.project-name,
+.project-category {
   position: absolute;
   left: 10px;
   color: white;
-  z-index: 1; /* Posizionato sopra l'immagine */
+  z-index: 1;
+  /* Posizionato sopra l'immagine */
   transition: opacity 0.3s ease-in-out;
 }
 
@@ -348,18 +438,44 @@ section.footer .footer-copy .footer-copy-text p a {
   bottom: 24px;
 }
 
+.menu__item-image {
+  max-width: 100%;
+  max-height: 100%;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+  object-fit: cover;
+  position: absolute;
+}
+
 .project-category {
   bottom: 10px;
 }
 
 /* Mostra il nome e la categoria al passaggio del mouse */
-.project:hover .project-name, 
+.project:hover .project-name,
 .project:hover .project-category {
   opacity: 1;
 }
 
+.hero-logo {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding-top: 33vh;
+}
+
+
+
+
 /* Media Queries per dispositivi mobili e tablet */
 @media (max-width: 768px) {
+
   /* Mostra sempre il nome del progetto su dispositivi più piccoli */
   .project-name {
     opacity: 1;
@@ -382,56 +498,84 @@ section.footer .footer-copy .footer-copy-text p a {
     aspect-ratio: 9 / 16;
   }
 
+  section.hero-img {
+    position: fixed;
+    padding: 0;
+    height: 90vh;
+    overflow: hidden !important;
+  }
+
+  .title-container {
+    width: 80vw !important;
+    z-index: 99999;
+  }
+
+
 }
 
 /* Stili per le immagini di sfondo specifiche */
 
-.logo-home-page-big, .menu__item-text {
-  z-index: 9999; /* Sufficientemente alto per stare sopra gli altri elementi */
-  position: relative; /* O absolute, a seconda della struttura della tua pagina */
+.logo-home-page-big,
+.menu__item-text {
+  z-index: 9999;
+  /* Sufficientemente alto per stare sopra gli altri elementi */
+  position: relative;
+  /* O absolute, a seconda della struttura della tua pagina */
   /* Altri stili per logo e testo del menu */
 }
 
 .menu {
   display: flex;
-  justify-content: center; /* Centra orizzontalmente i nomi dei progetti */
-  align-items: center;     /* Centra verticalmente i nomi dei progetti */
-  position: fixed;
-  z-index: 1000; /* Assicurati che il menu sia sopra gli elementi normali della pagina */
+  justify-content: center;
+  /* Centra orizzontalmente i nomi dei progetti */
+  align-items: center;
+  /* Centra verticalmente i nomi dei progetti */
+  /* position: fixed;*/
+  bottom: 198px;
+  z-index: 1000;
+
+  /* Assicurati che il menu sia sopra gli elementi normali della pagina */
   flex-direction: row;
-  flex-wrap: wrap; /* Questa proprietà permette di andare a capo quando necessario */
+  flex-wrap: wrap;
+  /* Questa proprietà permette di andare a capo quando necessario */
   line-height: 1.2em;
-  bottom: 200px;
-  margin-left:12%;
-  margin-right:12%;
+  margin-left: 24%;
+  margin-right: 24%;
+  margin-top: 30px;
 }
 
 .menu__item {
-  position: relative;
-  cursor: pointer;
   padding-left: 5px;
   padding-right: 2px;
   padding-top: 0px;
   padding-bottom: 0px;
   margin-top: 0px;
   margin-bottom: 0px;
+  line-height: 1em;
 }
 
 .menu__item-image_wrapper {
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-55%, -50%);
+  position: absolute;
+
+  top: 0;
+  left: 0;
   width: 100vw;
   height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   pointer-events: none;
   opacity: 0;
+  /* Gestisci l'opacità con GSAP o in base allo stato di hover */
   transition: opacity 0.3s ease;
-  z-index: 2; /* Sopra gli elementi normali della pagina, ma sotto il testo del menu */
+  z-index: -1;
+  /* Regola se necessario per evitare conflitti di sovrapposizione */
 }
 
+
 .menu__item:hover .menu__item-image_wrapper {
-  opacity: 1; /* Mostra l'immagine al passaggio del mouse */
+  opacity: 1;
+  /* Mostra l'immagine al passaggio del mouse */
 }
 
 .menu__item-text {
@@ -441,52 +585,123 @@ section.footer .footer-copy .footer-copy-text p a {
   text-transform: uppercase;
   font-family: 'Gotham' sans-serif;
   top: 75%;
+
 }
 
 .menu__item:hover .menu__item-text {
   color: #424242;
 }
+
 /* Imposta lo z-index del contenitore SVG a un valore molto alto */
 .logo-home-page-big {
-  position: absolute; /* O absolute/fixed a seconda della struttura della pagina */
-  z-index: 99999; /* Un valore estremamente elevato per garantire che sia sopra tutto */
+  position: absolute;
+  /* O absolute/fixed a seconda della struttura della pagina */
+  z-index: 99999;
+  /* Un valore estremamente elevato per garantire che sia sopra tutto */
   /* Altre proprietà come width, transform, etc... */
 }
 
 /* Assicurati che gli elementi del menu e le immagini abbiano un z-index inferiore */
 .menu {
   /* Proprietà esistenti... */
-  z-index: 1; /* Inferiore rispetto al contenitore SVG */
+  z-index: 1;
+  /* Inferiore rispetto al contenitore SVG */
 }
 
 .menu__item-image_wrapper {
   /* Proprietà esistenti... */
-  z-index: 1; /* Ancora inferiore, per stare sotto il testo del menu */
+  z-index: 1;
+  /* Ancora inferiore, per stare sotto il testo del menu */
 }
 
 .menu__item-text {
   /* Proprietà esistenti... */
-  z-index: 800; /* Inferiore rispetto al contenitore SVG ma sopra le immagini */
+  z-index: 800;
+  /* Inferiore rispetto al contenitore SVG ma sopra le immagini */
 }
 
 /* Nasconde il menu su schermi più piccoli (esempio: larghezza inferiore a 768px) */
 @media (max-width: 768px) {
-  .menu-animation {
-    display: none !important;
+  /* 
+  .welcome-message {
+    position: absolute;
+    z-index: 999;
+    left: 30%;
+    bottom: 100px;
+    align-items: center;
+    display: flex;
+    font-family: "Gotham Book";
+  }
+  */
+
+  .welcome-message p {
+    font-size: 12px;
+  }
+
+  .menu__item {
+    line-height: 0.6em;
+  }
+
+
+  button {
+    background: none;
+    color: inherit;
+    border: none;
+    padding: 0;
+    font: inherit;
+    cursor: pointer;
+    outline: inherit;
+    text-decoration: none;
+    padding-left: 5px;
+    font-size: 13px;
+    margin-bottom: 0px;
+  }
+
+  .menu__item:hover .menu__item-image_wrapper {
+    opacity: 1;
+    /* Assicurati che l'immagine sia visibile */
+  }
+
+
+  .project {
+    aspect-ratio: 3/4 !important;
+    ;
+    /* Questa proporzione si applica agli elementi non wide */
+  }
+
+  .project-wide {
+    aspect-ratio: 5/3 !important;
+    ;
+    /* Questa proporzione si applica agli elementi non wide */
+  }
+
+
+  .project-list-standard {
+    gap: 10px !important;
+    ;
+    /* Questa proporzione si applica agli elementi non wide */
+  }
+
+  .menu__item-text span {
+    font-size: 11px;
+    line-height: 1em;
+  }
+
+  .menu__item-text {
+    font-size: 10px;
+    line-height: 1em;
+  }
+
+  .menu__item-image_wrapper {
+    display: none;
   }
 
   .menu {
-    display: none !important;
+    line-height: 0.4em;
+    margin-left: 20px;
+    margin-right: 20px;
   }
 
-  .project {
-    aspect-ratio: 4 / 9; !important; /* Questa proporzione si applica agli elementi non wide */
-  }
-
-  .project-list-standard {
-    gap:10px; !important; /* Questa proporzione si applica agli elementi non wide */
-  }
-  
 }
 
 .background-video {
@@ -509,13 +724,47 @@ section.footer .footer-copy .footer-copy-text p a {
   }
 }
 
-@media (max-height: 845px) {
+@media (max-height: 844px) {
   .menu {
-    bottom: 160px;
+    bottom: 159px;
+    margin-left: 2%;
+    margin-right: 2%;
   }
+
+
+
+
+}
+
+.title-container {
+  width: 60vw;
+  z-index: 99999;
 }
 
 
+@media (max-height: 900px) {
+  .menu {
+    bottom: 220px;
+    margin-left: 2%;
+    margin-right: 2%;
+  }
 
+}
 
+@media (max-height: 667px) {
 
+  .menu {
+    bottom: 100px;
+    margin-left: 2%;
+    margin-right: 2%;
+  }
+}
+
+@media only screen and (width: 820px) and (height: 1180px) {
+  .menu {
+    bottom: 190px;
+    margin-left: 10%;
+    margin-right: 10%;
+  }
+
+}

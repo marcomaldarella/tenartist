@@ -23,6 +23,16 @@
   height: 100%;
 }
 
+.footer-content {
+  display: flex;
+  max-width: 20vw;
+}
+
+.footer-content-2 {
+  display: flex;
+  max-width: 61vw;
+}
+
 .project-wrapper section.project-img-full .project-img-full-wrapper img {
   width: 100%;
   height: 100%;
@@ -52,11 +62,18 @@ section.discover {
   padding-top: 0;
 }
 
+.video-wrap  {
+  max-height: 99vh;
+}
+
+
 @media (max-width: 900px) {
   .project-wrapper section.project-type .project-type-copy {
     justify-content: flex-end;
     align-items: flex-start;
   }
+
+  
 
   .project-wrapper section.project-overview .project-overview-copy {
     flex-direction: column;
@@ -90,7 +107,6 @@ section.discover {
   /* Add more styles as needed for your content */
 }
 
-
 .project-visualizer {
   display: flex; /* Disponi le immagini in linea */
   height: 100%; /* Altezza pari al contenitore, cioè 100vh */
@@ -102,23 +118,50 @@ section.discover {
   overflow-y: hidden;
   width: 100%; /* o la larghezza che preferisci */
   height: 100vh; /* o l'altezza che preferisci */
+  margin-right: 0px;
+  flex-wrap: wrap;
+}
+
+.current-project-image {
+  display: flex;
+  justify-content: center; /* Centra orizzontalmente */
+  align-items: center; /* Centra verticalmente */
+  position: relative;
+  width: 100vw;
+  height: 100vh; /* o l'altezza desiderata */
+  overflow: hidden;
 }
 
 .project-image {
-  max-height: 100%;
+  max-height: 88vh; /* Imposta un'altezza massima per le immagini */
   width: auto;
-  object-fit: contain; /* per assicurarsi che le immagini si adattino senza essere tagliate */
-  padding-right:5px;
-  padding-left:5px;
-  border-radius:15px;
+  margin-top: -5px;
+  object-fit: contain; /* Mantiene le proporzioni */
+  padding-right: 5px;
+  padding-left: 5px;
+  border-radius: 15px;
 }
 
+.project-image:first-child {
+  margin-left: 20px;
+}
+
+.project-image:last-child {
+  margin-right: 20px;
+}
 
 .project-nav {
   position: fixed;
   top: 0;
   width: 100%;
   /* Altri stili per la navbar */
+}
+
+
+
+.Project {
+  margin: 0;
+  padding: 0;
 }
 
 .project-footer {
@@ -129,8 +172,8 @@ section.discover {
 }
 
 .content {
-  padding-top: 60px; /* A seconda dell'altezza della navbar */
-  padding-bottom: 60px; /* A seconda dell'altezza del footer */
+  padding-top: 0px; /* A seconda dell'altezza della navbar */
+  padding-bottom: 0px; /* A seconda dell'altezza del footer */
   /* Altri stili per il contenuto */
 }
 
@@ -141,7 +184,6 @@ section.discover {
   padding-left: 1.8em;
   padding-right: 1.8em;
   padding-top: 1.2em;
-  mix-blend-mode: difference;
   z-index: 100;
 }
 
@@ -152,8 +194,9 @@ section.discover {
   color: inherit;
   text-transform: uppercase;
   cursor: pointer;
-  padding: 0.5em 1em; /* Aggiunge spazio intorno al testo del bottone */
+  padding: 0px; /* Aggiunge spazio intorno al testo del bottone */
   font-family: 'Gotham Bold';
+  text-decoration: none !important;
 }
 
 .project-nav button:hover {
@@ -167,25 +210,110 @@ section.discover {
   padding-left: 1.8em;
   padding-right: 1.8em;
   padding-top: 1.2em;
-  padding-bottom: 1.2em;
-  mix-blend-mode: difference;
+  padding-bottom: 1.5em;
   z-index: 100;
 }
 
 .footer-credits {
   font-size: 10px !important;
-} 
+  font-family: 'Gotham Book';
+}
 
+.footer-credits-2 {
+  font-size: 10px !important;
+  text-align: right;
+  font-family: 'Gotham Book';
+  white-space: wrap;
+}
 
 /* Media queries per dispositivi mobili e tablet */
 @media (max-width: 768px) {
   p {
-    font-size: 12px !important;
-  } 
+    font-size: 12px;
+  }
+
+
+  .video-wrap  {
+    max-height: 99vh;
+    max-width: 100vw;
+    margin-top: 25vh;
+  }
+
   p {
     font-weight: 400;
     font-size: 12px;
     text-transform: uppercase;
     line-height: 120%;
   }
+
+  .project-footer {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    flex-direction: row;
+    padding-left: 1.2em;
+    padding-right: 1.2em;
+    padding-top: 1.2em;
+    padding-bottom: 1.5em;
+    z-index: 100;
+    gap:2px;
+    align-items: flex-end;
+  }
+  .footer-credits {
+    font-size: 10px !important;
+    text-align: left;
+    display: flex;
+    align-items: flex-end;
+  }
+
+
+  .footer-credits-2 {
+    font-size: 10px !important;
+    text-align: right;
+    white-space: pre-wrap;
+    white-space: pre-line !important; 
+
+  }
+
+  .project-image {
+    max-height: 85vh; /* Imposta un'altezza massima per le immagini */
+    width: auto;
+    object-fit: contain; /* Mantiene le proporzioni */
+    border-radius: 15px;
+    margin-bottom:1em;
+    overflow: hidden;
+  }
+
+  .project-nav {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    padding-left: 1.2em;
+    padding-right: 1.2em;
+    padding-top: 1.2em;
+    z-index: 100;
+  }
+
+  .current-project-image {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative !important;
+    width: 100%;
+    height: auto;
+    overflow: scroll !important;
+  }
+
+  .project-image:first-child {
+    margin-top: 3em;
+    margin-left:0px;
+
+  }
+
+  .project-image:last-child {
+    margin-bottom: 5em;
+    margin-right:0px;
+  }
+  
 }

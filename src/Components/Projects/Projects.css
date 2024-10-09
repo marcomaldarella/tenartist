@@ -1,5 +1,11 @@
+html,
+body {
+  overflow: auto !important;
+}
+
 .project {
   position: relative;
+  overflow: auto;
 }
 
 .project-img-wide {
@@ -11,13 +17,18 @@
   margin-left: 7px;
 }
 
-.project-name, .project-category {
+.project-name,
+.project-category {
   position: absolute;
   left: 10px;
   bottom: 10px;
   color: white;
   padding: 10px;
+  text-align: left;
+  padding-top: 4px;
 }
+
+
 
 .project-name {
   bottom: 30px;
@@ -27,7 +38,7 @@
   bottom: 10px;
 }
 
-.project-category p{
+.project-category p {
   font-size: 10px;
   font-family: 'Gotham Book';
 }
@@ -36,13 +47,14 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  gap:15px;
-  padding-bottom:15px;
+  gap: 15px;
+  padding-bottom: 15px;
 }
 
 /* Stile per i progetti wide */
 .projects-list-wide .project {
-  width: 100%; /* I progetti wide occupano tutta la larghezza */
+  width: 100%;
+  /* I progetti wide occupano tutta la larghezza */
 }
 
 .projects-list-wide {
@@ -57,6 +69,22 @@
   opacity: 1;
   transition: opacity 0.2s ease;
 }
+
+.fade-in {
+  animation: fadeIn 0.3s ease-out;
+}
+
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
 
 .project .project-name,
 .project .project-category {
@@ -82,7 +110,7 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    gap:10px;
+    gap: 10px;
   }
 }
 
@@ -90,12 +118,29 @@
 @media (max-width: 768px) {
   @media (max-width: 768px) {
     .projects-list-standard .project {
-      flex: 0 0 calc(50% - 7.5px); /* Imposta la larghezza per due progetti per fila */
-      margin-bottom: 0px; /* Spazio aggiuntivo sotto ciascun progetto */
+      flex: 0 0 calc(50% - 7.5px);
+      /* Imposta la larghezza per due progetti per fila */
+      margin-bottom: 0px;
+      /* Spazio aggiuntivo sotto ciascun progetto */
     }
   }
 
   .project-name {
-   display: none;
+    display: none;
   }
+
+  html,
+  body {
+    overflow: auto !important;
+  }
+}
+
+
+.project-name .special-project-name {
+  bottom: 60px !important;
+}
+
+
+.special-project-name {
+  bottom: 40px !important;
 }

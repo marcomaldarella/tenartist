@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { NavLink } from "react-router-dom";
+import { motion } from "framer-motion";
 
 import "./Nav.css";
 
@@ -15,7 +16,7 @@ const Nav = () => {
   }, []);
 
   return (
-    <div className="nav">
+    <motion.div initial={{opacity:0}} animate={{opacity:1}} transition={{delay:0.3}} className="nav">
       <div className="nav-items">
         <div className="nav-item">
           <NavLink 
@@ -50,7 +51,7 @@ const Nav = () => {
           </NavLink>
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 };
 

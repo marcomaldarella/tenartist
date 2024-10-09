@@ -1,27 +1,9 @@
-import { React, useState, useEffect, useRef } from "react";
-import { Link } from "react-router-dom";
-import transition from "../transition";
-import { LocomotiveScrollProvider } from 'react-locomotive-scroll';
+import React, { useState, useEffect } from "react";
 import "./Home.css";
 import MenuAnimation from '../Home/MenuAnimation';
 
-
 const Home = () => {
-  const containerRef = useRef(null);
-  const [time, setTime] = useState(getCurrentTime());
-
-
-
-  useEffect(() => {
-    const intervalId = setInterval(() => {
-      setTime(getCurrentTime());
-    }, 1000);
-
-    return () => {
-      clearInterval(intervalId);
-    };
-  }, []);
-
+  // Funzione per ottenere l'orario corrente
   function getCurrentTime() {
     const now = new Date();
     const hours = String(now.getHours()).padStart(2, '0');
@@ -30,35 +12,73 @@ const Home = () => {
     return `${hours} : ${minutes} : ${seconds}`;
   }
 
+  useEffect(() => {
+    // Blocca lo scroll aggiungendo overflow: hidden al body
+    document.body.style.overflow = 'hidden';
+    window.scrollTo(0, 0); // Opzionale: forza la pagina a tornare all'inizio
 
-  const [backgroundImage, setBackgroundImage] = useState("");
+
+    // Funzione di pulizia che verrà chiamata quando il componente viene smontato
+    return () => {
+      // Riabilita lo scroll rimuovendo lo stile overflow
+      document.body.style.overflow = '';
+    };
+  }, []);
+
+
+  const [time, setTime] = useState(getCurrentTime());
+  const [messageText, setMessageText] = useState("");
+  const [showOkButton, setShowOkButton] = useState(true);
+
+  useEffect(() => {
+    const intervalId = setInterval(() => {
+      setTime(getCurrentTime());
+    }, 1000);
+
+    // Gestione della logica per mostrare il messaggio corretto
+    const messageClosedDate = localStorage.getItem('messageClosed');
+    const now = new Date();
+
+    if (messageClosedDate) {
+      const closedDate = new Date(messageClosedDate);
+      if (now < closedDate) {
+        // Se l'utente ha già chiuso il messaggio, mostriamo "Production company"
+        setMessageText("Production company");
+        setShowOkButton(false); // Nascondiamo il bottone OK
+      }
+    } else {
+      // Se l'utente non ha mai accettato, mostriamo "We use cookies"
+      setMessageText("We use cookies.");
+      setShowOkButton(true);
+    }
+
+    return () => clearInterval(intervalId);
+  }, []);
+
+
+
+  const handleCloseMessage = () => {
+    const nextYear = new Date();
+    nextYear.setFullYear(nextYear.getFullYear() + 1);
+    localStorage.setItem('messageClosed', nextYear.toISOString());
+    setMessageText("Production company"); // Aggiorniamo il messaggio
+    setShowOkButton(false); // Nascondiamo il bottone OK
+  };
+
 
 
   return (
-    <LocomotiveScrollProvider
-      options={{
-        smooth: true,
-        direction: 'vertical',
+    <div>
+      <video autoPlay loop muted playsInline className="background-video">
+        <source src="/assets/mobile_home.mp4" type="video/mp4" />
+      </video>
+      <section className="hero-img">
+        <div className="hero-logo">
 
-        smartphone: {
-          smooth: true,
-          direction: 'vertical',
 
-        },
-        tablet: {
-          direction: 'vertical',
-          smooth: true,
-        }
-      }}
-      watch={[]}
-      containerRef={containerRef}
-    >
-      <div className="home" data-scroll-container ref={containerRef} id="scroll-container">
-        <video autoPlay loop muted className="background-video"><source src="/assets/mobile_home.mp4" type="video/mp4" /></video>
-        <section className="hero-img" data-scroll-section>
-          <MenuAnimation className="menu-animation" />
-          <div className="hero-img-copy">
-            <div className="logo-home-page-big" style={{ zIndex: 999 }}>
+          {/* <div className="hero-img-copy"> */}
+          <div className="title-container">
+            <div style={{ zIndex: 999 }}>
               <svg id="logo" viewBox="0 0 905 123" fill="none" xmlns="http://www.w3.org/2000/svg" style={{ zIndex: 999 }}>
                 <path d="M0 82.2261L23.7618 83.2518V1.88037H67.0117V83.2518L90.7736 82.2261V120.86H0V82.2261Z" fill="white" />
                 <path d="M98.6372 1.88037H179.838V34.3605H142.229V45.985H175.564V76.9267H142.229V88.2093H178.641V120.689H98.6372V1.88037Z" fill="white" />
@@ -72,11 +92,18 @@ const Home = () => {
               </svg>
             </div>
           </div>
-        </section>
-      </div>
-    </LocomotiveScrollProvider>
+          <MenuAnimation />
+
+        </div>
+        <div className="welcome-message-container">
+          <div className="welcome-message">
+            <p>{messageText} {showOkButton && <button onClick={handleCloseMessage}>OK</button>}</p>
+          </div>
+        </div>
+      </section>
+
+    </div>
   );
 };
 
-export default transition(Home);
-
+export default Home;

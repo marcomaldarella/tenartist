@@ -1,53 +1,30 @@
-import React, { useRef, useEffect } from "react";
+import { useRef, useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
-import { LocomotiveScrollProvider } from 'react-locomotive-scroll';
-import ProjectItem from "./ProjectItem";
-import transition from "../transition";
-import projectData from './Projects.json';
-import { Link } from "react-router-dom";
-import "./Projects.css";
+import ProjectItem from './ProjectItem';
+import transition from '../transition';
+import { projectsData } from './projectsData';
+import { Link } from 'react-router-dom';
+import './Projects.css';
 
-const Projects = () => {
-  const containerRef = useRef(null);
+const Projects = transition(() => {
   const location = useLocation();
 
-  const standardProjects = projectData.filter(p => !p.isWide);
-  const wideProjects = projectData.filter(p => p.isWide);
-
-  let projectElements = [];
-  let standardIndex = 0, wideIndex = 0;
-
   useEffect(() => {
-    if (containerRef.current && containerRef.current.update) {
-      containerRef.current.update();
-    }
+    // Gestione dell'aggiornamento della pagina o azioni specifiche al cambio di location
+    // Ad esempio, scrollare verso l'alto quando la location cambia
+    window.scrollTo(0, 0);
   }, [location]);
 
+  let projectElements = [];
+  let standardProjects = projectsData.filter(p => !p.isWide);
+  let wideProjects = projectsData.filter(p => p.isWide);
+  let standardIndex = 0, wideIndex = 0;
 
-  // Inizia prima con il progetto wide
-  if (wideProjects.length > 0) {
-    projectElements.push(
-      <div key={wideProjects[wideIndex].id} className="projects-list-wide">
-        <Link to={`/project/${wideProjects[wideIndex].slug}`}>
-          <ProjectItem
-            name={wideProjects[wideIndex].name}
-            category={wideProjects[wideIndex].category}
-            imagePath={wideProjects[wideIndex].imagePath}
-            projectId={wideProjects[wideIndex].id}
-            isWide={true}
-          />
-        </Link>
-      </div>
-    );
-    wideIndex++;
-  }
-
-  // Poi procedi con le coppie di progetti standard e il resto dei progetti wide
   while (standardIndex < standardProjects.length || wideIndex < wideProjects.length) {
-    if (standardIndex < standardProjects.length) {
+    for (let i = 0; i < 2 && standardIndex < standardProjects.length; i++) {
       projectElements.push(
         <div key={`standard-pair-${standardIndex}`} className="projects-list-standard">
-          {[standardProjects[standardIndex], standardProjects[standardIndex + 1]].map(project => project && (
+          {standardProjects.slice(standardIndex, standardIndex + 2).map(project => (
             <div key={project.id} className="project">
               <Link to={`/project/${project.slug}`}>
                 <ProjectItem
@@ -84,38 +61,21 @@ const Projects = () => {
   }
 
   return (
-    <LocomotiveScrollProvider
-      options={{
-        smooth: true,
-        direction: 'vertical',
-        smartphone: {
-          smooth: true,
-          direction: 'vertical',
-        },
-        tablet: {
-          direction: 'vertical',
-          smooth: true,
-        }
-      }}
-      watch={[location]} // Osserva i cambiamenti di location
-      containerRef={containerRef}
-    >
-      <div className="projects-container" data-scroll-container ref={containerRef}>
-        <section className="projects" data-scroll-section>
-          {projectElements}
-        </section>
-        <section className="footer" data-scroll-section>
-          <div className="footer-copy">
-            <div className="footer-copy-text">
-              <a className="footer-links" href="#">info@tenartist.com</a>
-              <a className="footer-links-2" href="#">Instagram</a>
-              <a className="footer-links-3" href="#">@2024</a>
-            </div>
+    <div className="projects-container">
+      <section className="projects">
+        {projectElements}
+      </section>
+      <section className="footer">
+        <div className="footer-copy">
+          <div className="footer-copy-text">
+            <a className="footer-links" href="mailto:info@tenartist.com">info@tenartist.com</a>
+            <a className="footer-links-2" href="https://www.instagram.com/ten_artist">Instagram</a>
+            <span className="footer-links-3">@2024</span>
           </div>
-        </section>
-      </div>
-    </LocomotiveScrollProvider>
+        </div>
+      </section>
+    </div>
   );
-};
+});
 
-export default transition(Projects);
+export default Projects;

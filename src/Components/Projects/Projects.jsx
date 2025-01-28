@@ -21,6 +21,23 @@ const Projects = transition(() => {
   let standardIndex = 0, wideIndex = 0;
 
   while (standardIndex < standardProjects.length || wideIndex < wideProjects.length) {
+    if (wideIndex < wideProjects.length) {
+      projectElements.push(
+        <div key={wideProjects[wideIndex].id} className="projects-list-wide">
+          <Link to={`/project/${wideProjects[wideIndex].slug}`}>
+            <ProjectItem
+              name={wideProjects[wideIndex].name}
+              category={wideProjects[wideIndex].category}
+              imagePath={wideProjects[wideIndex].imagePath}
+              projectId={wideProjects[wideIndex].id}
+              isWide={true}
+            />
+          </Link>
+        </div>
+      );
+      wideIndex++;
+    }
+
     for (let i = 0; i < 2 && standardIndex < standardProjects.length; i++) {
       projectElements.push(
         <div key={`standard-pair-${standardIndex}`} className="projects-list-standard">
@@ -40,23 +57,6 @@ const Projects = transition(() => {
         </div>
       );
       standardIndex += 2;
-    }
-
-    if (wideIndex < wideProjects.length) {
-      projectElements.push(
-        <div key={wideProjects[wideIndex].id} className="projects-list-wide">
-          <Link to={`/project/${wideProjects[wideIndex].slug}`}>
-            <ProjectItem
-              name={wideProjects[wideIndex].name}
-              category={wideProjects[wideIndex].category}
-              imagePath={wideProjects[wideIndex].imagePath}
-              projectId={wideProjects[wideIndex].id}
-              isWide={true}
-            />
-          </Link>
-        </div>
-      );
-      wideIndex++;
     }
   }
 

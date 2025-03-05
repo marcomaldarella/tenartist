@@ -11,8 +11,51 @@ export type ProjectData = {
 }
 
 export const projectsData: ProjectData[] = [
+
   {
-    id: 1, // Nuovo progetto
+    id: 1,
+    name: 'PINKO SS 2025',
+    slug: 'pinko-ss-2025-video',
+    category: 'TESTIMONIAL: MARIACARLA BOSCONO, ART DIRECTOR & STYLIST: LORENZO POSOCCO, PH: ADAM PETER JOHNSON',
+    imagePath: '/assets/projects-thumbnail/pinko-ss-2025.jpg',
+    isWide: true,
+    isVideo: true,
+    videoPath: '/assets/49/pinko.mp4',
+  },
+  {
+    id: 2,
+    name: 'PINKO SS 2025',
+    slug: 'pinko-ss-2025-images',
+    category: 'TESTIMONIAL: MARIACARLA BOSCONO, ART DIRECTOR & STYLIST: LORENZO POSOCCO, PH: ADAM PETER JOHNSON',
+    imagePath: '/assets/projects-thumbnail/pinko-ss-2025-v.jpg',
+    isWide: false,
+    imagesPath: [
+      '/assets/50/1.jpg',
+      '/assets/50/2.jpg',
+      '/assets/50/3.jpg',
+      '/assets/50/4.jpg',
+      '/assets/50/5.jpg',
+      '/assets/50/6.jpg',
+    ],
+  },
+  {
+    id: 3,
+    name: 'FAY FW 2024',
+    slug: 'fay-fw-2024',
+    category: 'STYLIST: ALESSIA GIACOBINO, PH: NICCOLÒ PARSENZIANI',
+    imagePath: '/assets/projects-thumbnail/fay-fw-2024.jpg',
+    isWide: false,
+    imagesPath: [
+      '/assets/51/1.jpg',
+      '/assets/51/2.jpg',
+      '/assets/51/3.jpg',
+      '/assets/51/4.jpg',
+      '/assets/51/5.jpg',
+      '/assets/51/6.jpg',
+    ],
+  },
+  {
+    id: 4, // Nuovo progetto
     name: 'MONTBLANC',
     slug: 'montblanc',
     category: 'CREATIVE DIRECTOR: MARCO TOMMASETTA, PH: MARIANO VIVANCO, STYLIST: PAOLO TURINA, MAIN PRODUCTION: JN PRODUCTION',
@@ -28,7 +71,7 @@ export const projectsData: ProjectData[] = [
     ],
   },
   {
-    id: 3,
+    id: 5,
     name: 'ARMANI JUNIOR CAMPING SS2024',
     slug: 'armani-junior-camping-ss2024',
     category: 'CREATIVE DIRECTION: ALAN PRADA, PH: GIOVANNI CORABI, STYLIST: GIUSEPPE SILEO',
@@ -45,7 +88,7 @@ export const projectsData: ProjectData[] = [
     ],
   },
   {
-    id: 2,
+    id: 6,
     name: 'PINKO FW2024',
     slug: 'pinko-fw2024',
     category: 'TESTIMONIAL: MARIACARLA BOSCONO, ART DIRECTOR & STYLIST: LORENZO POSOCCO, PH: PABLO DI PRIMA',
@@ -65,7 +108,7 @@ export const projectsData: ProjectData[] = [
     ],
   },
   {
-    id: 4,
+    id: 7,
     name: 'EA BEACHWEAR SS2024',
     slug: 'ea-beachwear-ss2024',
     category: 'CREATIVE DIRECTION: ALAN PRADA, PH: ILYRA LIPKIN, STYLIST: GIUSEPPE SILEO',
@@ -81,7 +124,7 @@ export const projectsData: ProjectData[] = [
     ],
   },
   {
-    id: 5,
+    id: 8,
     name: 'FAY SS24',
     slug: 'fay-ss24',
     category:
@@ -103,7 +146,7 @@ export const projectsData: ProjectData[] = [
     ],
   },
   {
-    id: 9,
+    id: 10,
     name: 'ELLE US – ISLAND FANTASY',
     slug: 'elle-us-island-fantasy',
     category:
@@ -121,7 +164,7 @@ export const projectsData: ProjectData[] = [
     ],
   },
   {
-    id: 10,
+    id: 11,
     name: 'MADAME – CHE BELLA!',
     slug: 'madame-che-bella!',
     category:
@@ -138,7 +181,7 @@ export const projectsData: ProjectData[] = [
     ],
   },
   {
-    id: 11,
+    id: 12,
     name: 'FAY FW2023',
     slug: 'fay-fw23',
     category:
@@ -154,7 +197,7 @@ export const projectsData: ProjectData[] = [
     ],
   },
   {
-    id: 12,
+    id: 13,
     name: 'LUISAVIAROMA',
     slug: 'luisaviaroma',
     category:
@@ -172,7 +215,7 @@ export const projectsData: ProjectData[] = [
     ],
   },
   {
-    id: 13,
+    id: 14,
     name: 'CORNELIANI SS2023',
     slug: 'corneliani-ss23',
     category:
@@ -188,7 +231,7 @@ export const projectsData: ProjectData[] = [
     ],
   },
   {
-    id: 14,
+    id: 15,
     name: 'LOUIS VUITTON THE BOOK',
     slug: 'louis-vuitton-the-book',
     category:
@@ -201,7 +244,7 @@ export const projectsData: ProjectData[] = [
     ],
   },
   {
-    id: 15,
+    id: 16,
     name: 'MADAME – VIVA PALOMA',
     slug: 'madame-viva-paloma',
     category: 'PH: ADRIANO RUSSO, \nSTYLIST: KONSTANTIN SPACHIS',
@@ -218,7 +261,7 @@ export const projectsData: ProjectData[] = [
     ],
   },
   {
-    id: 16,
+    id: 17,
     name: 'TISSOT SEASTAR 2021',
     slug: 'tissot-seastar-2021',
     category:
@@ -231,7 +274,7 @@ export const projectsData: ProjectData[] = [
     ],
   },
   {
-    id: 17,
+    id: 18,
     name: 'TISSOT SEASTAR 2021 Video Campaign',
     slug: 'tissot-video',
     category: 'PH: ADRIANO RUSSO \nSTYLIST: GIULIO CASAGRANDE \n LOCATION: IBIZA (ES)',
@@ -241,7 +284,7 @@ export const projectsData: ProjectData[] = [
     isVideo: true,
   },
   {
-    id: 18,
+    id: 19,
     name: 'THE SUNDAY TIMES STYLE',
     slug: 'the-sunday-times-style',
     category: 'PH: ADRIANO RUSSO, \nTALENT: JORDAN ALEXANDER',
@@ -255,7 +298,7 @@ export const projectsData: ProjectData[] = [
     ],
   },
   {
-    id: 19,
+    id: 20,
     name: 'THE COLLECTOR - SUNGLASSES AT NIGHT',
     slug: 'the-collector-sunglasses-at-night',
     category: 'PH: ADRIANO RUSSO, \nSTYLIST: CLAUDIA GASTALDI',
@@ -272,7 +315,7 @@ export const projectsData: ProjectData[] = [
     ],
   },
   {
-    id: 20,
+    id: 21,
     name: 'MIA LE JOURNAL – HOW DO YOU FEEL',
     slug: 'mia-le-journal-feminin-singulier',
     category:
@@ -290,7 +333,7 @@ export const projectsData: ProjectData[] = [
     ],
   },
   {
-    id: 21,
+    id: 22,
     name: 'GIORGIO ARMANI NEVE 2021',
     slug: 'giorgio-armani-neve',
     category:
@@ -301,7 +344,7 @@ export const projectsData: ProjectData[] = [
     videoPath: '/assets/44/neve.mp4',
   },
   {
-    id: 22,
+    id: 23,
     name: 'ELLE ITALIA – LA BELLA VITA',
     slug: 'elle-italia-la-bella-vita',
     category:
@@ -317,7 +360,7 @@ export const projectsData: ProjectData[] = [
     ],
   },
   {
-    id: 23,
+    id: 24,
     name: 'CORNELIANI ADV FW2020',
     slug: 'corneliani-adv-fw2020',
     category:
@@ -331,7 +374,7 @@ export const projectsData: ProjectData[] = [
     ],
   },
   {
-    id: 24,
+    id: 25,
     name: 'EA7 ARMANI SS2020',
     slug: 'ea7-armani-ss20',
     category: ' PH: SERGE GUERARD, \nSTYLIST: LUDOVICA NANNI, \nLOCATION: SARDINIA',
@@ -344,7 +387,7 @@ export const projectsData: ProjectData[] = [
     ],
   },
   {
-    id: 25,
+    id: 26,
     name: 'EA7 ARMANI SS2020 - VIDEO',
     slug: 'ea7-armani-ss20-video',
     category: ' PH: SERGE GUERARD, \nSTYLIST: LUDOVICA NANNI, \nLOCATION: SARDINIA',
@@ -354,7 +397,7 @@ export const projectsData: ProjectData[] = [
     videoPath: '/assets/44/ea.mp4',
   },
   {
-    id: 26,
+    id: 27,
     name: 'ERMENEGILDO ZEGNA SS2020',
     slug: 'ermenegildo-zegna-ss20',
     category:
@@ -368,7 +411,7 @@ export const projectsData: ProjectData[] = [
     ],
   },
   {
-    id: 27,
+    id: 28,
     name: 'MIA LE JOURNAL – ANNA IN WONDERLAND',
     slug: 'mia-le-journal-anna-in-wonderland',
     category:
@@ -385,7 +428,7 @@ export const projectsData: ProjectData[] = [
     ],
   },
   {
-    id: 28,
+    id: 29,
     name: 'FALCONERI FW2019/20',
     slug: 'falconeri-fw-19-20',
     category: 'PH: ADRIANO RUSSO, \nSTYLIST: VIVIANA VOLPICELLA, \nLOCATIOn: COURMAYEOUR (AO)',
@@ -398,7 +441,7 @@ export const projectsData: ProjectData[] = [
     ],
   },
   {
-    id: 29,
+    id: 30,
     name: 'CORNELIANI SS2020',
     slug: 'corneliani-ss20',
     category: 'PH: ADRIANO RUSSO, \nSTYLIST: EMIL REBEK',
@@ -412,7 +455,7 @@ export const projectsData: ProjectData[] = [
     ]
   },
   {
-    id: 30,
+    id: 31,
     name: 'ELLE UK – THINK YOU KNOW KATIE HOLMES?',
     slug: 'elle-uk-think-you-know-katie-holmes',
     category: 'PH: DANIEL CLAVERO, \nSTYLIST: SASA THOMAN, \nTALENT: KATIE HOLMES',
@@ -429,7 +472,7 @@ export const projectsData: ProjectData[] = [
     ],
   },
   {
-    id: 31,
+    id: 32,
     name: 'CESARE PACIOTTI SS2019',
     slug: 'cesare-paciotti-ss19',
     category:
@@ -440,7 +483,7 @@ export const projectsData: ProjectData[] = [
     videoPath: '/assets/26/Paciotti.mp4',
   },
   {
-    id: 32,
+    id: 33,
     name: 'ZALANDO',
     slug: 'zalando',
     category: 'PH: ALICE ROSATI, \nSTYLIST: GIORGIA TAL',
@@ -454,7 +497,7 @@ export const projectsData: ProjectData[] = [
     ],
   },
   {
-    id: 33,
+    id: 34,
     name: 'CORNELIANI ADV FW2019',
     slug: 'corneliani-adv-fw2019',
     category:
@@ -469,7 +512,7 @@ export const projectsData: ProjectData[] = [
     ],
   },
   {
-    id: 34,
+    id: 35,
     name: 'MSGM',
     slug: 'msgm-bar-basso',
     category:
@@ -484,7 +527,7 @@ export const projectsData: ProjectData[] = [
     ],
   },
   {
-    id: 35,
+    id: 36,
     name: 'GOLDENPOINT MARE 2019',
     slug: 'goldenpoint-mare-2019',
     category:
@@ -500,7 +543,7 @@ export const projectsData: ProjectData[] = [
     ],
   },
   {
-    id: 36,
+    id: 37,
     name: 'CESARE PACIOTTI FW2018/19',
     slug: 'cesare-paciotti-fw18-19',
     category:
@@ -514,7 +557,7 @@ export const projectsData: ProjectData[] = [
     ],
   },
   {
-    id: 37,
+    id: 38,
     name: 'SISLEY YOUNG SS2018',
     slug: 'sisley-young-ss18',
     category:
@@ -533,7 +576,7 @@ export const projectsData: ProjectData[] = [
     ],
   },
   {
-    id: 38,
+    id: 39,
     name: 'MAX MARA STUDIO SS2017',
     slug: 'max-mara-studio-ss17',
     category: 'PH: GIAMPAOLO SGURA, \nSTYLIST: SISSY VIAN',
@@ -548,7 +591,7 @@ export const projectsData: ProjectData[] = [
     ],
   },
   {
-    id: 39,
+    id: 40,
     name: 'GOLDENPOINT MARE 2017',
     slug: 'goldenpoint-mare-17',
     category:
@@ -567,7 +610,7 @@ export const projectsData: ProjectData[] = [
     ],
   },
   {
-    id: 40,
+    id: 41,
     name: 'CORNELIANI ADV FW2017/18',
     slug: 'corneliani-adv-fw17-18',
     category:
@@ -582,7 +625,7 @@ export const projectsData: ProjectData[] = [
     ],
   },
   {
-    id: 41,
+    id: 42,
     name: 'CESARE PACIOTTI SS2017',
     slug: 'cesare-paciotti-ss17',
     category:
@@ -598,7 +641,7 @@ export const projectsData: ProjectData[] = [
     ],
   },
   {
-    id: 42,
+    id: 43,
     name: 'SISLEY YOUNG SS2017',
     slug: 'sisley-young-ss17',
     category:
@@ -615,7 +658,7 @@ export const projectsData: ProjectData[] = [
     ],
   },
   {
-    id: 43,
+    id: 44,
     name: 'PAL ZILERI SS2017',
     slug: 'pal-zileri-ss17',
     category:
@@ -630,7 +673,7 @@ export const projectsData: ProjectData[] = [
     ],
   },
   {
-    id: 44,
+    id: 45,
     name: 'GQ China - Wildlife',
     slug: 'gq-china-wildlife',
     category: 'PH: GIAMPAOLO SGURA, \nSTYLIST: GRANT PEARCE',
@@ -644,7 +687,7 @@ export const projectsData: ProjectData[] = [
     ],
   },
   {
-    id: 45,
+    id: 46,
     name: 'GQ China - Madness',
     slug: 'gq-china-madness',
     category:
@@ -658,7 +701,7 @@ export const projectsData: ProjectData[] = [
     ],
   },
   {
-    id: 46,
+    id: 47,
     name: 'VOGUE BRASIL - COSA NOSTRA',
     slug: 'vogue-brasil-cosa-nostra',
     category:

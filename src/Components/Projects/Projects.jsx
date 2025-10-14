@@ -17,14 +17,6 @@ const Projects = transition(() => {
   let standardProjects = projectsData.filter(p => !p.isWide);
   let wideProjects = projectsData.filter(p => p.isWide);
 
-  // (FACOLTATIVO) Se vuoi Montblanc come SECONDO wide,
-  // e nell'array c'è un'altra wide prima di lui,
-  // allora sposta Montblanc in posizione 1.
-  const montblancIndex = wideProjects.findIndex(p => p.slug === 'montblanc');
-  if (montblancIndex > -1) {
-    const [montblanc] = wideProjects.splice(montblancIndex, 1);
-    wideProjects.splice(1, 0, montblanc);
-  }
 
   let projectElements = [];
 
